@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芯风暴：我的老婆不好惹</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《芯风暴：我的老婆不好惹》
+类型/题材：甜宠+复仇+悬疑（隐藏身份/大女主/霸总）
+目标平台：短剧平台（抖音/快手/微短剧）
+总集数：31 集（当前提供至31集）
+评估日期：2026-01-20</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  CONSIDER  ]
+评级：[  A+  ]
+总分：77/100</p>
+<p>一句话结论：开场撞吻设计具有病毒传播潜力，双隐藏身份设定有新意，但节奏控制偏慢、前3集信息密度过高，需优化结构后可进入开发。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre class="ascii-art">            开场与代入(8/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (6/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (7/10)      |      (8/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (8/10)   \|/  (7/10)
+              ▼
+         台词质量(7/10)
+              |
+         人物塑造(8/10)</pre>
+
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8/10</td>
+<td>18%</td>
+<td>14.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>6/10</td>
+<td>15%</td>
+<td>9.0</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7/10</td>
+<td>12%</td>
+<td>8.4</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>8/10</td>
+<td>10%</td>
+<td>8.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>74.2→77</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：开场与代入 - 撞吻开场+命运相遇的经典设计，代入感极强
+<strong>最弱项</strong>：节奏控制 - 中段（6-16集）节奏拖沓，拍卖会情节过于冗长</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：20+ 人
+• 核心人物：6 人（有名有戏份）
+• 正派阵营：5 人
+• 反派阵营：5 人
+• 中立/摇摆：3 人</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[阮宁<br/>隐藏身份大佬/神医/复仇者]
+        B[白司言<br/>霸总/中毒/痴情]
+        C[阮正国<br/>阮宁爷爷/名医]
+        D[坦克<br/>阮宁手下]
+        E[张恒<br/>白司言助理]
+    end
+
+    subgraph 反派阵营
+        F[李知恒<br/>神行科技董事长/幕后黑手]
+        G[早田信夫<br/>神社组织副会长]
+        H[黑风/李泽峰<br/>云苗族/下蛊者]
+        I[赛尔斯<br/>普林森二少/内鬼]
+        J[老疤<br/>李知恒打手]
+    end
+
+    subgraph 中立势力
+        K[奥古斯特<br/>普林森家族/被蛊]
+        L[李欣然<br/>李知恒女儿/追求白司言]
+    end
+
+    A -->|"相爱/双向奔赴"| B
+    A -->|"孙女"| C
+    A -->|"主从/暗线势力"| D
+    B -->|"主从"| E
+    B -.->|"恩情/白爷爷救命之恩"| C
+
+    F -->|"父女"| L
+    F -->|"幕后指使"| J
+    F -.->|"合谋？"| G
+    G -->|"雇佣"| H
+    H -->|"下蛊"| K
+    I -->|"背叛"| K
+
+    L -.->|"单恋"| B
+    A -.->|"复仇目标"| G
+    A -->|"救治/交换"| K
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 女主：阮宁 ─────────────────────────────────────────────────┐
+│ 标签：[隐藏身份大佬] + [天才神医] + [复仇者]                    │
+│ 标签印证：                                                      │
+│ • [隐藏身份大佬] ← 第5集：「阮宁拿出抽屉里的特制手机」          │
+│                  ← 第5集：「坦克vo：老大你可算给我回电话了」     │
+│ • [天才神医] ← 第4集：「阮正国os：小宁都要皱眉的毒，怕是不好解」 │
+│              ← 第4集：「阮宁（神情严肃说道）：爷爷，是龙岩草的毒」│
+│ • [复仇者] ← 第26集：「我就想找到当年的凶手给我爸妈报仇」        │
+│ 弧线：伪装普通医生 → 暴露实力 → 与白司言联手复仇                 │
+│ 标签准确度：★★★★★                                             │
+└──────────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 男主：白司言 ─────────────────────────────────────────────────┐
+│ 标签：[霸总] + [深情痴情] + [实力强大]                          │
+│ 标签印证：                                                      │
+│ • [霸总] ← 第5集：「张恒，照着这个图找龙岩草，立刻调派人手」     │
+│          ← 第22集：「这点钱对我来说不算什么」（101亿拍芯片）     │
+│ • [深情痴情] ← 第2集：「白司言（自语，温柔带笑）：小丫头，脾气还是那么大」│
+│              ← 第27集：「阿宁，希望你能喜欢这份礼物」（项链）    │
+│ • [实力强大] ← 第6集：「普林森家族，我亲自去」                   │
+│ 弧线：中毒虚弱 → 被治愈 → 助攻复仇                              │
+│ 标签准确度：★★★★☆                                             │
+└──────────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 反派：李知恒 ─────────────────────────────────────────────────┐
+│ 标签：[幕后黑手] + [阴险狡诈] + [与神社勾结]                    │
+│ 标签印证：                                                      │
+│ • [幕后黑手] ← 第31集：「通知欣然和老疤晚上来老宅」             │
+│              ← 第31集：「你们等消息，等他们出了机场就动手」      │
+│ • [与神社勾结] ← 第22集：「神社组织」（芯片来源暗示）           │
+│ 弧线：暗处布局 → 逐渐暴露 → 最终对决（待续）                    │
+│ 标签准确度：★★★★☆                                             │
+└──────────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre class="ascii-art">张
+力  │
+强  │                                              ★ 车内表白
+度  │                            ☆ 解毒+确认关系  /
+    │              ○ 拍卖会     /    \          /
+    │             / 遇袭高潮   /      \        /
+    │    ○ 撞吻 /            /        \      /
+    │   /  \   /            /          \    /
+    │  /    \ /            /            \  /
+    │ /      \/           /              \/
+    │/        ○ 初诊中毒
+    └────────────────────────────────────────────────→ 集数
+      1    5     10    15    20    25    30</pre>
+
+<p>【高潮点标注】
+• 小高潮①（第1集）：撞吻+反吻——命运相遇
+• 小高潮②（第3-4集）：初诊龙岩草毒，建立治疗关系
+• 中高潮①（第17-26集）：拍卖会+遇袭+芯片争夺
+• 情感高潮（第27-29集）：表白确认关系+解毒成功
+• 伏笔高潮（第31集）：李知恒布局暗杀</p>
+<p>【冲突热力图】</p>
+<pre class="ascii-table">集数    1-5    6-10   11-15  16-20  21-25  26-31
+────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥🔥🔥 🔥🔥🔥
+情感冲突  🔥🔥🔥  🔥🔥    🔥      🔥🔥    🔥🔥    🔥🔥🔥🔥
+人物冲突  🔥🔥    🔥      🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥
+悬疑线    🔥      🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥🔥🔥
+────────────────────────────────────────────────────
+冲突密度  高      中      中低    高      极高    高
+（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突（复仇线）</strong>：阮宁追查父母车祸真相
+   - 起点（第7集）：「坦克，马上查一下普林森家族」——阮宁首次主动出击
+   - 升级（第22集）：「神社组织，我能告诉你的只有这个」——锁定神社
+   - 悬念（第31集）：「等他们出了机场就动手」——李知恒暗杀计划</p>
+</li>
+<li>
+<p><strong>情感冲突线</strong>：阮宁×白司言的甜宠发展
+   - 起点（第1集）：意外撞吻，白司言主动加深
+   - 升级（第8集）：「以夫妻的身份怎么样？」——暧昧试探
+   - 高潮（第27集）：「我们试试啊？」「阮宁最后不好意思的点点头」</p>
+</li>
+<li>
+<p><strong>身份冲突线</strong>：双方隐藏身份的张力
+   - 阮宁隐藏大佬身份（第5/10/17集多次暗线行动）
+   - 白司言察觉异常（第10集）：「别墅安防系统监测到非授权加密信号」
+   - 悬念未解：两人何时互相坦白？</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>追逐场景</td>
+<td>黄金开场</td>
+<td>「阮宁扎着一个丸子头，气喘吁吁的追着两个小男孩跑」</td>
+<td>✓动态开场</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>巷口相遇</td>
+<td>双交代</td>
+<td>「轮椅上的白司言穿着一身黑色西装」「两个小宝慌慌张张地冲了出来」</td>
+<td>✓身份暗示</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>撞吻</td>
+<td>核心冲突建立</td>
+<td>「阮宁柔软的唇瓣精准的对上白司言微凉的唇」</td>
+<td>✓✓极强</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>反吻</td>
+<td>反转升级</td>
+<td>「直接覆上她的唇，深深地吻了上去」「好了，这样才公平」</td>
+<td>✓出人意料</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>男主离去</td>
+<td>钩子</td>
+<td>「白司言头都没有回，只抬手冲她挥了挥」</td>
+<td>中（钩子稍弱）</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：8/10
+问题点：结尾钩子力度一般，"登徒子"的骂声不够形成悬念，建议增加男主神秘身份暗示。</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阮宁在原地气愤</td>
+<td>白司言从高处注视</td>
+<td>「小丫头，脾气还是那么大」（暗示前缘）</td>
+<td>两个小孩要告状</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<p>原文钩子：「大宝（捂着嘴小声说）：就说姐姐被帅哥偷亲啦」</p>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白爷爷孙子到访</td>
+<td>竟是撞吻男！</td>
+<td>「阮爷爷，让阿宁妹妹对我负责」</td>
+<td>进屋讨论</td>
+<td>5/5 极强</td>
+</tr>
+</tbody>
+</table>
+<p>原文钩子：「白司言话音刚落，阮宁就冲到白司言轮椅旁」——冲突感十足</p>
+<p>【前3集总评】
+• 代入速度：☑极快（撞吻3秒入戏）□快 □一般 □慢
+• 信息密度：☑过载（人物关系+世界观铺设过多）□适中 □偏少
+• 钩子循环：□紧密 ☑一般（第1集结尾稍弱）□松散
+• 前3集整体评分：8/10</p>
+<p><strong>核心问题</strong>：第3集信息量过大——同时交代：白爷爷救命恩情、男女主重逢、初吻争端、中毒暗示。建议拆分。</p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「登徒子，下次不要让我再见到你」</td>
+<td>白司言从高处注视</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「就说姐姐被帅哥偷亲啦」</td>
+<td>白爷爷孙子来访</td>
+<td>5/5</td>
+<td>反转型</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>「咱们进屋说」</td>
+<td>诊脉场景</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>4→5</td>
+<td>「这毒能解吗？」</td>
+<td>龙岩草解说</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>26→27</td>
+<td>「你为什么帮我？」</td>
+<td>「秘密」+表白</td>
+<td>5/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>30→31</td>
+<td>「阮小姐会帮我找到母蛊吗」</td>
+<td>李知恒布局</td>
+<td>4/5</td>
+<td>危机型</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：4.6/5
+衔接问题点：第6-16集（拍卖会筹备段）节奏偏慢，钩子力度下降</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白司言认识阮宁（「小丫头，脾气还是那么大」）</td>
+<td>第2集</td>
+<td>-</td>
+<td>✗未回收（重大伏笔）</td>
+</tr>
+<tr>
+<td>阮宁隐藏身份（特制手机+坦克）</td>
+<td>第5集</td>
+<td>第10/17/25集持续</td>
+<td>○部分展开</td>
+</tr>
+<tr>
+<td>芯片与父母车祸关联</td>
+<td>第7集（坦克提及芯片）</td>
+<td>第22/26集</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>白司言察觉加密信号</td>
+<td>第10集</td>
+<td>-</td>
+<td>✗未回收</td>
+</tr>
+<tr>
+<td>子母蛊追踪黑风</td>
+<td>第20-21集</td>
+<td>第24集（画面呈现）</td>
+<td>○部分回收</td>
+</tr>
+<tr>
+<td>水蓝钻石项链（母亲遗物）</td>
+<td>第15集</td>
+<td>第15集闪回</td>
+<td>✓已回收</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+☑ 连贯无矛盾
+□ 有小问题
+□ 有明显矛盾</p>
+<p>【人物行为一致性】
+☑ 行为符合性格设定
+□ 有不一致处</p>
+<p><strong>注意点</strong>：阮宁在第1-3集表现得像普通医学生，但第5集突然展现暗网大佬身份，转换稍显突兀。建议在前几集增加微小伏笔（如：阮宁某个眼神/反应暗示不简单）。</p>
+<p>【逻辑硬伤】（如有）
+1. 第8集：阮宁不懂军火，却能和白司言讨论"华国军火商夫妇"身份，略显草率。
+2. 第12集：解毒针灸只需5分钟能让瘫痪病人行走，医学设定需更合理的解释。</p>
+<p>逻辑一致性评分：7/10</p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>时长</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集</td>
+<td>15s</td>
+<td>反转型</td>
+<td>撞吻→反吻</td>
+<td>「好了，这样才公平」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第3集</td>
+<td>10s</td>
+<td>冲突型</td>
+<td>让女主负责</td>
+<td>「阮爷爷，让阿宁妹妹对我负责」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第13集</td>
+<td>8s</td>
+<td>撩拨型</td>
+<td>摸腹肌</td>
+<td>「阿宁妹妹你这是馋我的身体吗？」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第22集</td>
+<td>10s</td>
+<td>爽点型</td>
+<td>101亿拍芯片</td>
+<td>「这点钱对我来说不算什么」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第27集</td>
+<td>12s</td>
+<td>情感型</td>
+<td>车内表白吻</td>
+<td>「白司言看着看着不自觉的吻了上去」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第4集</td>
+<td>8s</td>
+<td>悬念型</td>
+<td>诊断毒药</td>
+<td>「是龙岩草的毒」「下毒之人是抱着让你死的心思」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第29集</td>
+<td>10s</td>
+<td>甜宠型</td>
+<td>吹头发</td>
+<td>「我来帮你吹干」「乖叫老公」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：2 个
+• 反转/悬念型：2 个
+• 金句/名场面型：1 个
+• 情感/虐心型：1 个
+• 爽点/撩拨型：3 个</p>
+<p>投流素材丰富度：★★★★☆
+<strong>最佳投流片段推荐</strong>：第1集撞吻→反吻场景——具有病毒传播潜力，15秒内完成"意外-反转-霸道"三连击。</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】</p>
+<pre class="character-card">┌─ 片段1：撞吻反转 ─────────────────────────────────────────────┐
+│ 位置：第1集                                                    │
+│ 类型：☑反转揭示 ☑名场面                                        │
+│                                                                │
+│ 完整原文：                                                     │
+│ 「阮宁猛地回过神来，手撑着白色的胸膛挣扎着站起来，手忙脚乱的摆手。│
+│ 阮宁（心虚的道歉）：对不起对不起，我不是故意的。                │
+│ △白司言缓缓的抬起手，指尖划过自己的唇，嘴角勾起一抹玩味的弧度。 │
+│ 白司言：意外？可是小姐你夺走了我的初吻啊。                      │
+│ 阮宁（小声嘀咕）：那你想怎么样？                                │
+│ △白司言不等阮宁反应过来，突然伸手揽过她的腰，阮宁猝不及防的坐在了│
+│ 白司言的腿上，他的另一只手扣住阮宁的后颈，直接覆上她的唇，深深地 │
+│ 吻了上去。                                                     │
+│ △阮宁浑身僵住，连反抗都忘了。                                  │
+│ △白司言缓缓的松开了阮宁，指尖摩挲着她泛红的唇角。              │
+│ 白司言（开心的低语）：好了，这样才公平。」                      │
+│                                                                │
+│ 上下文：阮宁追小孩意外撞上坐轮椅的白司言，撞出初吻              │
+│ 精彩点：①"夺走初吻"的说法反转受害者位置 ②"公平"逻辑霸道却成立 │
+│         ③轮椅上的弱者姿态vs霸道动作的反差萌                    │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：负责名场面 ─────────────────────────────────────────────┐
+│ 位置：第3集                                                    │
+│ 类型：☑冲突高潮 ☑台词金句                                      │
+│                                                                │
+│ 完整原文：                                                     │
+│ 「白司言：阮爷爷，我们认识。昨天在巷口，阿宁妹妹不仅撞进我怀里，│
+│ 还夺走了我的初吻。                                             │
+│ △阮宁的脸更红了。                                              │
+│ 阮宁：你胡说！谁是你妹妹，明明是你强吻我！你这个臭流氓！        │
+│ △白司言却一脸无辜地看向阮正国，眼底满是"委屈"。                │
+│ 白司言：阮爷爷，还请您老人家为我做主，让阿宁妹妹对我负责。」    │
+│                                                                │
+│ 上下文：白司言以白爷爷孙子身份到阮家，与阮宁再次相遇            │
+│ 精彩点：①性别反转的"负责"梗 ②当着长辈面的尴尬升级 ③无辜表演   │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：101亿拍芯片 ─────────────────────────────────────────────┐
+│ 位置：第22-23集                                                │
+│ 类型：☑爽点 ☑情感爆发                                          │
+│                                                                │
+│ 完整原文：                                                     │
+│ 「阮宁：出价这么高，不然还是算了吧。                            │
+│ 白司言（给阮宁一个安心的眼神）：放心，这么点钱对我来说不算什么。 │
+│ ...                                                            │
+│ △最后白司言出价101亿拍下了这块芯片。                           │
+│ ...                                                            │
+│ 白司言：告诉你们老板我花钱哄我的女人开心不能够让他买单。」       │
+│                                                                │
+│ 上下文：芯片是阮宁父母遗物，神社加价到100亿，白司言压价101亿    │
+│ 精彩点：①"这么点钱"的凡尔赛 ②"我的女人"宣示主权 ③为爱豪掷     │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「好了，这样才公平」</td>
+<td>第1集</td>
+<td>白司言</td>
+<td>反吻后</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「让阿宁妹妹对我负责」</td>
+<td>第3集</td>
+<td>白司言</td>
+<td>当着爷爷面</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「这么点钱对我来说不算什么」</td>
+<td>第22集</td>
+<td>白司言</td>
+<td>101亿拍芯片</td>
+</tr>
+<tr>
+<td>撩拨型</td>
+<td>「阿宁妹妹你这是馋我的身体吗？」</td>
+<td>第13集</td>
+<td>白司言</td>
+<td>针灸脱衣</td>
+</tr>
+<tr>
+<td>撩拨型</td>
+<td>「乖叫老公」</td>
+<td>第29集</td>
+<td>白司言</td>
+<td>解毒后</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「我的一切都可以给你」</td>
+<td>第16集</td>
+<td>白司言</td>
+<td>拍卖会前</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「我这内心隐隐的兴奋怎么办？」</td>
+<td>第28集</td>
+<td>张恒os</td>
+<td>目睹撒狗粮</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：双隐藏身份设定</strong></p>
+<p>证据链：
+• 第5集：「阮宁拿出抽屉里的特制手机...坦克vo：老大你可算给我回电话了」
+• 第10集：「老K又检测到那股信号了...老K：我觉得这个加密算法很像Jey的风格」
+• 第17集：「阮宁拿出手机，看到坦克的消息，他们在一楼的108号包间内」</p>
+<p>分析：女主不是传统的弱势复仇者，而是隐藏实力的大佬，这打破了"霸总+小白兔"的俗套。同时男主也在暗中观察，形成"猫捉老鼠"的张力。
+可复用技巧：双线隐藏身份+互相试探，可制造更多悬念和反转空间。</p>
+<p><strong>亮点2：开场设计的病毒性</strong></p>
+<p>证据链：
+• 第1集：追逐→撞吻→反吻，15秒内完成三重反转
+• 第1集：「好了，这样才公平」——金句收尾
+• 第2集：「小丫头，脾气还是那么大」——暗示前缘</p>
+<p>分析：撞吻是老梗，但"反吻+公平论"是新包装。轮椅上的弱势姿态vs霸道行为形成反差萌，具有极强的短视频传播潜力。
+可复用技巧：经典桥段+逻辑反转+金句收尾。</p>
+<p><strong>亮点3：救命之恩的双向绑定</strong></p>
+<p>证据链：
+• 第3集：「当年要不是你白爷爷把我背出死人堆，爷爷早就死了」
+• 第4集：「白爷爷的恩情还是要还的」——阮宁os
+• 第7集：「您忘了白爷爷当年可是不顾安危把您救出来的」——阮宁利用恩情</p>
+<p>分析：恩情设定不仅解决了"为什么要帮他"的逻辑问题，还为女主的"不情愿"提供了合理外衣，是典型的"嘴上说不要身体很诚实"的萌点制造器。</p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：中段节奏拖沓（第6-16集）</strong></p>
+<p>证据链：
+• 第6-7集：大量篇幅用于解释普林森家族背景
+• 第8-9集：「以夫妻身份/医生身份」的讨论过于冗长
+• 第10-16集：别墅内的日常戏节奏平缓</p>
+<p>影响评估：用户在第5集后可能流失，因为核心冲突（复仇线）推进过慢。
+优化建议：
+1. 压缩别墅日常戏，删除冗余对话
+2. 提前暴露芯片线索到第5集
+3. 增加神社组织的威胁感（如：暗杀预警）</p>
+<p><strong>问题2：男主前缘伏笔未回收</strong></p>
+<p>证据链：
+• 第2集：「小丫头，脾气还是那么大」——明确暗示白司言认识阮宁
+• 截至第31集：未解释两人前缘</p>
+<p>影响评估：这是重大悬念，如果后续不回收会导致逻辑崩塌。
+优化建议：在第15集左右通过闪回或对话揭示部分前缘，保持观众期待。</p>
+<p><strong>问题3：反派出场过晚</strong></p>
+<p>证据链：
+• 李知恒首次出场在第31集
+• 神社组织早田信夫出场在第20集
+• 前20集反派力量模糊</p>
+<p>影响评估：缺乏明确反派会削弱复仇线的紧迫感。
+优化建议：在第5集左右插入李知恒的阴谋筹备画面，建立"幕后黑手"的存在感。</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>中段节奏拖沓</td>
+<td>节奏控制/代入</td>
+<td>中</td>
+<td>压缩第6-16集，删除冗余解释</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>反派出场过晚</td>
+<td>故事结构</td>
+<td>低</td>
+<td>第5集插入李知恒阴谋镜头</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>前缘伏笔未回收</td>
+<td>逻辑一致性</td>
+<td>中</td>
+<td>第15集左右部分揭示</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>第1集结尾钩子偏弱</td>
+<td>开场代入</td>
+<td>低</td>
+<td>增加男主神秘身份暗示</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>阮宁身份转换突兀</td>
+<td>人物塑造</td>
+<td>低</td>
+<td>前3集增加微小伏笔</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>第1集结尾优化</strong>
+   - 问题：「登徒子」骂声不够形成悬念
+   - 建议：增加白司言的神秘反应，如：
+   - 参考：可改为「白司言（意味深长）：终于找到你了...」</p>
+</li>
+<li>
+<p><strong>第5集后插入反派线</strong>
+   - 问题：反派存在感弱
+   - 建议：在第5集末尾插入李知恒接到神社电话的画面
+   - 参考：「李知恒（阴沉）：白司言那边有什么动静？...盯紧他们」</p>
+</li>
+<li>
+<p><strong>压缩拍卖会筹备段</strong>
+   - 问题：第8-11集节奏过慢
+   - 建议：删除"夫妻/医生身份"的冗长讨论，直接跳转出发
+   - 预计：可节省2集篇幅</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☐ 立即进入开发
+☑ 小幅修改后开发（预计 2 周）
+☐ 重大修改后重新评估
+☐ 暂缓
+☐ 放弃</p>
+<p><strong>推荐行动</strong>：
+1. 优化中段节奏（P0），预计3-5天
+2. 补充反派前期伏笔（P0），预计1-2天
+3. 完成剧本后半段（第32集以后），确认完整度
+4. 重新评估后可进入开发</p>
+<p>预估开发周期：剧本定稿后约4-6周
+预估制作预算：中等偏上（涉及拍卖会场景、追车戏）
+风险提示：
+- 双隐藏身份设定需要把控揭示节奏，避免观众困惑
+- 芯片+复仇+甜宠三线并行，需确保不相互干扰</p>
+<div class="section-title">评估完成</div>
+
+<p>````</p>
+<hr />
+<h2>总结</h2>
+<p>《芯风暴：我的老婆不好惹》是一部具有较高商业潜力的短剧剧本：</p>
+<p><strong>核心优势</strong>：
+- 开场撞吻→反吻设计极具病毒传播力
+- 双隐藏身份设定打破传统霸总+小白兔套路
+- 男主金句频出，"负责""公平"等梗具有传播性</p>
+<p><strong>主要问题</strong>：
+- 中段（6-16集）节奏拖沓
+- 反派出场过晚，缺乏紧迫感
+- 男主"前缘"伏笔需要回收</p>
+<p><strong>评估结论</strong>：<strong>CONSIDER / A+ / 77分</strong>
+建议小幅修改后进入开发阶段。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

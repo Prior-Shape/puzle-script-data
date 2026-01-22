@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烬火重燃：囚笼玫瑰</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《烬火重燃：囚笼玫瑰》
+类型/题材：民国虐恋/重生复仇/豪门商战
+目标平台：短剧平台（抖音/快手等）
+总集数：60 集
+评估日期：2026-01-20</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  CONSIDER  ]
+评级：[  A+  ]
+总分：77/100</p>
+<p>一句话结论：民国重生虐恋题材成熟，开场钩子极强，人物关系清晰，但中后期节奏拖沓、反派智商降级明显，需重点优化第三幕及反派塑造。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;            开场与代入(9/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (6/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (8/10)      |      (8/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (7/10)   \|/  (7/10)
+              ▼
+         台词质量(7/10)
+              |
+         人物塑造(7/10)&lt;/pre&gt;
+
+</code></pre>
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>9/10</td>
+<td>18%</td>
+<td>16.2</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>6/10</td>
+<td>15%</td>
+<td>9.0</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7/10</td>
+<td>12%</td>
+<td>8.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>7/10</td>
+<td>10%</td>
+<td>7.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td>-</td>
+<td>100%</td>
+<td><strong>77.0</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：开场与代入 - 第1集雨夜枪杀→重生的设计极具冲击力，钩子强度满分
+<strong>最弱项</strong>：节奏控制 - 中期（20-40集）事件密度下降，后期（46-60集）收尾仓促</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：15+ 人
+• 核心人物：6 人（有名有戏份）
+• 正派阵营：5 人
+• 反派阵营：4 人
+• 中立/摇摆：2 人</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[沈青芜<br/>重生复仇/隐忍智慧/深情难忘]
+        B[沈敬言<br/>沈家家主/慈父]
+        C[沈青川<br/>兄长/正直热血]
+        D[春桃<br/>贴身丫鬟/忠心]
+    end
+
+    subgraph 反派阵营
+        E[陆明远<br/>阴险狡诈/堂弟]
+        F[苏曼丽<br/>嫉妒毒辣/心机女]
+        G[李总长<br/>权势滔天/幕后黑手]
+        H[周副理<br/>叛徒/内奸鹰]
+    end
+
+    subgraph 摇摆阵营
+        I[陆承渊<br/>冷面柔情/男主]
+        J[福伯<br/>忠仆/隐藏内奸]
+    end
+
+    A ==>|虐恋情深| I
+    A -->|父女| B
+    A -->|兄妹| C
+    A -->|主仆| D
+
+    I -.->|堂兄弟/对立| E
+    E -->|利用合作| F
+    E -->|勾结| G
+    G -->|指使| H
+    G -->|威胁利用| J
+
+    F -.->|情敌/嫉妒| A
+    E -.->|陷害| A
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 女主：沈青芜 ─────────────────────────────────────────────┐
+│ 标签：[重生复仇] + [隐忍智慧] + [深情难忘]                    │
+│ 标签印证：                                                   │
+│ • [重生复仇] ← 第1集：「意识消散前，玉佩发出微弱红光，将雨水│
+│    染成血色...眼前竟不是阴曹地府，而是自己未出阁的闺房？」   │
+│ • [隐忍智慧] ← 第3集：「这里看似借款，实则变相吞并！陆氏近期│
+│    在暗中收购咱们的下游商队」                                │
+│ • [深情难忘] ← 第4集：「面对陆承渊熟悉的脸庞，残留的爱意隐隐│
+│    作祟，可一想到惨死的家人，又强行压下情绪」                │
+│ 弧线：[含冤而死] → [重生复仇] → [放下恨意，破镜重圆]         │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 男主：陆承渊 ────────────────────────────────────────────┐
+│ 标签：[冷面柔情] + [被蒙蔽者] + [守护者]                     │
+│ 标签印证：                                                   │
+│ • [冷面柔情] ← 第1集：「陆承渊一身黑西装立在雨中，手枪垂在身│
+│    侧，指尖微动，喉结滚动，却未开口」「眼底闪过一丝转瞬即逝│
+│    的痛」                                                    │
+│ • [被蒙蔽者] ← 第47集：「原来，当年外敌以沈家安危要挟陆父，│
+│    逼他协助运送军火，陆父假意答应」                         │
+│ • [守护者] ← 第20集：「陆承渊眼疾手快，一把将沈青芜拉到身边」│
+│ 弧线：[冷漠执法者] → [逐渐觉醒] → [坚定守护]                │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 反派：陆明远 + 苏曼丽 ────────────────────────────────────┐
+│ 标签：[阴险狡诈] + [嫉妒毒辣] + [工具人]                     │
+│ 标签印证：                                                   │
+│ • [阴险狡诈] ← 第5集：「陆明远先生的人拦住，说欠了赌债，要抓│
+│    去抵债」（设局陷害）                                      │
+│ • [嫉妒毒辣] ← 第8集：「小翠上前一步，假装摔倒，手里的茶水刚│
+│    好泼在沈青芜的旗袍上」                                    │
+│ • [工具人] ← 第14集：两人互相指责，「明明是你先提出的！」    │
+│ 弧线：[嚣张陷害] → [被揭穿] → [彻底失败]                     │
+│ 标签准确度：★★★☆☆（后期智商降级明显）                      │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 幕后黑手：李总长 ────────────────────────────────────────┐
+│ 标签：[权势滔天] + [老谋深算] + [通敌叛国]                   │
+│ 标签印证：                                                   │
+│ • [权势滔天] ← 第22集：「警局局长收过一个叫『李总长』的人的好│
+│    处」「此事另有隐情，先把他们都放了」                      │
+│ • [通敌叛国] ← 第35集：「想利用陆氏的航运线路，给外敌运送军火│
+│    ，换取利益」                                              │
+│ 弧线：[幕后操控] → [正面交锋] → [狱中灭口]                   │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;张
+力  │
+强  │                                          ★ 大高潮(43-45)
+度  │                                         /  \
+    │                        ☆ 中高潮(19-21)/    \    ○(59)
+    │        ○(13-14)      /    \          /      \  /
+    │       /  \    ☆(17)/      \        /        \/
+    │  ★(1)/    \  /  \  /        \      /
+    │   / \      \/    \/          \    /
+    │  /   \                        \  /
+    │ /     \                        \/
+    │/
+    └────────────────────────────────────────────────→ 集数
+      1    10    20    30    40    50    60&lt;/pre&gt;
+
+</code></pre>
+<p>【高潮点标注】
+• 开场高潮（第1集）：雨夜枪杀+重生——情绪冲击极强
+• 小高潮①（第13-14集）：绸缎庄风波+承渊追责——反派初次受挫
+• 中高潮①（第17集）：大婚灯笼坠落惊变——危机升级
+• 中高潮②（第19-21集）：仓库营救+生死对决——男女主联手
+• 大高潮（第43-45集）：双线遇险+生死与共——全剧最高张力
+• 收尾高潮（第59集）：盛世婚礼——情感圆满</p>
+<p>【冲突热力图】</p>
+<pre><code>
+&lt;pre class=&quot;ascii-table&quot;&gt;集数     1-10   11-20  21-30  31-40  41-50  51-60
+────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥🔥🔥  🔥🔥🔥🔥 🔥🔥
+人物冲突  🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥    🔥
+情感冲突  🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥
+内心冲突  🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥    🔥      🔥
+────────────────────────────────────────────────────
+冲突密度  高      高      中      中高    极高    中&lt;/pre&gt;
+
+</code></pre>
+<pre class="ascii-table">（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p><strong>问题诊断</strong>：21-40集冲突密度下降明显，属于"中期疲软"典型表现</p>
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突</strong>：沈青芜vs陆明远/李总长的复仇对抗
+   - 起点（第3集）：「这里看似借款，实则变相吞并！」——阻止合同
+   - 升级（第18集）：「沈青川在后门查看时，被人打晕掳走了！」
+   - 高潮（第43集）：双线遇险，「你的小情人已经落入我的陷阱」</p>
+</li>
+<li>
+<p><strong>情感冲突线</strong>：沈青芜vs陆承渊的爱恨纠葛
+   - 起点（第1集）：「她最后望向陆承渊，见他眼底闪过一丝转瞬即逝的痛」
+   - 挣扎（第9集）：「原来上一世的冷漠不是错觉，他从未真正相信过自己」
+   - 和解（第47集）：「陆父并非勾结外敌，反而是在暗中守护沈家」</p>
+</li>
+<li>
+<p><strong>人物冲突线</strong>：苏曼丽vs沈青芜的情敌之争
+   - 第4集：「沈青芜，你倒是会装模作样」
+   - 第8集：泼茶事件
+   - 第17集：大婚暗算</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>雨夜废弃码头</td>
+<td>黄金开场</td>
+<td>「民国十七年，沪上废弃码头。雨帘密集，湿透沈青芜的月白旗袍」</td>
+<td>✓强视觉</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>打手围攻+通敌指控</td>
+<td>双交代</td>
+<td>「打手围成半圆，枪口对准沈青芜...勾结外敌，通敌叛国，证据确凿！」</td>
+<td>✓完美</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>陆承渊冷眼旁观</td>
+<td>冲突建立</td>
+<td>「陆承渊一身黑西装立在雨中，手枪垂在身侧...却未开口」</td>
+<td>✓核心矛盾</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>枪杀+血溅玉佩</td>
+<td>高潮</td>
+<td>「砰——枪声破雨，沈青芜胸口血花绽开，向后倒地」</td>
+<td>★极强</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>玉佩红光+重生</td>
+<td>钩子</td>
+<td>「玉佩发出微弱红光...眼前竟不是阴曹地府，而是自己未出阁的闺房？」</td>
+<td>★★★★★</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：<strong>10/10</strong>
+问题点：无，堪称教科书级开场</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>惊坐起身，摸胸口无伤</td>
+<td>确认重生事实</td>
+<td>「民国十七年，十月十二」——大婚前三日</td>
+<td>「这份合同正是将沈家推入深渊的开始，她该如何阻止？」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>原文证据</strong>：
+- 承接：「沈青芜惊坐起身，摸向胸口——无伤口，唯有心跳剧烈」
+- 钩子：「这份合同正是将沈家推入深渊的开始」</p>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接进入阻止合同</td>
+<td>沈青芜展露先知能力</td>
+<td>「陆氏近期在暗中收购咱们的下游商队」</td>
+<td>「沈小姐好手段——他会向陆承渊如实汇报吗？」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>原文证据</strong>：
+- 核心冲突：「爹，不能签！...这里看似借款，实则变相吞并！」
+- 内心挣扎：「担心自己的『先知』被怀疑，又急着阻止危机」</p>
+<p>【前3集总评】
+• 代入速度：☑极快（3秒入戏）——雨夜枪杀画面冲击力极强
+• 信息密度：☑适中——重生设定清晰，家族危机明确
+• 钩子循环：☑紧密——每集结尾都有强悬念
+• 前3集整体评分：<strong>9.5/10</strong></p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】（抽样关键节点）</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「是梦，还是……」</td>
+<td>「沈青芜惊坐起身，摸向胸口」</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「她该如何阻止？」</td>
+<td>直接进入阻止合同场景</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>9→10</td>
+<td>「这份证据清单会带来什么连锁反应？」</td>
+<td>将清单递给父兄</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>14→15</td>
+<td>「福伯口中的上一辈恩怨是什么？」</td>
+<td>反复琢磨密信</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>17→18</td>
+<td>「灯笼坠落是苏曼丽的阴谋吗？」</td>
+<td>追查灯笼绳索</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>45→46</td>
+<td>「李总长的话是真是假？」</td>
+<td>前往老宅探秘</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>55→56</td>
+<td>「她会选择原谅陆承渊吗？」</td>
+<td>闭门沉思数日</td>
+<td>3/5</td>
+<td>情感型</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：<strong>4.3/5</strong>
+衔接问题点：第三幕（46-60集）部分衔接松散，情感线推进缓慢</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>玉佩红光/重生之谜</td>
+<td>第1集</td>
+<td>第58集</td>
+<td>✓已回收（时空回溯设定）</td>
+</tr>
+<tr>
+<td>上一辈恩怨</td>
+<td>第14集福伯密信</td>
+<td>第47集密室日记</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>陆氏内奸</td>
+<td>第25集照片背后小字</td>
+<td>第54集福伯揭示</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>李总长与母亲的恩怨</td>
+<td>第23集</td>
+<td>第47集</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>「鹰」代号</td>
+<td>第49集</td>
+<td>第51集周副理</td>
+<td>✓已回收</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+☑ 连贯无矛盾
+- 重生时间点：民国十七年十月十二（大婚前三日）
+- 主线事件按时间顺序推进</p>
+<p>【人物行为一致性】
+☐ 有不一致处：
+- <strong>陆明远</strong>：前期狡诈（设局陷害），后期智商降级（第24集「我早就报警了」暴露行踪）
+- <strong>李总长</strong>：权势滔天却在码头正面硬刚，不符合幕后黑手人设</p>
+<p>【逻辑硬伤】
+1. 第38集：沈敬言刚将航道图藏好，阿福立刻跟踪偷取——沈府安保形同虚设
+2. 第48集：李总长狱中被毒杀——督察署安保严重失职，缺乏合理解释</p>
+<p>逻辑一致性评分：<strong>7/10</strong></p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集</td>
+<td>冲突型</td>
+<td>雨夜枪杀重生</td>
+<td>「砰——枪声破雨，沈青芜胸口血花绽开...玉佩发出微弱红光」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第3集</td>
+<td>反转型</td>
+<td>闺秀识破阴谋</td>
+<td>「这里看似借款，实则变相吞并！...沈小姐好手段」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第5集</td>
+<td>打脸型</td>
+<td>名媛聚会反击</td>
+<td>「这是你让丫鬟散播流言的凭证，要不要给大家看看？」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第8集</td>
+<td>爽点型</td>
+<td>以彼之道还施彼身</td>
+<td>「丫鬟不懂规矩，看来是主人没教好」——推倒小翠</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第13集</td>
+<td>当众打脸</td>
+<td>绸缎庄揭穿陷害</td>
+<td>「这匹次品的编号，根本不在我们的账本上！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第20集</td>
+<td>情感型</td>
+<td>生死关头护身</td>
+<td>「陆承渊停下脚步...有什么条件，你说，别伤害她」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第21集</td>
+<td>反转型</td>
+<td>假意妥协绝地反杀</td>
+<td>「陆承渊突然加速冲上前，手中藏着的短刀直刺陆明远握枪的手腕！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>8</td>
+<td>第44集</td>
+<td>高燃型</td>
+<td>双线生死与共</td>
+<td>「沈青芜发射红色信号弹...陆承渊心急如焚」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9</td>
+<td>第57集</td>
+<td>霸气宣言</td>
+<td>当众护妻</td>
+<td>「沈青芜是我此生唯一挚爱...任何诋毁她的人，就是与我陆承渊为敌！」</td>
+<td>★★★★★</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：5 个
+• 反转/悬念型：3 个
+• 金句/名场面型：2 个
+• 情感/虐心型：2 个
+• 爽点/逆袭型：4 个</p>
+<p>投流素材丰富度：★★★★★
+最佳投流片段推荐：<strong>第1集雨夜枪杀重生</strong> + <strong>第5集名媛聚会打脸</strong> + <strong>第57集当众护妻宣言</strong></p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】</p>
+<pre class="character-card">┌─ 片段1：雨夜绝响 ─────────────────────────────────────────────┐
+│ 位置：第1集                                                   │
+│ 类型：☑冲突高潮 ☑情感爆发 ☑名场面                            │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「打手围成半圆，枪口对准沈青芜，为首者嘶吼："沈青芜，勾结    │
+│  外敌，通敌叛国，证据确凿！"                                  │
+│  沈青芜抬头，雨水顺着发梢滴落，她望向圈外持枪的陆承渊，声音  │
+│  嘶哑："陆承渊，我没有……"                                   │
+│  陆承渊一身黑西装立在雨中，手枪垂在身侧，指尖微动，喉结滚动，│
+│  却未开口。                                                   │
+│  【内心挣扎·沈青芜】恨他冷酷，又怨自己错付深情，死前竟还盼他│
+│  信我。                                                       │
+│  "砰——"枪声破雨，沈青芜胸口血花绽开，向后倒地。              │
+│  领口的白玉佩滑落，砸在青石板上，清脆一声，沾染喷涌的鲜血。  │
+│  她最后望向陆承渊，见他眼底闪过一丝转瞬即逝的痛。」          │
+│                                                               │
+│ 精彩点：视觉冲击（雨夜+血色）、情感张力（死前仍望向他）、    │
+│        悬念设置（玉佩红光）三位一体，堪称教科书级开场         │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：名媛聚会反杀 ─────────────────────────────────────────┐
+│ 位置：第5集                                                   │
+│ 类型：☑冲突高潮 ☑爽点                                        │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「苏曼丽正围在一群名媛中间，添油加醋："你们是没看见，沈青芜  │
+│  在茶楼对陆先生多主动，简直丢尽沈家脸面。"                    │
+│  "苏小姐，话可不能乱说。"沈青芜走进来，声音平静却带着寒意。  │
+│  众人目光聚焦，苏曼丽一愣，随即冷笑："难道我说错了？"        │
+│  沈青芜走到苏曼丽面前，从袖中拿出一张纸条："这是你让丫鬟散  │
+│  播流言的凭证，要不要给大家看看？"——纸条是她提前让春桃收集  │
+│  的，上面有丫鬟的签字画押。                                   │
+│  苏曼丽脸色惨白，抢过纸条撕碎："你胡说八道！"」              │
+│                                                               │
+│ 精彩点：证据链反击、当众打脸、从容不迫的气场碾压              │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：假意妥协绝地反杀 ─────────────────────────────────────┐
+│ 位置：第21集                                                  │
+│ 类型：☑反转揭示 ☑冲突高潮                                    │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「陆承渊抬手的动作一顿，语气沉缓："好，我答应你。"           │
+│  陆明远眼中闪过狂喜："算你识相！"                            │
+│  沈青芜浑身发冷，死死盯着陆承渊，心底最后一丝期待即将碎裂。  │
+│  "协议可以拟，但我要先确认我妹妹的安全。"陆承渊缓缓迈步上前，│
+│  目光紧盯着沈青芜，"让她过来，我要亲眼看到她没事。"          │
+│  ...                                                          │
+│  就在护卫后退、陆明远注意力松懈的瞬间，陆承渊突然加速冲上前，│
+│  手中藏着的短刀直刺陆明远握枪的手腕！」                       │
+│                                                               │
+│ 精彩点：情绪反转设计——观众跟着女主绝望→惊喜，代入感极强      │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「我沈青芜行得正坐得端，无需他派人监视」</td>
+<td>第11集</td>
+<td>沈青芜</td>
+<td>拦截阿忠</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「任何诋毁她的人，就是与我陆承渊为敌！」</td>
+<td>第57集</td>
+<td>陆承渊</td>
+<td>当众宣言</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「恨他冷酷，又怨自己错付深情，死前竟还盼他信我」</td>
+<td>第1集</td>
+<td>沈青芜内心</td>
+<td>枪杀前</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「别担心，我会用一辈子去弥补」</td>
+<td>第55集</td>
+<td>陆承渊</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>虐心型</td>
+<td>「他从未真正相信过自己，内心的寒意比恨意更甚」</td>
+<td>第9集</td>
+<td>沈青芜内心</td>
+<td>被偏袒后</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：教科书级重生开场</strong></p>
+<p>证据链：
+• 第1集：「民国十七年，沪上废弃码头。雨帘密集，湿透沈青芜的月白旗袍」——强视觉
+• 第1集：「打手围成半圆，枪口对准沈青芜...通敌叛国，证据确凿！」——8秒内完成双交代
+• 第1集：「砰——枪声破雨，沈青芜胸口血花绽开」→「眼前竟不是阴曹地府，而是自己未出阁的闺房？」——钩子极强</p>
+<p>分析：0-3秒强视觉（雨夜+白旗袍+血色），8秒内完成主角身份+对立力量交代，结尾重生悬念直接封住观众退出率。
+可复用技巧：<strong>死亡→重生</strong>的时间倒错开场，比「突然穿越」更具情感冲击力</p>
+<p><strong>亮点2：内心挣扎可视化设计</strong></p>
+<p>证据链：
+• 第4集：「面对陆承渊熟悉的脸庞，残留的爱意隐隐作祟，可一想到惨死的家人，又强行压下情绪，提醒自己"他是仇人"」
+• 第9集：「一丝期望彻底破灭，原来上一世的冷漠不是错觉...内心的寒意比恨意更甚」
+• 第20集：「被陆明远挟持，生死一线间，她没有害怕，反而看向陆承渊，内心竟有一丝期待」</p>
+<p>分析：每集都用【内心挣扎】标注女主心理变化，让观众清晰看到「恨→疑→动摇→信任」的弧线
+可复用技巧：<strong>内心独白标注法</strong>，解决短剧"无法深入角色内心"的痛点</p>
+<p><strong>亮点3：证据链反击模式</strong></p>
+<p>证据链：
+• 第5集：「从袖中拿出一张纸条："这是你让丫鬟散播流言的凭证"」
+• 第12集：「将照片推到他面前："陆先生，你看看这些，就知道我为何要『反常』行事了"」
+• 第13集：「这匹次品的编号，根本不在我们的账本上！」</p>
+<p>分析：女主不是靠"金手指"碾压，而是靠<strong>收集证据、当众揭穿</strong>的方式反击，智商在线
+可复用技巧：<strong>证据链打脸</strong>比直接怼脸更有说服力和爽感</p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：中期节奏拖沓（21-40集）</strong></p>
+<p>证据链：
+• 第26-29集：联手查奸、内奸露馅、舆论反转——事件重复度高，都是"查内奸→被灭口→新线索"的循环
+• 第30-35集：码头危机、航运困局、破解封锁——商战情节缺乏情感高潮，观众疲劳</p>
+<p>影响评估：完播率下降风险高，中期流失率可能达到30-40%
+优化建议：
+- 压缩内奸线，将张经理、刘叔、陈叔合并为1-2人
+- 第30集前插入情感高潮（如陆承渊主动坦白上一辈秘密）</p>
+<p><strong>问题2：反派智商降级</strong></p>
+<p>证据链：
+• 第14集：陆明远和苏曼丽当场「两人互相指责，丑态百出」——被揭穿后毫无后手
+• 第21集：陆明远「我早就报警了！就说陆承渊私藏军火、绑架良民！」——暴露行踪的低级错误
+• 第24集：陆明远「今天，我就让你和你母亲的秘密一起消失！」——典型反派死于话多</p>
+<p>影响评估：观众审美疲劳，"工具人反派"缺乏威胁感
+优化建议：
+- 陆明远前期应有1-2次成功的计谋，让观众感受到真正的威胁
+- 李总长不应正面硬刚，保持幕后黑手的神秘感到45集后</p>
+<p><strong>问题3：第三幕收尾仓促（46-60集）</strong></p>
+<p>证据链：
+• 第46-48集：密室揭秘、李总长灭口——信息量过大，节奏突然加速
+• 第55-56集：「闭门不出，独自在闺房里沉思了数日」——情感线推进过于单薄
+• 第58集：玉佩重生之谜用一段手记解释——缺乏仪式感</p>
+<p>影响评估：前期铺垫的情感张力在收尾时未能充分释放
+优化建议：
+- 第55-56集增加陆承渊主动追求的具体行动（如当众下跪、家族道歉仪式）
+- 玉佩之谜可提前铺垫（第30集左右让沈敬言提及），第58集揭秘时情感共鸣更强</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>中期节奏拖沓</td>
+<td>节奏控制</td>
+<td>中</td>
+<td>压缩内奸线，插入情感高潮</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>反派智商降级</td>
+<td>人物塑造</td>
+<td>中</td>
+<td>增加反派成功案例，保持威胁感</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>第三幕收尾仓促</td>
+<td>故事结构</td>
+<td>低</td>
+<td>增加情感仪式感</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>安保漏洞（第38集）</td>
+<td>逻辑一致性</td>
+<td>低</td>
+<td>增加沈府安保被收买的暗示</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>中期节奏优化（最重要）</strong>
+   - 问题：21-40集事件重复，缺乏情感高潮
+   - 建议：</p>
+<ul>
+<li>第28集左右，让陆承渊主动向沈青芜坦白密室发现（不等到第47集）</li>
+<li>第32集设计一场"男女主因误会暂时分离"的虐心戏，提升情感张力</li>
+<li>参考：第32集可以改为「沈青芜意外发现陆承渊似乎早就知道上一辈秘密，愤而离去」</li>
+</ul>
+</li>
+<li>
+<p><strong>反派威胁感提升</strong>
+   - 问题：陆明远智商降级，缺乏真正的威胁
+   - 建议：</p>
+<ul>
+<li>第15集大婚前夜，让陆明远的阴谋成功一次（如成功绑架沈青川数小时）</li>
+<li>李总长保持幕后，直到第40集后才正面出场</li>
+<li>参考：第15集可以改为「沈青川被绑架，沈青芜不得不单独赴约交换」</li>
+</ul>
+</li>
+<li>
+<p><strong>情感收尾强化</strong>
+   - 问题：破镜重圆缺乏仪式感
+   - 建议：第56集增加陆承渊当众跪地、家族道歉仪式，而非仅靠"门外守候"
+   - 参考：「陆承渊带着陆氏族长老，在沈府门口三跪九叩，当众宣读道歉书」</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☐ 立即进入开发
+☑ <strong>小幅修改后开发</strong>（预计 2-3 周）
+☐ 重大修改后重新评估
+☐ 暂缓
+☐ 放弃</p>
+<p><strong>预估开发周期</strong>：完成优化后可进入制作，预计3-4个月
+<strong>预估制作预算</strong>：中等偏高（民国服化道+多场景）
+<strong>风险提示</strong>：
+1. 民国题材需注意历史合规审查
+2. "通敌叛国"情节需弱化政治敏感度
+3. 枪杀、绑架场景需控制血腥尺度</p>
+<p><strong>核心优势</strong>：
+- 开场钩子极强，投流素材丰富
+- 重生+虐恋+复仇的成熟类型组合
+- 民国背景差异化，区别于现代都市题材</p>
+<div class="section-title">评估完成</div>
+<h2>总结</h2>
+<p>《烬火重燃：囚笼玫瑰》是一部<strong>开场极强、中期需优化、收尾可提升</strong>的民国虐恋重生剧本。</p>
+<p><strong>核心卖点</strong>：
+1. 雨夜枪杀+重生的教科书级开场
+2. 证据链打脸的智商在线女主
+3. 投流素材丰富（打脸、反转、霸气宣言）</p>
+<p><strong>主要短板</strong>：
+1. 中期（21-40集）节奏拖沓
+2. 反派智商降级，缺乏持续威胁感
+3. 第三幕情感收尾仓促</p>
+<p>建议进行<strong>2-3周的定向优化</strong>后进入制作阶段，重点解决中期节奏和反派塑造问题。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

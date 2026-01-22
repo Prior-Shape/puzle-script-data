@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S 都市甜宠 捡漏，程少是专业的</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<h1>剧本评估报告</h1>
+<div class="section-title">剧本评估报告</div>
+
+<h2>【基本信息】</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>剧本名称</td>
+<td>《捡漏，程少是专业的》</td>
+</tr>
+<tr>
+<td>类型/题材</td>
+<td>都市甜宠 / 豪门契约婚姻 / 霸道总裁</td>
+</tr>
+<tr>
+<td>目标平台</td>
+<td>短剧平台（抖音/快手/微短剧）</td>
+</tr>
+<tr>
+<td>总集数</td>
+<td>30集（当前提交）</td>
+</tr>
+<tr>
+<td>评估日期</td>
+<td>2026-01-20</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">一、评估结论</div>
+
+<p><strong>决策：[ RECOMMEND ]</strong></p>
+<p><strong>评级：[ S ]</strong></p>
+<p><strong>总分：82/100</strong></p>
+<p><strong>一句话结论：</strong> 
+开场设计堪称教科书级别，"逃婚换新郎"的高概念hook极强，男主"暗恋多年的顶级捡漏"人设新颖有记忆点，前3集代入感极佳；但中后段节奏略有松弛，配角线（秦墨/苏雪）篇幅偏多影响主线推进，建议优化后立即开发。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<h3>【能力分布图】</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;            开场与代入(9/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (7/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (8/10)      |      (8/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (8/10)   \|/  (8/10)
+              ▼
+         台词质量(8/10)
+              |
+         人物塑造(8/10)&lt;/pre&gt;
+
+</code></pre>
+<h3>【维度评分表】</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>9/10</td>
+<td>18%</td>
+<td>16.2</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>7/10</td>
+<td>15%</td>
+<td>10.5</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>8/10</td>
+<td>10%</td>
+<td>8.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td>-</td>
+<td>100%</td>
+<td><strong>80.3</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：开场与代入 — 逃婚换新郎的设计在前8秒内完成核心冲突建立，代入感极强</p>
+<p><strong>最弱项</strong>：节奏控制 — 中段（10-20集）配角戏份过多，秦墨/苏雪支线分散主线注意力</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<h3>【人物统计】</h3>
+<ul>
+<li>总人物数：12人</li>
+<li>核心人物：4人（有名有戏份）</li>
+<li>正派阵营：3人</li>
+<li>反派阵营：3人</li>
+<li>中立/摇摆：6人</li>
+</ul>
+<h3>【关系图】（Mermaid格式）</h3>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[阮书妤<br/>清冷理性/商业女强人/被算计的棋子]
+        B[程听也<br/>腹黑深情/纨绔伪装/暗恋八年]
+        C[林菁<br/>闺蜜/信息源]
+    end
+
+    subgraph 反派/对立阵营
+        D[秦墨<br/>前未婚夫/软弱/被操控]
+        E[苏雪<br/>心机模特/棋子/工具人]
+        F[阮承志<br/>堂弟/内斗者]
+    end
+
+    subgraph 长辈阵营
+        G[程父<br/>权威/审视]
+        H[阮父<br/>无奈/软弱]
+        I[秦夫人<br/>算计/拉拢]
+    end
+
+    A ===|契约夫妻→真爱| B
+    A -.->|彻底决裂| D
+    D -->|被利用| E
+    B -.->|操控/设计| E
+    B -.->|打压| D
+    F -.->|内斗| A
+    G -->|考验| B
+    H -->|依赖| A
+    I -.->|拉拢| A
+</div>
+
+<h3>【核心人物卡片】</h3>
+<pre class="character-card">┌─ 女主：阮书妤 ─────────────────────────────────────────────┐
+│ 标签：清冷理性 + 商业精英 + 外柔内刚                          │
+│ 标签印证：                                                   │
+│ • [清冷理性] ← 第1集：「阮书妤的目光在屏幕上停留了三秒。     │
+│   修长的手指伸向手机，指尖平稳地按下侧键，屏幕熄灭。」       │
+│ • [商业精英] ← 第10集：「阮书妤站在屏幕前，手持激光笔，      │
+│   正在讲解……第三版方案的核心优化在于商业区的动线设计」      │
+│ • [外柔内刚] ← 第8集：「会。然后，继续过我的人生。阮氏不会   │
+│   因为一场婚礼而倒下，我阮书妤，更不会因为一个男人的离开     │
+│   就垮掉。」                                                  │
+│ 弧线：被动接受契约 → 逐渐动心 → 主动选择信任                  │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 男主：程听也 ─────────────────────────────────────────────┐
+│ 标签：腹黑深情 + 纨绔伪装 + 暗恋八年                          │
+│ 标签印证：                                                   │
+│ • [腹黑深情] ← 第9集：程听也打开书桌最底层一个指纹锁的抽屉。 │
+│   「是十七岁的阮书妤，正在作为学生代表发言。照片右下角，     │
+│   用蓝色圆珠笔写着一个模糊的日期，是八年前。」               │
+│ • [纨绔伪装] ← 第1集：「他穿着一身看起来价格昂贵、但领口     │
+│   微微敞开、领带也松垮地挂在颈间的黑色西装……玩世不恭的笑意」│
+│ • [手段狠辣] ← 第20集：「让他分析去吧……让他继续折腾，       │
+│   我要让他眼睁睁看着什么都改变不了。」                       │
+│ 弧线：暗中操控 → 逐步袒露 → 坦诚告白                          │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 反派/工具人：苏雪 ──────────────────────────────────────────┐
+│ 标签：野心勃勃 + 色厉内荏 + 棋子命运                          │
+│ 标签印证：                                                   │
+│ • [野心勃勃] ← 第5集：「苏雪快速打字：我已经按你说的做了，   │
+│   秦墨和阮书妤的婚约彻底完了。我的资源呢？什么时候兑现？」   │
+│ • [色厉内荏] ← 第5集：「苏雪看着这行字，脊背窜上一股寒意。   │
+│   她咬了咬牙，删除了对话框。」                               │
+│ 弧线：得意 → 被抛弃 → 狗急跳墙 → 被孤立                       │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<h3>【剧本结构曲线】</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;张
+力  │
+强  │                                    ★ 大高潮(第16集告白+第30集定情)
+度  │                                   /\
+    │              ☆ 中高潮(第10集)   /  \    ☆(第29集真相摊牌)
+    │             /    \            /    \  /
+    │    ○ 小高潮/      \          /      \/
+    │   /  (1-4) /        \    ☆ /
+    │  /    \  /          \    /(第21集发现照片)
+    │ /      \/            \  /
+    │/ (开场震撼)           \/
+    └────────────────────────────────────────────────────→ 集数&lt;/pre&gt;
+
+
+&lt;pre class=&quot;ascii-table&quot;&gt;      1-4    5-9   10-14  15-19  20-24  25-30&lt;/pre&gt;
+
+
+</code></pre>
+<h3>【高潮点标注】</h3>
+<ul>
+<li><strong>开场高潮</strong>（第1集）：婚礼现场换新郎，当众亲吻</li>
+<li><strong>小高潮①</strong>（第4集）：程听也在阮父面前表态"阮氏的事就是我的事"</li>
+<li><strong>小高潮②</strong>（第7集）：宴会上与秦墨正面对峙</li>
+<li><strong>中高潮①</strong>（第10集）：阮承志闹场，程听也视频力挺</li>
+<li><strong>中高潮②</strong>（第21集）：阮书妤发现暗恋照片</li>
+<li><strong>大高潮①</strong>（第16集）：烟花表白"我好像……爱上你了"</li>
+<li><strong>大高潮②</strong>（第29-30集）：真相摊牌+定情</li>
+</ul>
+<h3>【冲突热力图】</h3>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>1-5</th>
+<th>6-10</th>
+<th>11-15</th>
+<th>16-20</th>
+<th>21-25</th>
+<th>26-30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="ascii-table">| 主线冲突 | 🔥🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥 | 🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥🔥🔥 |
+| 人物冲突 | 🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥 | 🔥🔥 | 🔥🔥🔥 |
+| 情感冲突 | 🔥🔥 | 🔥🔥🔥 | 🔥🔥 | 🔥🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥🔥🔥 |</pre>
+
+<p>| <strong>冲突密度</strong> | 极高 | 高 | 中 | 高 | 高 | 极高 |</p>
+<pre class="ascii-table">（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<h3>【冲突线梳理】</h3>
+<p><strong>1. 主线冲突：契约婚姻中的真心博弈</strong>
+- 起点（第1集）：「假结婚。为期一年。」
+- 升级（第13集）：「对你……我所有的算计，都只有一个目的——把你留在我身边。」
+- 高潮（第29集）：「我赌他对你的爱，抵不过一时的怜悯、新鲜感和冲动。我赌赢了。」</p>
+<p><strong>2. 情感冲突线：暗恋八年的单向奔赴</strong>
+- 起点（第9集）：「是十七岁的阮书妤……照片右下角，用蓝色圆珠笔写着一个模糊的日期，是八年前。」
+- 转折（第16集）：「我好像……爱上你了。」
+- 高潮（第23集）：「我从十七岁，第一次在学校礼堂看到你站在台上演讲开始，就喜欢上你了。」</p>
+<p><strong>3. 外部对抗线：前未婚夫的追查与报复</strong>
+- 起点（第11集）：秦墨开始调查苏雪背后的人
+- 升级（第14集）：秦墨质问苏雪，得知真相
+- 结局（第30集）：秦墨彻底出局，「程听也！你会遭报应的！」</p>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<h3>【第1集逐段分析】（生死线）⭐⭐⭐⭐⭐</h3>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0-3秒</strong></td>
+<td>OS独白+婚纱特写</td>
+<td>黄金开场</td>
+<td>「这本是我的婚礼，如今，却变成了一场交易，一场由未婚夫逃婚引发的荒诞的交易。」</td>
+<td>✓✓ 悬念拉满</td>
+</tr>
+<tr>
+<td><strong>0-8秒</strong></td>
+<td>闪回：伴娘冲入化妆室</td>
+<td>双交代</td>
+<td>「书妤！不好了！秦墨他……他电话关机了！」</td>
+<td>✓✓ 极快建立冲突</td>
+</tr>
+<tr>
+<td><strong>前30秒</strong></td>
+<td>秦墨短信+女主反应</td>
+<td>核心冲突建立</td>
+<td>「书妤，对不起。婚礼取消吧。别等我。」+「镜子映出她毫无波澜的脸，只有睫毛几不可察地轻颤了一下。」</td>
+<td>✓✓ 人设立住</td>
+</tr>
+<tr>
+<td><strong>中段</strong></td>
+<td>男主出场提议</td>
+<td>反转推进</td>
+<td>「听说……新郎官跑了？」「看你的笑话有什么意思？我是来捡漏的。」</td>
+<td>✓✓ 金句+高概念</td>
+</tr>
+<tr>
+<td><strong>结尾</strong></td>
+<td>当众亲吻</td>
+<td>钩子</td>
+<td>「阮书妤轻笑，伸出手指，戴上戒指，抬手拉住程听也的领带，向前一拉……吻了上去。」</td>
+<td><strong>极强</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>第1集代入感评分：9.5/10</strong></p>
+<p><strong>亮点分析</strong>：
+- 开场即高能，"逃婚"设定3秒内抛出
+- "捡漏"一词精准概括男主人设，高度记忆点
+- 女主"毫无波澜"的反应瞬间立住"清冷女强人"人设
+- 结尾女主主动亲吻——打破霸总套路，女主不是弱者</p>
+<h3>【第2集分析】</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接承接婚礼后，回到公寓</td>
+<td>签订婚前协议+确定契约规则</td>
+<td>程听也主动让出主卧+体贴细节</td>
+<td>「明天早上九点，我爸要见我们。在老宅。记得……装得像一点。」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第2集评分：8/10</strong>
+- 节奏略缓但必要，建立"假夫妻"生活规则
+- 钩子有效：见家长=新一轮考验</p>
+<h3>【第3集分析】</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>程家老宅早餐</td>
+<td>过堂式审视+商业试探</td>
+<td>程听也当众护妻「书妤现在是我太太，阮氏的事就是我的事」</td>
+<td>「桌布下，阮书妤放在腿上的手，悄悄握紧，指甲陷进掌心。」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第3集评分：8.5/10</strong>
+- 家庭戏写得扎实，长辈压迫感到位
+- 男主"护短"人设进一步强化
+- 女主内心波动通过小动作外化，细腻</p>
+<h3>【前3集总评】</h3>
+<ul>
+<li>代入速度：☑极快（3秒入戏）</li>
+<li>信息密度：☑适中</li>
+<li>钩子循环：☑紧密</li>
+<li><strong>前3集整体评分：9/10</strong></li>
+</ul>
+<div class="section-title">六、集间衔接度分析</div>
+
+<h3>【衔接度评分表】</h3>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「阮书妤在一片惊呼声与程听也惊讶的眼神中，吻了上去。」</td>
+<td>「大门关上，阮书妤略有些疲惫的走进客厅」</td>
+<td>5/5</td>
+<td>反转型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「明天早上九点，我爸要见我们。记得……装得像一点。」</td>
+<td>「老宅餐厅……气氛庄重甚至压抑」</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>「桌布下，阮书妤放在腿上的手，悄悄握紧」</td>
+<td>阮父质问</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>8→9</td>
+<td>「如果是你，我认。」</td>
+<td>程听也看着暗恋照片</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>15→16</td>
+<td>「程听也……你到底，想干什么？」</td>
+<td>包场约会+烟花告白</td>
+<td>5/5</td>
+<td>悬念型→情感型</td>
+</tr>
+<tr>
+<td>16→17</td>
+<td>「我好像……爱上你了。」</td>
+<td>女主逃避式回应</td>
+<td>4/5</td>
+<td>情感危机型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>平均衔接度：4.5/5</strong></p>
+<p><strong>衔接问题点</strong>：
+- 第5集（苏雪视角）与主线衔接略弱，跳出感明显
+- 第11-14集秦墨调查线过长，与主线情感进展割裂</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<h3>【伏笔回收检查】</h3>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>暗恋照片</td>
+<td>第9集（程听也独自看）</td>
+<td>第21集（阮书妤发现）</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>"光"字含义</td>
+<td>第25集（卡片上的字）</td>
+<td>未明确解释</td>
+<td>○部分回收</td>
+</tr>
+<tr>
+<td>程听也的"手段"</td>
+<td>第1集暗示</td>
+<td>第29集完整坦白</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>苏雪被利用</td>
+<td>第5集（与Y的对话）</td>
+<td>第14集（秦墨质问）+第19集</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>宏远集团证据U盘</td>
+<td>第13集</td>
+<td>第15集使用</td>
+<td>✓已回收</td>
+</tr>
+</tbody>
+</table>
+<h3>【时间线检查】</h3>
+<p>☑ 连贯无矛盾
+- 婚礼→签约→见程家→见阮家→工作日常→宴会→出差→调查线→表白→真相揭示
+- 时间线清晰，无跳跃性漏洞</p>
+<h3>【人物行为一致性】</h3>
+<p>☑ 行为符合性格设定</p>
+<p><strong>阮书妤</strong>：始终保持理性，即使面对表白也先选择"逃避式处理"——符合"清冷理性"人设
+- 第17集：「你昨晚喝多了，又看了烟花，一时上头，说了些不着边际的胡话。」</p>
+<p><strong>程听也</strong>：始终"说真话时像开玩笑"——符合"纨绔伪装"人设
+- 第24集：「是吗？（他笑了笑，侧头看她）开玩笑的。照片真是毕业时从学校宣传栏偷的……」</p>
+<h3>【逻辑一致性评分：9/10】</h3>
+<div class="section-title">八、投流素材清单</div>
+
+<h3>【高潜力投流片段】</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集中段</td>
+<td><strong>爽点型</strong></td>
+<td>男主霸气"捡漏"登场</td>
+<td>「看你的笑话有什么意思？我是来捡漏的。」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第1集结尾</td>
+<td><strong>反转型</strong></td>
+<td>女主主动亲吻</td>
+<td>「阮书妤轻笑，伸出手指，戴上戒指，抬手拉住程听也的领带，向前一拉……吻了上去。」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第1集</td>
+<td><strong>金句型</strong></td>
+<td>钻戒宣言</td>
+<td>「这么小的礼堂可配不上我的程太太。」「我程听也的妻子，配得上最好的。」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第10集</td>
+<td><strong>打脸型</strong></td>
+<td>视频会议怼堂弟</td>
+<td>「再让我听到你用这种语气跟她说话……你收回扣的那些破事，就不只是阮家内部处理了。」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第7集</td>
+<td><strong>冲突型</strong></td>
+<td>宴会上护妻怼前任</td>
+<td>「我想让你离我太太远一点。这个答案，满意吗？」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第16集</td>
+<td><strong>情感型</strong></td>
+<td>烟花告白</td>
+<td>「阮书妤，我好像……爱上你了。」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第23集</td>
+<td><strong>情感型</strong></td>
+<td>暗恋八年揭秘</td>
+<td>「我从十七岁，第一次在学校礼堂看到你站在台上演讲开始，就喜欢上你了。」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>8</td>
+<td>第29集</td>
+<td><strong>反转型</strong></td>
+<td>真相摊牌</td>
+<td>「我赌他对你的爱，抵不过一时的怜悯、新鲜感和冲动。我赌赢了。」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<h3>【投流类型分布】</h3>
+<ul>
+<li>冲突/打脸型：3个</li>
+<li>反转/悬念型：2个</li>
+<li>金句/名场面型：4个</li>
+<li>情感/虐心型：2个</li>
+<li>爽点/逆袭型：3个</li>
+</ul>
+<p><strong>投流素材丰富度：★★★★★</strong>
+<strong>最佳投流片段推荐</strong>：
+1. <strong>首推</strong>：第1集「捡漏」登场+女主反手亲吻（15秒可成爆款）
+2. <strong>次推</strong>：第10集视频会议护妻怼人（纯爽感）
+3. <strong>情感向</strong>：第23集暗恋八年揭秘（差异化卖点）</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<h3>【高光片段】</h3>
+<pre class="character-card">┌─ 片段1：捡漏名场面 ─────────────────────────────────────────┐
+│ 位置：第1集 1-5场                                             │
+│ 类型：☑反转揭示 ☑台词金句 ☑名场面                            │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「程听也：哟，阮大小姐。（顿了顿，目光与镜中的阮书妤再次相撞，│
+│ 笑意加深）听说……新郎官跑了？                                 │
+│ 阮书妤：程听也？你是来看笑话的？                              │
+│ 程听也：看你的笑话有什么意思？我是来捡漏的。」                │
+│                                                               │
+│ 上下文：秦墨逃婚，婚礼即将沦为笑柄，程听也突然出现             │
+│ 精彩点：                                                      │
+│ 1."捡漏"一词将豪门联姻降维为淘宝捡便宜，颠覆传统霸总叙事     │
+│ 2.男主从"不请自来"到"救火英雄"的身份反转在一句话内完成      │
+│ 3.为后续"暗恋设计"埋下伏笔                                   │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：女主反杀式亲吻 ─────────────────────────────────────┐
+│ 位置：第1集 1-6场结尾                                         │
+│ 类型：☑名场面 ☑情感爆发                                      │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「程听也：现在反悔，还来得及。戒指带上，可就没有回头箭了。    │
+│ △阮书妤轻笑，伸出手指，戴上戒指，抬手拉住程听也的领带，      │
+│ 向前一拉。                                                    │
+│ 阮书妤：程听也，你的话真的很多。                              │
+│ △随即在一片惊呼声与程听也惊讶的眼神中，吻了上去。」          │
+│                                                               │
+│ 上下文：全场宾客、媒体注视下的戒指交换环节                    │
+│ 精彩点：                                                      │
+│ 1.打破"男强女弱"套路，女主掌握主动权                         │
+│ 2.用行动回应男主的试探，果断利落，人设飞升                    │
+│ 3.极具视觉冲击力，适合做投流素材封面                          │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：暗恋八年揭秘 ───────────────────────────────────────┐
+│ 位置：第23集                                                  │
+│ 类型：☑情感爆发 ☑反转揭示                                    │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「程听也：好，告诉你。（停顿，声音压得极低）                  │
+│ 我从十七岁，第一次在学校礼堂看到你站在台上演讲开始，          │
+│ 就喜欢上你了。偷拍、跟踪、打听你的一切，                      │
+│ 像个变态一样关注了你很多年。                                  │
+│ 这个答案，你满意吗？」                                        │
+│                                                               │
+│ 上下文：阮书妤发现旧照片后质问                                │
+│ 精彩点：                                                      │
+│ 1."像个变态一样"的自嘲式告白，真诚得近乎残忍                 │
+│ 2.将"契约婚姻"彻底翻转为"蓄谋已久的深情"                   │
+│ 3.颠覆观众对男主"临时捡漏"的初始认知                        │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<h3>【金句清单】</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>霸气型</strong></td>
+<td>「我程听也的妻子，配得上最好的。」</td>
+<td>第1集</td>
+<td>程听也</td>
+<td>换礼堂</td>
+</tr>
+<tr>
+<td><strong>霸气型</strong></td>
+<td>「我想让你离我太太远一点。这个答案，满意吗？」</td>
+<td>第7集</td>
+<td>程听也</td>
+<td>宴会怼秦墨</td>
+</tr>
+<tr>
+<td><strong>霸气型</strong></td>
+<td>「再让我听到你用这种语气跟她说话……」</td>
+<td>第10集</td>
+<td>程听也</td>
+<td>视频护妻</td>
+</tr>
+<tr>
+<td><strong>情感型</strong></td>
+<td>「我好像……爱上你了。」</td>
+<td>第16集</td>
+<td>程听也</td>
+<td>烟花告白</td>
+</tr>
+<tr>
+<td><strong>情感型</strong></td>
+<td>「也许我就是……单纯想对你好点？」</td>
+<td>第6集</td>
+<td>程听也</td>
+<td>厨房对话</td>
+</tr>
+<tr>
+<td><strong>反转型</strong></td>
+<td>「看你的笑话有什么意思？我是来捡漏的。」</td>
+<td>第1集</td>
+<td>程听也</td>
+<td>化妆室</td>
+</tr>
+<tr>
+<td><strong>反转型</strong></td>
+<td>「如果是你，我认。」</td>
+<td>第30集</td>
+<td>程听也</td>
+<td>车内</td>
+</tr>
+<tr>
+<td><strong>果断型</strong></td>
+<td>「程听也，你的话真的很多。」（然后吻上去）</td>
+<td>第1集</td>
+<td>阮书妤</td>
+<td>婚礼现场</td>
+</tr>
+<tr>
+<td><strong>理性型</strong></td>
+<td>「我阮书妤，更不会因为一个男人的离开就垮掉。」</td>
+<td>第8集</td>
+<td>阮书妤</td>
+<td>观景台</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<h3><strong>亮点1：开场设计堪称教科书</strong></h3>
+<p><strong>证据链</strong>：
+- 第1集开场：「这本是我的婚礼，如今，却变成了一场交易」— 3秒内建立核心悬念
+- 第1集化妆室：「外面坐着三百多位有头有脸的宾客，媒体长枪短炮架了至少二十台」— 压力外化
+- 第1集换礼堂：「这么小的礼堂可配不上我的程太太」— 反转+人设宣言</p>
+<p><strong>分析</strong>：
+- 采用"倒叙+闪回"结构，先抛结果再揭过程，勾住观众
+- "逃婚换新郎"是极高概念密度的设定，一句话可讲清
+- 前30秒完成：身份交代、核心冲突、男主登场、初步人设</p>
+<p><strong>可复用技巧</strong>：
+- 开场先给"结果画面"，再用闪回解释"为什么"
+- 用数字制造紧迫感（"三百多位宾客""二十台镜头""十分钟"）</p>
+<hr />
+<h3><strong>亮点2："捡漏"概念与暗恋反差</strong></h3>
+<p><strong>证据链</strong>：
+- 第1集：「看你的笑话有什么意思？我是来捡漏的。」— 表面：临时起意
+- 第9集：「是十七岁的阮书妤……照片右下角，用蓝色圆珠笔写着一个模糊的日期，是八年前。」— 真相：暗恋八年
+- 第23集：「我从十七岁，第一次在学校礼堂看到你站在台上演讲开始，就喜欢上你了。」— 坦白</p>
+<p><strong>分析</strong>：
+- "捡漏"是最佳伪装，把深谋远虑包装成"顺手为之"
+- 暗恋照片的设计极具视觉冲击力，是"告白证据"而非台词
+- 反差感极强：纨绔+深情、捡漏+蓄谋、玩世不恭+一心一意</p>
+<p><strong>可复用技巧</strong>：
+- 给男主一个"伪人设"，在适当时刻撕开
+- 用物证（照片/日记/信物）替代口头告白，更有说服力</p>
+<hr />
+<h3><strong>亮点3：女主不弱，且有弧光</strong></h3>
+<p><strong>证据链</strong>：
+- 第1集：「阮书妤的目光在屏幕上停留了三秒……指尖平稳地按下侧键，屏幕熄灭。」— 临危不乱
+- 第1集：「阮书妤轻笑，伸出手指，戴上戒指，抬手拉住程听也的领带，向前一拉……吻了上去。」— 主动出击
+- 第8集：「阮氏不会因为一场婚礼而倒下，我阮书妤，更不会因为一个男人的离开就垮掉。」— 独立宣言
+- 第19集：「程听也现在是我法律上的丈夫。我为什么要帮一个外人，去对付我的'自己人'？」— 立场清晰</p>
+<p><strong>分析</strong>：
+- 女主从"被动接受契约"到"主动选择信任"，有完整弧线
+- 不是等待被拯救的弱者，而是"配得上最好的"强者
+- 面对苏雪拉拢能冷静拒绝，面对秦母试探能果断回击</p>
+<p><strong>可复用技巧</strong>：
+- 女主的"强"不是吵架，而是"关键时刻的判断力和执行力"
+- 用小动作（按灭手机、拉领带）替代长篇大论的内心独白</p>
+<div class="section-title">十一、关键问题</div>
+
+<h3><strong>问题1：配角线过重，分散主线注意力</strong></h3>
+<p><strong>证据链</strong>：
+- 第5集：整集苏雪视角，与主线几乎无交集
+- 第11集：秦墨调查苏雪，整场戏没有男女主
+- 第14集：秦墨在画廊质问苏雪，同样无男女主</p>
+<p><strong>影响评估</strong>：
+- 观众追剧是为了看"假夫妻真甜"，配角戏过多会导致"跳出感"
+- 秦墨/苏雪线虽然服务于"揭示程听也手段"的主题，但节奏拖沓
+- 可能导致中段（10-20集）完播率下降</p>
+<p><strong>优化建议</strong>：
+1. 将第5集苏雪视角压缩至半集，穿插男女主日常甜戏
+2. 秦墨调查线可用"画外音+闪回"替代完整场景，缩减篇幅
+3. 保持每集至少60%篇幅给男女主互动</p>
+<hr />
+<h3><strong>问题2：中段甜度不足，事业线过多</strong></h3>
+<p><strong>证据链</strong>：
+- 第9-15集：大量篇幅给宏远集团证据、城东项目、视频会议
+- 第13集：「城东项目第三版的预算，有几个数据我觉得需要再核对一下」— 过于冗长的工作讨论
+- 第10集：阮承志闹场戏虽然有"护妻"爽点，但前因后果铺垫过多</p>
+<p><strong>影响评估</strong>：
+- 短剧观众期待的是"情感高密度"，事业线是点缀而非主体
+- 中段缺乏"小甜饼"场景（亲密互动、日常撒糖）
+- 可能导致观众"等不到糖"而流失</p>
+<p><strong>优化建议</strong>：
+1. 在事业线中穿插更多亲密细节（如开会时男主偷看女主、午餐送饭、微信调情）
+2. 第6集厨房戏是范本，中段应增加类似的"日常甜"
+3. 每3集设置一个"小甜点"场景，保持情感温度</p>
+<hr />
+<h3><strong>问题3："光"字伏笔未完全回收</strong></h3>
+<p><strong>证据链</strong>：
+- 第25集：「卡片上，是程听也力透纸背的字迹……她翻到背面。在日期旁边，还有一行极小的、几乎被忽略的钢笔字……"光。"只有一个字。」
+- 后续未明确解释"光"的含义</p>
+<p><strong>影响评估</strong>：
+- 观众会对这个细节产生期待，如果不回收会感到"虎头蛇尾"
+- 错失一次极佳的情感高潮机会</p>
+<p><strong>优化建议</strong>：
+- 在最终告白时让程听也解释：「你就是我的光，是我十七岁那年在黑暗里看到的唯一光亮。」
+- 或让阮书妤主动发现并追问，形成双向奔赴</p>
+<div class="section-title">十二、优化建议</div>
+
+<h3>【修改优先级排序】</h3>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0</strong></td>
+<td>中段配角线过重</td>
+<td>节奏控制</td>
+<td>中</td>
+<td>压缩苏雪/秦墨独立戏份至原来的50%</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>中段甜度不足</td>
+<td>情绪设计</td>
+<td>低</td>
+<td>每3集增加1场"日常甜"互动</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>"光"字伏笔未回收</td>
+<td>故事结构</td>
+<td>低</td>
+<td>在第30集增加一句解释</td>
+</tr>
+</tbody>
+</table>
+<h3>【具体修改建议】</h3>
+<p><strong>1. 压缩配角线（P0）</strong>
+- 问题：第5、11、14集配角戏份过多
+- 建议：
+  - 第5集：苏雪与"Y"的对话保留，但名媛讽刺戏可删除，改为男女主第一次"被迫"同床的尴尬甜
+  - 第11集：秦墨调查可用30秒画外音+文件特写替代，释放时长给男女主
+  - 第14集：秦墨质问苏雪可从完整场景压缩为"秦墨甩门离去+苏雪崩溃"的10秒结果呈现</p>
+<p><strong>2. 增加中段甜度（P1）</strong>
+- 建议增加场景：
+  - 第9集：程听也看照片后→下一场接"给阮书妤送宵夜却假装是助理送的"
+  - 第12集：机场接机时，程听也"公主抱"阮书妤的行李箱，被阮书妤吐槽"你抱的是箱子"
+  - 第15集：谈完宏远集团后，程听也拉阮书妤去吃路边摊，"我太太谈了一天生意，该吃点人间烟火"</p>
+<p><strong>3. 回收"光"字伏笔（P2）</strong>
+- 建议在第30集增加：
+  - 程听也：「你问那个'光'是什么意思？」
+  - 阮书妤：「……」
+  - 程听也：「那年的礼堂太暗了，我睡了一半被老师叫起来，迷迷糊糊睁开眼，台上有个女生在讲话。逆光。特别亮。我就想，原来礼堂也能这么亮。后来我才知道，不是礼堂亮，是她。」</p>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☑ <strong>小幅修改后开发（预计1周）</strong></p>
+<p><strong>预估开发周期</strong>：30集短剧，2-3个月完成拍摄制作</p>
+<p><strong>预估制作预算</strong>：中等偏上（需豪华婚礼、高档公寓、商务会议室等场景）</p>
+<p><strong>风险提示</strong>：
+1. 男主"设计逃婚"的道德灰度需把控尺度，避免引发"男主太渣"的舆论反弹
+2. 建议在第29集坦白时强化"秦墨本身就不配拥有女主"的合理性
+3. 投流时避免过度强调"算计"，侧重"暗恋八年的深情"</p>
+<div class="section-title">评估完成</div>
+<h2>总结</h2>
+<p>《捡漏，程少是专业的》是一部开场极其出色、人设鲜明、投流素材丰富的短剧剧本。<strong>"逃婚换新郎+暗恋八年的捡漏"</strong> 这一高概念设计在甜宠赛道具有明显差异化优势。</p>
+<p><strong>核心卖点</strong>：
+1. 黄金开场——逃婚婚礼现场3秒入戏
+2. 反套路女主——主动亲吻、果断决策
+3. 深情反差男主——纨绔表象下的八年暗恋</p>
+<p><strong>建议</strong>：优化中段节奏后立即进入开发，投流主推第1集"捡漏"场景和第23集"暗恋揭秘"场景。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

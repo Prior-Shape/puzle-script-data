@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ 轻喜剧 职场空降古人</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<h1>剧本评估报告</h1>
+<h2>基本信息</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>剧本名称</strong></td>
+<td>《职场空降古人》</td>
+</tr>
+<tr>
+<td><strong>类型/题材</strong></td>
+<td>轻喜剧 / 穿越 / 职场 / 女性向</td>
+</tr>
+<tr>
+<td><strong>目标平台</strong></td>
+<td>短剧平台（抖音/快手类）</td>
+</tr>
+<tr>
+<td><strong>总集数</strong></td>
+<td>31集（含2集番外）</td>
+</tr>
+<tr>
+<td><strong>总字数</strong></td>
+<td>约11,500字</td>
+</tr>
+<tr>
+<td><strong>评估日期</strong></td>
+<td>2025年1月20日</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>一、评估结论</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>决策</strong></td>
+<td><strong>CONSIDER</strong></td>
+</tr>
+<tr>
+<td><strong>评级</strong></td>
+<td><strong>A+</strong></td>
+</tr>
+<tr>
+<td><strong>总分</strong></td>
+<td><strong>76/100</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>一句话结论</h3>
+<p>高概念穿越喜剧，"百岁女军师穿现代认拖把为枪"的核心设定有梗有爽点，但剧本整体偏向"日常流水账"，缺乏强主线冲突和情感深度，需优化结构后可开发。</p>
+<hr />
+<h2>二、9维度能力雷达图</h2>
+<h3>维度评分表</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>7.5/10</td>
+<td>18%</td>
+<td>1.35</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>6.0/10</td>
+<td>15%</td>
+<td>0.90</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>6.5/10</td>
+<td>12%</td>
+<td>0.78</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>5.5/10</td>
+<td>12%</td>
+<td>0.66</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>7.0/10</td>
+<td>10%</td>
+<td>0.70</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>8.0/10</td>
+<td>8%</td>
+<td>0.64</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>8.5/10</td>
+<td>8%</td>
+<td>0.68</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>8.0/10</td>
+<td>8%</td>
+<td>0.64</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>7.5/10</td>
+<td>9%</td>
+<td>0.68</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>76.03</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：创意题材(8.5) - "百岁女军师穿越现代"高概念设定新颖，反差萌笑点密集<br />
+<strong>最弱项</strong>：故事结构(5.5) - 缺乏贯穿全剧的主线冲突，中段情节松散近乎日常流水</p>
+<hr />
+<h2>三、人物关系图谱</h2>
+<h3>人物统计</h3>
+<ul>
+<li><strong>总人物数</strong>：10人</li>
+<li><strong>核心人物</strong>：5人（沈惊辞、阮软、贺野、卫飒、纪晚）</li>
+<li><strong>正派阵营</strong>：5人</li>
+<li><strong>反派阵营</strong>：1人（叛军首领，仅第1集）</li>
+<li><strong>功能性角色</strong>：4人（女甲方、李编辑、保洁阿姨、外卖员）</li>
+</ul>
+<h3>关系图</h3>
+<div class="mermaid">
+graph TB
+    subgraph 见组影视团队
+        A[沈惊辞<br/>百岁军师/女扮男装/通透傻萌]
+        B[阮软<br/>温柔体贴/照顾者]
+        C[贺野<br/>嘴硬心软/主管]
+        D[卫飒<br/>忠诚憨直/迷弟]
+        E[纪晚<br/>记录者/编剧助理]
+    end
+
+    subgraph 外部角色
+        F[女甲方/李编辑<br/>商业推动]
+        G[保洁阿姨<br/>导师型]
+    end
+
+    A -->|信任依赖| B
+    A -.->|互怼/暧昧| C
+    A -->|主从/师徒| D
+    A -->|被记录| E
+    B -->|同事情谊| C
+    D -->|崇拜| A
+    G -->|教导| A
+</div>
+
+<h3>核心人物卡片</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 主角：沈惊辞 ─────────────────────────────────────────────┐
+│ 标签：百岁军师 + 女扮男装 + 反差萌 + 通透善良                 │
+│ 标签印证：                                                   │
+│ • [百岁军师] ← 第1集：「我沈惊辞活了百余年，护大晟半生」       │
+│ • [女扮男装] ← 第1集：「女扮男装瞒了圣上这么久」              │
+│ • [反差萌] ← 第1集：「此二物，杆身笔直，乃上阵杀敌的神兵！     │
+│              赐名左右先锋！」                                 │
+│ • [通透善良] ← 第29集：「活了百年，方才知晓，长生的意义，      │
+│               从来不是沙场扬名」                              │
+│ 弧线：沙场孤独→穿越迷茫→融入职场→找到归属                     │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 主要配角：贺野 ────────────────────────────────────────────┐
+│ 标签：嘴硬心软 + 职场主管 + 隐藏关心                          │
+│ 标签印证：                                                   │
+│ • [嘴硬] ← 第6集：「放肆！此乃左膀右臂，岂容你亵渎？」（反驳） │
+│ • [心软] ← 第11集：「（嘴上嫌弃，却悄悄把绿萝搬到阳光充足     │
+│           的地方）」                                         │
+│ • [关心] ← 第3集：「（给沈惊辞发消息）别瞎折腾，有事喊我们」  │
+│ 弧线：嫌弃→接纳→主动保护                                      │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 主要配角：卫飒 ────────────────────────────────────────────┐
+│ 标签：忠诚迷弟 + 憨直搞笑 + 扫把大刀                          │
+│ 标签印证：                                                   │
+│ • [忠诚] ← 第1集：「军师！我叫卫飒，会武功！这扫把，就当      │
+│           我的大刀！」                                        │
+│ • [憨直] ← 第7集：「扔了扫把，我拿什么当大刀啊……」           │
+│ 弧线：跟随者→成长→独当一面（第28集扫把救场）                  │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<hr />
+<h2>四、剧本结构与冲突分布</h2>
+<h3>剧本结构曲线</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;张
+力  │
+强  │                                    ★ 杀青（29）
+度  │                                   /
+    │              ☆ 甲方认可(14)     /
+    │             /    \            /
+    │    ○ 穿越  /      \    ○ 蜕变(24)
+    │   /  (1) \/        \  /
+    │  /       ○外卖乌龙  \/
+    │ /         (18)
+    │/
+    └────────────────────────────────────────────────→ 集数
+      1     5    10    15    20    25    30&lt;/pre&gt;
+
+</code></pre>
+<h3>高潮点标注</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>位置</th>
+<th>事件描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小高潮①</td>
+<td>第1集</td>
+<td>沈惊辞坠崖穿越，认拖把为神兵</td>
+</tr>
+<tr>
+<td>小高潮②</td>
+<td>第12集</td>
+<td>更衣室乌龙吻</td>
+</tr>
+<tr>
+<td>中高潮①</td>
+<td>第14集</td>
+<td>甲方刁难，军师妙计化解</td>
+</tr>
+<tr>
+<td>小高潮③</td>
+<td>第18集</td>
+<td>外卖员被当敌寇，拖把袭击</td>
+</tr>
+<tr>
+<td>小高潮④</td>
+<td>第24集</td>
+<td>临街蜕变，主场宣言</td>
+</tr>
+<tr>
+<td>大高潮</td>
+<td>第29集</td>
+<td>杀青宴，沈惊辞找到人生意义</td>
+</tr>
+</tbody>
+</table>
+<h3>冲突热力图</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-table&quot;&gt;集数      1-5    6-10   11-15  16-20  21-25  26-31
+────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥  🔥      🔥🔥    🔥      🔥🔥    🔥🔥🔥
+人物冲突  🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥    🔥      🔥
+日常喜剧  🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥
+────────────────────────────────────────────────────
+冲突密度  高      中      中      中      中      中高&lt;/pre&gt;
+
+</code></pre>
+<p><strong>问题</strong>：第6-10集、16-20集、21-25集冲突密度偏低，以日常搞笑片段填充，缺乏推动力。</p>
+<h3>冲突线梳理</h3>
+<p><strong>1. 主线冲突</strong>：古人适应现代（弱）
+- 起点（第1集）：「何方妖孽放冷箭！」——对现代世界的恐惧
+- 升级（第13集）：「此……此乃何处？为何有一口水井？」——马桶惊魂
+- 高潮（第24集）：「我的地盘听我的！」——完成蜕变</p>
+<p><strong>2. 情感冲突线</strong>：归属感建立（中）
+- 起点（第1集）：「没想到竟在这陌生之地，寻到一丝烟火暖意」
+- 升级（第23集）：「吾一生征战，活了百余年，从未有过家」
+- 高潮（第29集）：「长生的意义，从来不是沙场扬名，而是与诸君相伴」</p>
+<p><strong>3. 外部冲突线</strong>：剧本创作（弱）
+- 仅在第14集、25-27集出现，缺乏贯穿性</p>
+<hr />
+<h2>五、前3集深度拆解（核心）</h2>
+<h3>第1集逐段分析（生死线）</h3>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>悬崖边银甲军师</td>
+<td>黄金开场</td>
+<td>「沈惊辞（一身银甲，手持龙纹令牌，嘴角淌血）」</td>
+<td>✓强视觉</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>身份揭露+坠崖</td>
+<td>双交代</td>
+<td>「女扮男装瞒了圣上这么久，去死吧！」</td>
+<td>✓完成</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>穿越+认拖把为枪</td>
+<td>冲突建立</td>
+<td>「此二物，杆身笔直，乃上阵杀敌的神兵！赐名左右先锋！」</td>
+<td>✓反差冲突</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>众人反应</td>
+<td>人物介绍</td>
+<td>卫飒/贺野/纪晚各有一句定性台词</td>
+<td>✓高效</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>军师宣言</td>
+<td>钩子</td>
+<td>「今日起，此地便是吾的职场阵地！」</td>
+<td>中（悬念不够强）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第1集代入感评分</strong>：8/10<br />
+<strong>问题点</strong>：结尾钩子偏弱，缺乏"非看下一集不可"的悬念设计</p>
+<h3>第2集分析</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>延续"朝堂"设定</td>
+<td>冷宫禁令（厕所管制）</td>
+<td>军师自己憋不住冲进厕所</td>
+<td>「军师也有憋不住的时候」</td>
+<td>3/5（弱承接）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>问题</strong>：第2集与第1集的穿越主线脱节，直接进入搞笑日常，缺乏递进</p>
+<h3>第3集分析</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>军师缺席</td>
+<td>众人学军师喝奶茶</td>
+<td>无</td>
+<td>贺野发消息关心</td>
+<td>2/5（主角缺席）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>问题</strong>：主角缺席整集，严重影响代入感连贯性</p>
+<h3>前3集总评</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>评估</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代入速度</td>
+<td>☑ 快（30秒内）</td>
+</tr>
+<tr>
+<td>信息密度</td>
+<td>☑ 适中</td>
+</tr>
+<tr>
+<td>钩子循环</td>
+<td>☐ 松散</td>
+</tr>
+<tr>
+<td>前3集整体评分</td>
+<td><strong>6.5/10</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心问题</strong>：第1集开场惊艳，但第2-3集迅速滑向日常喜剧，缺乏主线推进和钩子设计。</p>
+<hr />
+<h2>六、集间衔接度分析</h2>
+<h3>衔接度评分表</h3>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「此地便是吾的职场阵地」</td>
+<td>卫飒扛扫把守厕所</td>
+<td>2/5</td>
+<td>情感型→日常</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>军师被风吹成鸡窝头</td>
+<td>军师缺席</td>
+<td>1/5</td>
+<td>无钩子</td>
+</tr>
+<tr>
+<td>12→13</td>
+<td>「更衣殿乌龙吻」</td>
+<td>卫飒喊冷宫有异响</td>
+<td>3/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>13→14</td>
+<td>「此物竟如此神奇」</td>
+<td>甲方刁难</td>
+<td>2/5</td>
+<td>弱承接</td>
+</tr>
+<tr>
+<td>28→29</td>
+<td>「扫把救补光灯」</td>
+<td>杀青宴</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>平均衔接度</strong>：2.4/5<br />
+<strong>衔接问题点</strong>：大量集与集之间缺乏钩子设计，可独立成段但不构成"追剧"驱动力</p>
+<hr />
+<h2>七、逻辑一致性检查</h2>
+<h3>伏笔回收检查</h3>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>龙纹令牌</td>
+<td>第1集</td>
+<td>第14集、29集</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>女扮男装身份</td>
+<td>第1集</td>
+<td>-</td>
+<td>✗未回收（现代无人追问）</td>
+</tr>
+<tr>
+<td>大晟朝廷背景</td>
+<td>第1集</td>
+<td>-</td>
+<td>✗未展开</td>
+</tr>
+<tr>
+<td>扫把拖把"神兵"</td>
+<td>第1集</td>
+<td>贯穿全剧</td>
+<td>✓持续回收</td>
+</tr>
+</tbody>
+</table>
+<h3>时间线检查</h3>
+<p>☑ 连贯无矛盾</p>
+<h3>人物行为一致性</h3>
+<p>☑ 行为符合性格设定</p>
+<p><strong>小问题</strong>：沈惊辞作为"百岁军师"，智谋体现偏少，主要表现为"反差萌搞笑"，第14集"妙计"是唯一展现智慧的场景</p>
+<h3>逻辑一致性评分</h3>
+<p><strong>8/10</strong>（伏笔回收有遗漏，但无硬伤）</p>
+<hr />
+<h2>八、投流素材清单</h2>
+<h3>高潜力投流片段</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集</td>
+<td>反差型</td>
+<td>银甲军师认拖把为神兵</td>
+<td>「此二物，杆身笔直，乃上阵杀敌的神兵！赐名左右先锋！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第13集</td>
+<td>搞笑型</td>
+<td>马桶惊魂</td>
+<td>「它……它张开嘴了！要吃人了！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第18集</td>
+<td>冲突型</td>
+<td>外卖员被当敌寇</td>
+<td>「何方敌寇？竟敢擅闯本军师的朝堂！」+拖把攻击</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第12集</td>
+<td>情感型</td>
+<td>更衣室乌龙吻</td>
+<td>「你……你竟敢轻薄本军师！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第8集</td>
+<td>搞笑型</td>
+<td>闹钟当战鼓</td>
+<td>「战鼓擂响！敌军来犯！将士们！随我出征！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第24集</td>
+<td>爽点型</td>
+<td>主场宣言</td>
+<td>「我的地盘听我的！我想穿什么，就穿什么！」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<h3>投流类型分布</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反差/搞笑型</td>
+<td>8个</td>
+</tr>
+<tr>
+<td>情感/暧昧型</td>
+<td>2个</td>
+</tr>
+<tr>
+<td>爽点/逆袭型</td>
+<td>2个</td>
+</tr>
+<tr>
+<td>冲突/打脸型</td>
+<td>1个</td>
+</tr>
+</tbody>
+</table>
+<p><strong>投流素材丰富度</strong>：★★★★☆<br />
+<strong>最佳投流片段推荐</strong>：第13集马桶惊魂 + 第18集外卖员乌龙（可剪成15秒高密度笑点）</p>
+<hr />
+<h2>九、精彩片段提取</h2>
+<h3>高光片段</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段1：百岁军师认神兵 ─────────────────────────────────────┐
+│ 位置：第1集                                                   │
+│ 类型：☑名场面 ☑反差萌                                         │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「沈惊辞（惊跳起身，抓衣架当剑格挡）：何方妖孽放冷箭！         │
+│ （瞥见角落扫把拖把）此二物，杆身笔直，乃上阵杀敌的神兵！       │
+│ 赐名左右先锋！」                                              │
+│                                                               │
+│ 精彩点：穿越设定的核心笑点，一句话建立人物反差+系列梗          │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段2：马桶惊魂 ───────────────────────────────────────────┐
+│ 位置：第13集                                                  │
+│ 类型：☑搞笑高潮 ☑名场面                                       │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「沈惊辞（凑近盯水面）：井中为何有水声？莫非藏着水怪？会……    │
+│ 会咬人的那种？                                                │
+│ （马桶上水结束&quot;哗啦&quot;一声，水面波动）                          │
+│ 沈惊辞（吓跳躲卫飒身后尖叫）：怪物出来了！护驾！              │
+│ 卫飒（举扫把乱挥）：妖怪休走！吃我一棒！                      │
+│ （扫把戳到马桶盖，&quot;哐当&quot;弹开）                                │
+│ 沈惊辞（闭眼大喊）：它张开嘴了！要吃人了！」                  │
+│                                                               │
+│ 精彩点：视觉喜剧+台词喜剧双重叠加，投流爆款潜力               │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段3：蜕变宣言 ───────────────────────────────────────────┐
+│ 位置：第24集                                                  │
+│ 类型：☑情感爆发 ☑人物弧线高潮                                 │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「沈惊辞（大声喊出，举起拖把）：我的地盘听我的！我想穿什么，   │
+│ 就穿什么！拖把是拖把，外卖员是外卖员！马桶怪物也得听我的！     │
+│ （拖把杆晃了晃，碰到风口开关，风吹出一阵大风，把她的头发       │
+│ 吹得飞扬，卫生间冲水声正好停下）」                            │
+│                                                               │
+│ 精彩点：从恐惧到自信的弧线完成，有仪式感                      │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<h3>金句清单</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「今日起，此地便是吾的职场阵地！」</td>
+<td>第1集</td>
+<td>沈惊辞</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「此乃何物？竟能弹出暗器！赐名——定乾坤钉！」</td>
+<td>第5集</td>
+<td>沈惊辞</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「它张开嘴了！要吃人了！」</td>
+<td>第13集</td>
+<td>沈惊辞</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「活了百年，方才知晓，长生的意义，从来不是沙场扬名」</td>
+<td>第29集</td>
+<td>沈惊辞</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「军师也有憋不住的时候」</td>
+<td>第2集</td>
+<td>纪晚</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、核心亮点</h2>
+<h3>亮点1：高概念反差设定</h3>
+<p><strong>证据链</strong>：
+- 第1集：「此二物，杆身笔直，乃上阵杀敌的神兵！赐名左右先锋！」
+- 第5集：「此乃何物？竟能弹出暗器！赐名——定乾坤钉！」
+- 第8集：「战鼓擂响！敌军来犯！」（把闹钟当战鼓）
+- 第13集：「莫非藏着水怪？会……会咬人的那种？」</p>
+<p><strong>分析</strong>："百岁军师vs现代物品"的认知错位是核心笑点引擎，每次出现都能产生喜剧效果<br />
+<strong>可复用技巧</strong>：穿越题材中，"旧认知套新事物"的命名梗可批量复制</p>
+<h3>亮点2：群像喜剧化学反应</h3>
+<p><strong>证据链</strong>：
+- 第4集：沈惊辞+卫飒拖把扫把比武
+- 第7集：卫飒霸占沙发称"龙床"，与贺野扯围巾
+- 第18集：沈惊辞攻击外卖员，卫飒举扫把助阵</p>
+<p><strong>分析</strong>：卫飒作为"忠诚迷弟"与沈惊辞形成CP感，两人的"中二互动"是副笑点引擎<br />
+<strong>可复用技巧</strong>：给主角配一个"无条件跟随"的搭档，可放大主角特质</p>
+<h3>亮点3：台词喜剧性强</h3>
+<p><strong>证据链</strong>：
+- 「无召擅闯，成何体统？忍！成大事者不拘小节！」（古语+憋尿的反差）
+- 「女子胳膊岂容外露？！」（古代礼教vs现代穿着）
+- 「朕宣布！今后御酒宴，需配温水饮用！」（军师也怕辣）</p>
+<p><strong>分析</strong>：古语腔调+现代场景的语言错位，是持续的笑点来源</p>
+<hr />
+<h2>十一、关键问题</h2>
+<h3>问题1：缺乏贯穿性主线冲突（最严重）</h3>
+<p><strong>证据链</strong>：
+- 第1集建立"穿越适应"主线后，第2-10集几乎全是独立的日常搞笑
+- 第14集"甲方刁难"是唯一外部冲突，仅1集解决
+- 第25-31集"剧本成功"线索突然加速，缺乏铺垫</p>
+<p><strong>影响评估</strong>：观众在第3-10集可能流失，因为"没有悬念让我想看下一集"<br />
+<strong>优化建议</strong>：
+1. 增加一条贯穿性威胁线（如：大晟反派也穿越来追杀？或公司面临倒闭危机？）
+2. 在每集结尾设计悬念钩子</p>
+<h3>问题2：中段情节松散（第6-20集）</h3>
+<p><strong>证据链</strong>：
+- 第6集：御酒赐宴（喝酒日常）
+- 第7集：龙床争夺（抢沙发）
+- 第9集：风口小恙（空调吹风）
+- 第10集：扫把练兵
+- 第11集：绿萝护国</p>
+<p><strong>影响评估</strong>：单集可独立成短视频，但连续看会觉得"都差不多"<br />
+<strong>优化建议</strong>：将日常集减少至5集以内，增加推进主线的情节</p>
+<h3>问题3：情感线浅尝辄止</h3>
+<p><strong>证据链</strong>：
+- 第12集"乌龙吻"后，沈惊辞与阮软的暧昧线没有发展
+- 贺野的"嘴硬心软"停留在表面，未深化
+- 第23集"归属感"情感爆发来得突兀，缺乏铺垫</p>
+<p><strong>影响评估</strong>：错失女性向观众的情感共鸣机会<br />
+<strong>优化建议</strong>：选择一条CP线（惊辞x阮软 或 惊辞x贺野）重点发展</p>
+<hr />
+<h2>十二、优化建议</h2>
+<h3>修改优先级排序</h3>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0</strong></td>
+<td>缺乏主线冲突</td>
+<td>结构、节奏</td>
+<td>高</td>
+<td>增加贯穿性威胁/目标</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>中段松散</td>
+<td>节奏</td>
+<td>中</td>
+<td>删减/合并日常集</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>集间钩子弱</td>
+<td>开场代入</td>
+<td>中</td>
+<td>每集结尾设计悬念</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>情感线浅</td>
+<td>情绪设计</td>
+<td>中</td>
+<td>选定一条CP重点发展</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>女扮男装伏笔未用</td>
+<td>逻辑</td>
+<td>低</td>
+<td>增加身份危机情节</td>
+</tr>
+</tbody>
+</table>
+<h3>具体修改建议</h3>
+<p><strong>1. 增加主线冲突（最重要）</strong></p>
+<p>建议方案A：<strong>公司危机线</strong>
+- 见组影视面临倒闭，需要在30天内做出爆款剧本
+- 沈惊辞的故事就是救命稻草
+- 每5集设置一个deadline压力点</p>
+<p>建议方案B：<strong>穿越追杀线</strong>
+- 大晟的反派也穿越过来，要夺回龙纹令牌
+- 沈惊辞需要在现代躲避追杀
+- 可增加动作戏份</p>
+<p><strong>2. 重构中段节奏</strong></p>
+<table>
+<thead>
+<tr>
+<th>删减/合并</th>
+<th>原集数</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合并</td>
+<td>第6集+第2集</td>
+<td>御酒=厕所禁令后的庆功宴</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>第7集</td>
+<td>龙床争夺（主角缺席）</td>
+</tr>
+<tr>
+<td>合并</td>
+<td>第9集+第11集</td>
+<td>风口+绿萝（现代设备认知）</td>
+</tr>
+<tr>
+<td>保留</td>
+<td>第13集</td>
+<td>马桶惊魂（核心名场面）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. 强化集间钩子</strong></p>
+<p>参考改法（第1集结尾）：
+- 原版：「今日起，此地便是吾的职场阵地！」
+- 改为：「沈惊辞握紧令牌——令牌突然发出微光，映出大晟宫殿的虚影。难道……还有人要穿越过来？」</p>
+<hr />
+<h2>十三、下一步建议</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>决策</strong></td>
+<td>☑ 小幅修改后开发（预计2-3周）</td>
+</tr>
+<tr>
+<td><strong>预估开发周期</strong></td>
+<td>修改+拍摄 约1.5个月</td>
+</tr>
+<tr>
+<td><strong>预估制作预算</strong></td>
+<td>低（单场景为主，无特效需求）</td>
+</tr>
+<tr>
+<td><strong>风险提示</strong></td>
+<td>1. 喜剧演员选角关键，沈惊辞需有古装底子+喜剧节奏<br/>2. 如不增加主线，可能变成"搞笑短视频合集"而非"追剧向短剧"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>评估完成</h2>
+<p><strong>总结</strong>：《职场空降古人》拥有优秀的高概念设定和密集的笑点设计，"百岁女军师认拖把为枪"的核心创意有爆款潜力。主要问题在于剧本结构偏向日常流水账，缺乏让观众"追下去"的主线冲突。建议增加贯穿性危机/目标线，优化集间衔接，可成为轻喜剧赛道的优质项目。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

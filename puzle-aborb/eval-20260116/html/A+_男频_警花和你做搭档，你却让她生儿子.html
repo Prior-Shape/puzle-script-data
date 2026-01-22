@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>警花和你做搭档，你却让她生儿子</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《警花和你做搭档，你却让她生儿子》
+类型/题材：男频/都市/系统/刑侦/甜宠
+目标平台：红果短剧/抖音短剧
+总集数：30集（已提供）
+评估日期：2026-01-21</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  CONSIDER  ]
+评级：[  A+  ]
+总分：77/100</p>
+<p>一句话结论：这是一部节奏紧凑、爽点密集的男频系统流短剧，前3集代入感极强，但人物深度和逻辑严谨性有待提升，中后期需加强情感线发展。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre class="ascii-art">            开场与代入(8.5/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (7.5/10) /   |   \ (8/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (7/10)      |      (7.5/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (7.5/10)  \|/  (7/10)
+              ▼
+         台词质量(7/10)
+              |
+         人物塑造(6.5/10)</pre>
+
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8.5/10</td>
+<td>18%</td>
+<td>15.3</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>8/10</td>
+<td>15%</td>
+<td>12.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>7.5/10</td>
+<td>12%</td>
+<td>9.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7/10</td>
+<td>12%</td>
+<td>8.4</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>6.5/10</td>
+<td>10%</td>
+<td>6.5</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>7.5/10</td>
+<td>8%</td>
+<td>6.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>7.5/10</td>
+<td>9%</td>
+<td>6.75</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>75.15≈77</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：开场与代入 - 第1集审讯室开场迅速建立人物关系和核心悬念，8秒内完成双交代
+<strong>最弱项</strong>：人物塑造 - 女主顾倾城人设稍显工具化，人物弧线不够清晰</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：15+ 人
+• 核心人物：6人（有名有戏份）
+• 正派阵营：5人
+• 反派阵营：3人
+• 中立/摇摆：2人</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[雷震<br/>街溜子/孤儿/系统宿主]
+        B[顾倾城<br/>警花/柯南体质/川妹子]
+        C[赵刚<br/>治安所所长]
+        D[周胜朝<br/>警官/顾倾城师兄]
+        E[顾文海<br/>省厅局长/顾倾城父亲]
+        F[邹雨晴<br/>法医/顾倾城表姐]
+    end
+
+    subgraph 反派阵营
+        G[陈万康<br/>雨夜杀人魔]
+        H[王青山<br/>强奸杀人犯]
+        I[李尚军<br/>越狱犯/拐卖团伙]
+    end
+
+    subgraph 其他角色
+        J[楚人美<br/>王青山妻子]
+        K[陈伟<br/>楚人美情人]
+    end
+
+    A -->|追求/搭档| B
+    B -.->|抗拒→暧昧| A
+    A -->|上下级| C
+    A -->|同事| D
+    B -->|父女| E
+    B -->|表姐妹| F
+    A -.->|抓捕| G
+    A -.->|抓捕| H
+    A -.->|抓捕| I
+    H -->|夫妻| J
+    J -->|出轨| K
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 主角：雷震 ─────────────────────────────────────────────┐
+│ 标签：[街溜子] + [神探系统宿主] + [孤儿寻亲]                │
+│ 标签印证：                                                   │
+│ • [街溜子] ← 第1集：「顾倾城（白眼）：明明挺年轻的，做什么│
+│   不好，做街溜子？」                                         │
+│ • [系统宿主] ← 第1集：「【神探系统激活成功，恭喜宿主获得   │
+│   '罪恶之眼'，可看清罪恶之人身上所有的罪证！】」           │
+│ • [孤儿寻亲] ← 第20集：「雷震OS：二十年过去了，爸妈，我虽  │
+│   然被拐卖了，但是我一定会找到你们的！」                    │
+│ 弧线：[街溜子] → [辅警] → [破案英雄] → [寻找身世]          │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 女主：顾倾城 ────────────────────────────────────────────┐
+│ 标签：[冷面警花] + [柯南体质] + [川妹子]                    │
+│ 标签印证：                                                   │
+│ • [冷面警花] ← 第1集：「顾倾城【治安警】穿着警服，冷若寒霜」│
+│ • [柯南体质] ← 第1集：「雷震OS：这顾倾城果然是柯南体质，走 │
+│   到哪里，哪里就会出现罪犯」                                │
+│ • [川妹子] ← 第9集：「顾倾城（握紧拳头）：劳资蜀到山！」   │
+│ 弧线：[抗拒雷震] → [逐渐信任] → [暧昧发展]                  │
+│ 标签准确度：★★★☆☆（弧线发展略显平淡）                       │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 配角：赵刚（所长）────────────────────────────────────────┐
+│ 标签：[开明领导] + [善于识人] + [月老属性]                  │
+│ 标签印证：                                                   │
+│ • [开明领导] ← 第7集：「赵刚：年轻人有冲劲是好事！」        │
+│ • [月老属性] ← 第6集：「赵刚（姨母笑）：小伙子，想要追上倾 │
+│   城，你可得多花点功夫啊！」                                │
+│ 标签准确度：★★★☆☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre class="ascii-art">张
+力  │
+强  │                            ★ 抓捕小偷团伙+李尚军(21-27集)
+度  │                           /
+    │              ☆ 王青山案 /
+    │             /    \    /
+    │    ○ 雨夜杀人案/  \  /
+    │   /  \    /        \/
+    │  /    \  /
+    │ /      \/
+    │/ 陈万康
+    └────────────────────────────────────────────────→ 集数</pre>
+
+<pre class="ascii-table">      1-6   7-11  12-18  19-27  28-30</pre>
+
+<p>【高潮点标注】
+• 小高潮①（第5集）：雨夜凶杀案破获，陈万康当场认罪
+• 小高潮②（第7集）：雷震成功入职治安所成为辅警
+• 中高潮①（第17-18集）：王青山615案破获，雷震利用心理战术逼供
+• 大高潮（第26-27集）：一次性抓获30+小偷团伙+越狱通缉犯李尚军</p>
+<p>【冲突热力图】</p>
+<pre class="ascii-table">集数    1-5    6-10   11-15  16-20  21-25  26-30
+────────────────────────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥🔥 🔥🔥    🔥🔥🔥  🔥🔥🔥🔥 🔥🔥🔥  🔥🔥🔥🔥
+人物冲突  🔥🔥    🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥
+情感冲突  🔥      🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥🔥
+────────────────────────────────────────────────────────────────────────
+冲突密度  高      中      中      高      高      极高
+（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突（破案升级线）</strong>：雷震利用系统不断破案升级
+   - 起点（第1集）：「雷震揉了揉眼，一副不可置信。雷震：我去！系统？」
+   - 升级（第5集）：「系统：侦破雨夜凶杀案，奖励宿主十万元现金，高级格斗术，灵敏嗅觉！」
+   - 高潮（第27集）：「顾文海：赵所长，这次小雷同志捣毁了三十多人的小偷团伙，而且还抓获了一名通缉犯」</p>
+</li>
+<li>
+<p><strong>情感冲突线（爱情拉扯）</strong>：雷震追求顾倾城
+   - 起点（第1集）：「雷震：警官，你相信一见钟情吗？」
+   - 发展（第20集）：「苏晓晓（坏笑）：是是，我们顾大小姐没有喜欢！今天出门只是为了工作~」
+   - 暗示（第26集）：「顾倾城（担心）：小心！」→ 关心雷震安危</p>
+</li>
+<li>
+<p><strong>身世悬念线</strong>：雷震的孤儿身份
+   - 埋设（第20集）：「雷震OS：二十年过去了，爸妈，我虽然被拐卖了，但是我一定会找到你们的！」
+   - 伏笔（第30集）：「也许背后的拐卖团伙，知道我的身世也说不定！」</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>审讯室场景，警服女警+手铐男</td>
+<td>黄金开场</td>
+<td>「顾倾城【治安警】穿着警服，冷若寒霜。顾倾城：说吧，这次又是为什么？」</td>
+<td>✓ 强场景</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>雷震表白+顾倾城吐槽</td>
+<td>双交代</td>
+<td>「雷震：警官，你相信一见钟情吗？」「顾倾城：你那是见色起意！」</td>
+<td>✓ 完成</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>撞车六次的缘由揭示</td>
+<td>冲突建立</td>
+<td>「顾倾城（生气）：所以这就是你一个月撞我车六次的原因？」</td>
+<td>✓ 冲突有趣</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>系统激活闪回+柯南体质设定</td>
+<td>设定交代</td>
+<td>「【神探系统激活成功】」「顾倾城出现，追捕着一个小偷」</td>
+<td>✓ 高概念快速建立</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>陈万康出现+系统提示杀人犯</td>
+<td>钩子</td>
+<td>「【陈万康——盗窃，强奸，杀人！】雷震（惊呼）：我去！」</td>
+<td>强</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：8.5/10
+优点：开场即冲突，设定交代干净利落，结尾钩子极强</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接承接第1集结尾惊呼</td>
+<td>雷震发现陈万康是杀人犯并举报</td>
+<td>「雷震：他不是杀人吗？怎么又偷电瓶车了啊！」</td>
+<td>「雷震：你不是杀人吗？怎么又偷电瓶车了啊！」陈万康身躯一抖</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完美承接，陈万康反应</td>
+<td>雷震揭露凶器藏匿地点</td>
+<td>系统解锁罪证位置</td>
+<td>「雷震：我要举报！陈万康，他就是杀人凶手！」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p>【前3集总评】
+• 代入速度：☑极快（3秒入戏）□快（30秒内）□一般（1集内）□慢
+• 信息密度：□过载 ☑适中 □偏少
+• 钩子循环：☑紧密 □一般 □松散
+• 前3集整体评分：8.5/10</p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】（抽样关键节点）</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「【陈万康——杀人！】雷震：我去！」</td>
+<td>「雷震（惊呼）：我去！顾倾城瞪了雷震一眼」</td>
+<td>5/5</td>
+<td>悬念</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「雷震：你不是杀人吗？」</td>
+<td>「陈万康身躯一抖，害怕的往后退」</td>
+<td>5/5</td>
+<td>悬念</td>
+</tr>
+<tr>
+<td>5→6</td>
+<td>「雷震：你亲我一下就知道了！」</td>
+<td>「顾倾城：劳资蜀到山！」</td>
+<td>4/5</td>
+<td>情感</td>
+</tr>
+<tr>
+<td>9→10</td>
+<td>「顾倾城请吃饭约定」</td>
+<td>「来到法医工作室」</td>
+<td>3/5</td>
+<td>转场</td>
+</tr>
+<tr>
+<td>17→18</td>
+<td>「罪证就在竹林里」</td>
+<td>「顾倾城一愣」</td>
+<td>5/5</td>
+<td>悬念</td>
+</tr>
+<tr>
+<td>19→20</td>
+<td>「反扒行动开始」</td>
+<td>「雷震做噩梦」</td>
+<td>3/5</td>
+<td>情感插入</td>
+</tr>
+<tr>
+<td>26→27</td>
+<td>「抓获李尚军」</td>
+<td>「顾文海开会」</td>
+<td>4/5</td>
+<td>危机解决</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：4.1/5
+衔接问题点：第19-20集从反扒行动突然切入雷震身世回忆，节奏稍有断裂</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>神探系统设定</td>
+<td>第1集</td>
+<td>持续使用</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>撞车六次追求</td>
+<td>第1集</td>
+<td>第1集闪回</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>柯南体质</td>
+<td>第1集</td>
+<td>第2、21集</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>雷震孤儿身份</td>
+<td>第20集</td>
+<td>第25、30集</td>
+<td>○部分回收（留悬念）</td>
+</tr>
+<tr>
+<td>李尚军拐卖线索</td>
+<td>第21集</td>
+<td>第30集</td>
+<td>○伏笔埋设（未回收）</td>
+</tr>
+<tr>
+<td>顾文海省厅局长身份</td>
+<td>第28集</td>
+<td>-</td>
+<td>○功能性交代</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+☑ 连贯无矛盾
+- 案件时间线清晰：雨夜案→615案→反扒行动
+- 人物关系发展合理</p>
+<p>【人物行为一致性】
+☑ 行为符合性格设定
+□ 有不一致处：
+- 顾倾城作为"冷若寒霜"的警花，第20集突然为雷震化妆赴约，转变稍显突兀</p>
+<p>【逻辑硬伤】（如有）
+1. 第11集：雷震能闻到马应龙痔疮膏味道过于神奇——「雷震：我刚刚在死者身上都闻到了一股马应龙痔疮膏的味道」（系统奖励灵敏嗅觉可解释，但略显牵强）
+2. 第17集：DNA检测报告获取速度过快——「雷震将文件里面的两张DNA检测报告抽了出来」（从发现到拿到报告时间不合理）</p>
+<p>逻辑一致性评分：7/10</p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>时长</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集 开场</td>
+<td>15s</td>
+<td>悬念型</td>
+<td>审讯室表白+见色起意吐槽</td>
+<td>「雷震：警官，你相信一见钟情吗？」「顾倾城：你那是见色起意！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第2-3集</td>
+<td>10s</td>
+<td>反转型</td>
+<td>揭露杀人犯真面目</td>
+<td>「雷震：你不是杀人吗？怎么又偷电瓶车了啊！」陈万康身躯一抖</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第9集</td>
+<td>8s</td>
+<td>金句型</td>
+<td>川妹子发飙</td>
+<td>「顾倾城（握紧拳头）：劳资蜀到山！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第17集</td>
+<td>20s</td>
+<td>爽点型</td>
+<td>心理战逼供</td>
+<td>「雷震：陈万康，你也不想藏在家里的凶器被别人发现吧？」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第24-26集</td>
+<td>15s</td>
+<td>爽点型</td>
+<td>一人制服小偷团伙</td>
+<td>「雷震一伸手就轻轻松松抓住了小偷甲，并且将他按在了地上」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第26集</td>
+<td>10s</td>
+<td>情感型</td>
+<td>孤儿共情</td>
+<td>「雷震：就凭我跟你们一样，也是孤儿！」</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第6集</td>
+<td>8s</td>
+<td>搞笑型</td>
+<td>所长误会</td>
+<td>「赵刚：倾城，你什么时候谈的对象啊？」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：3个
+• 反转/悬念型：2个
+• 金句/名场面型：2个
+• 情感/虐心型：1个
+• 爽点/逆袭型：3个</p>
+<p>投流素材丰富度：★★★★☆
+最佳投流片段推荐：第1集 审讯室开场「见色起意」对话</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】（代表剧本最佳水平）</p>
+<pre class="character-card">┌─ 片段1：审讯室表白 ─────────────────────────────────────────┐
+│ 位置：第1集                                                   │
+│ 类型：☑冲突高潮 □情感爆发 □反转揭示 ☑台词金句 ☑名场面      │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「顾倾城：说吧，这次又是为什么？　　                          │
+│ 雷震：警官，你相信一见钟情吗？                                │
+│ 顾倾城敲了敲桌子。                                            │
+│ 雷震：我以前也不相信，但是我自从见到你的第一眼开始...         │
+│ 顾倾城：你那是一见钟情吗？我都不好意思戳破你！你那是见色起意！│
+│ 雷震（正色）：就算我是见色起意，我追求爱情有错吗？            │
+│ 顾倾城（生气）：所以这就是你一个月撞我车六次的原因？」        │
+│                                                               │
+│ 上下文：雷震被顾倾城带到审讯室询问，是开场场景                │
+│ 精彩点：对话节奏快、信息密度高、人设立刻鲜明、有记忆点        │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：揭露杀人犯 ─────────────────────────────────────────┐
+│ 位置：第2-3集                                                 │
+│ 类型：□冲突高潮 □情感爆发 ☑反转揭示 □台词金句 ☑名场面      │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「雷震：喂！陈万康！                                          │
+│ 陈万康抬头，脸上闪过疑惑。                                    │
+│ 陈万康：你谁啊？                                              │
+│ 雷震（微笑）：你不是杀人吗？怎么又偷电瓶车了啊！              │
+│ 陈万康身躯一抖，害怕的往后退了一步。」                        │
+│                                                               │
+│ 上下文：陈万康因偷电瓶车被抓，雷震通过系统发现其杀人罪行      │
+│ 精彩点：以小博大、出其不意、四两拨千斤的揭露方式              │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：孤儿共情 ─────────────────────────────────────────────┐
+│ 位置：第25-26集                                               │
+│ 类型：□冲突高潮 ☑情感爆发 □反转揭示 □台词金句 ☑名场面      │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「小偷乙：我为什么要相信你？                                  │
+│ 雷震：就凭我跟你们一样，也是孤儿！但是我通过自己的努力，成为  │
+│ 了一名治安警！我相信你们只要愿意努力，以后不会比现在差！      │
+│ 小偷甲：我愿意相信你！我愿意跟你回去自首！」                  │
+│                                                               │
+│ 上下文：雷震在大巴车上劝说小偷团伙自首                        │
+│ 精彩点：人物内心深度展示、情感共鸣、主角正能量形象升华        │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【冲突写作示范】（展示冲突处理技巧）</p>
+<pre class="character-card">┌─ 示范片段：心理战逼供 ──────────────────────────────────────┐
+│ 位置：第17集                                                  │
+│ 冲突类型：人物冲突 + 心理冲突                                 │
+│                                                               │
+│ 原文：                                                        │
+│ 「雷震：这是你和你儿子的DNA检测报告，报告显示，你们并不是父子 │
+│ 关系。                                                        │
+│ 王青山瞳孔一震，顿时上前拿着两张纸仔细看了起来。              │
+│ 王青山：不可能！不可能！你肯定在骗我！                        │
+│ 雷震将楚人美和陈伟亲密的照片拿了出来，放在桌上。              │
+│ 雷震（摊手）：你不信我没关系，但是这个你总不能不信吧？        │
+│ 王青山浑身一颤，开始大声的喘气。                              │
+│ 王青山：贱人！这个贱人！你怎么敢背叛我！」                    │
+│                                                               │
+│ 技巧分析：层层递进的心理施压，先用DNA报告动摇，再用照片击溃  │
+│ 防线，利用犯罪嫌疑人的情感弱点瓦解其心理防线                  │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】（按类型分类）</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「你不是杀人吗？怎么又偷电瓶车了啊！」</td>
+<td>第2集</td>
+<td>雷震</td>
+<td>揭露陈万康</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「就凭我跟你们一样，也是孤儿！」</td>
+<td>第25集</td>
+<td>雷震</td>
+<td>劝说小偷</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「劳资蜀到山！」</td>
+<td>第9集</td>
+<td>顾倾城</td>
+<td>被雷震调戏</td>
+</tr>
+<tr>
+<td>调侃型</td>
+<td>「你那是一见钟情吗？你那是见色起意！」</td>
+<td>第1集</td>
+<td>顾倾城</td>
+<td>审讯室</td>
+</tr>
+<tr>
+<td>自恋型</td>
+<td>「不要迷恋哥，哥只是一个传说~」</td>
+<td>第6集</td>
+<td>雷震</td>
+<td>破案后</td>
+</tr>
+<tr>
+<td>机智型</td>
+<td>「恶人啊，自有恶人磨！」</td>
+<td>第26集</td>
+<td>雷震</td>
+<td>小偷打李尚军</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：系统设定与柯南体质的巧妙结合</strong></p>
+<p>证据链：
+• 第1集：「【神探系统激活成功，恭喜宿主获得'罪恶之眼'，可看清罪恶之人身上所有的罪证！】」
+• 第1集：「雷震OS：要不是我自己找不到罪犯，而你这位柯南体质的顾警官出现在哪里，哪里就会有罪犯」
+• 第21集：「雷震OS：这都多亏了顾警官啊！要不是她这位柯南体质的幸运女神在我身边，我还抓不到这群犯罪团伙！」</p>
+<p>分析：系统能力+女主柯南体质的设定互补，解决了"主角如何找到犯罪者"的逻辑问题，也为男女主绑定提供了剧情理由。
+可复用技巧：双主角能力互补设计，各有缺陷各有所长。</p>
+<p><strong>亮点2：节奏紧凑，每案2-3集快速推进</strong></p>
+<p>证据链：
+• 第1-5集：陈万康雨夜杀人案（5集完结）
+• 第8-18集：王青山615案（10集完结）
+• 第19-27集：小偷团伙+李尚军案（8集完结）</p>
+<p>分析：每个案件控制在合理集数内，避免拖沓，保持观众新鲜感。
+可复用技巧：短剧案件不宜超过10集，5-8集为最佳。</p>
+<p><strong>亮点3：爽点设计层层升级</strong></p>
+<p>证据链：
+• 第5集：「系统：侦破雨夜凶杀案，奖励宿主十万元现金，高级格斗术，灵敏嗅觉！」
+• 第18集：「系统：恭喜宿主抓捕罪犯刘青山，奖励三十万元现金，敏锐听觉，超凡记忆！」
+• 第27集：「赵刚：这次小雷同志捣毁了三十多人的小偷团伙，而且还抓获了一名通缉犯」</p>
+<p>分析：从抓1人→抓1人+证据→抓30+人+通缉犯，案件规模和影响力持续升级。
+可复用技巧：爽点不能平行，必须递进。</p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：女主人设扁平化，弧线不够清晰</strong></p>
+<p>证据链：
+• 第1集：「顾倾城【治安警】穿着警服，冷若寒霜」→ 设定为冷面警花
+• 第20集：「苏晓晓：这可是我为你画的斩男妆」→ 突然变成恋爱脑
+• 全剧：顾倾城的主要功能是"被追求"+"柯南体质引出案件"</p>
+<p>影响评估：女性观众难以代入，女主沦为工具人，削弱CP感。
+优化建议：增加顾倾城的独立案件线，展示其专业能力；设计其内心成长弧线（如从不信任到信任的转变原因）。</p>
+<p><strong>问题2：系统能力过于便利，降低破案悬念</strong></p>
+<p>证据链：
+• 第1集：「【陈万康——盗窃，强奸，杀人！】」→ 直接显示罪行
+• 第3集：「【系统：解锁犯罪嫌疑人罪证——杀人凶器！该杀人凶器正被凶犯藏于家中！】」→ 直接显示证据位置
+• 第17集：「【系统：解锁罪证——杀人凶器！该凶器正藏于王青山家后院那片竹林里！】」</p>
+<p>影响评估：观众缺乏推理参与感，破案过程缺少智力博弈的乐趣。
+优化建议：增加系统使用的限制条件（如需要刺激犯人情绪才能解锁更多信息），或增加假线索干扰。</p>
+<p><strong>问题3：情感线发展过于程式化</strong></p>
+<p>证据链：
+• 第1集：雷震表白 → 第5集：赌约 → 第9集：请客吃饭 → 第20集：化妆赴约
+• 模式固定为：追求→拒绝→立功→靠近→调侃→拒绝→循环</p>
+<p>影响评估：感情线缺乏波折和深度，观众审美疲劳。
+优化建议：设计情感危机事件（如误会、竞争者、价值观冲突），打破"追求-拒绝"的循环模式。</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>女主工具人化</td>
+<td>人物塑造、市场适配</td>
+<td>中</td>
+<td>增加女主独立高光时刻</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>情感线程式化</td>
+<td>情绪设计、故事结构</td>
+<td>中</td>
+<td>设计情感危机事件</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>系统过于万能</td>
+<td>故事结构、创意题材</td>
+<td>低</td>
+<td>增加系统使用限制</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>【最重要】强化女主人物弧线</strong>
+   - 问题：顾倾城从始至终性格变化不大，主要作为"被追求对象"存在
+   - 建议：在第15-20集设计顾倾城的独立破案高光时刻，展示其专业能力不输雷震；设计其内心从"排斥→好奇→信任→依赖"的情感变化线
+   - 参考：第20集可以改为「顾倾城在雷震遇险时展现高超格斗技能救场，反转"被保护者"形象」</p>
+</li>
+<li>
+<p><strong>情感线增加波折</strong>
+   - 问题：追求-拒绝的模式重复
+   - 建议：在第25-28集设计一个误会/危机事件（如顾倾城误解雷震接近她是为了利用其父亲的权力），让感情线有真正的波折
+   - 参考：可以增加一个追求顾倾城的竞争者角色，制造三角关系张力</p>
+</li>
+<li>
+<p><strong>系统设定增加限制</strong>
+   - 问题：罪行直接显示，缺乏破案悬念
+   - 建议：系统信息初始只显示"有罪"，需要通过调查/刺激情绪才能逐步解锁具体罪行和证据
+   - 参考：第3集的"刺激情绪解锁罪证"机制可以贯穿始终，增加破案过程的策略性</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☑ 小幅修改后开发（预计 2 周）
+□ 立即进入开发
+□ 重大修改后重新评估
+□ 暂缓
+□ 放弃</p>
+<p>预估开发周期：4-6周（含拍摄）
+预估制作预算：中等偏低（场景集中、无大特效）
+风险提示：
+1. 刑侦题材需注意合规审查，避免过度美化犯罪细节
+2. 系统设定需把握尺度，避免被认为"开挂无脑"
+3. 需加强女性观众吸引力，否则可能限制受众范围</p>
+<div class="section-title">附录：爆款潜力速查</div>
+
+<p>【加分项检测】</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>有=+1分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有猎奇设定（神探系统+柯南体质）</td>
+<td>☑ +1</td>
+</tr>
+<tr>
+<td>有可传播金句（≥3句）</td>
+<td>☑ +1</td>
+</tr>
+<tr>
+<td>有名场面潜力（审讯室表白、揭露杀人犯、孤儿共情）</td>
+<td>☑ +1</td>
+</tr>
+<tr>
+<td>人物有强记忆点（"劳资蜀道山"、街溜子逆袭）</td>
+<td>☑ +1</td>
+</tr>
+<tr>
+<td>情绪设计有共鸣点（孤儿身世）</td>
+<td>☑ +1</td>
+</tr>
+<tr>
+<td>差异化明确且可说清（系统流+刑侦+甜宠）</td>
+<td>☑ +1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>爆款潜力得分：6/6 - 极高爆款潜力</strong></p>
+<div class="section-title">评估完成</div>
+
+<p>```</p>
+<hr />
+<h2>评估总结</h2>
+<p>这是一部<strong>质量中上</strong>的男频系统流刑侦短剧，具有以下特点：</p>
+<h3>核心优势</h3>
+<ol>
+<li><strong>开场极佳</strong> - 审讯室场景+见色起意对话，3秒内抓住观众</li>
+<li><strong>设定巧妙</strong> - 系统能力+柯南体质互补，逻辑自洽</li>
+<li><strong>节奏紧凑</strong> - 每案5-10集快速推进，爽点层层升级</li>
+<li><strong>投流素材丰富</strong> - 多个可切片投放的高光场景</li>
+</ol>
+<h3>待优化点</h3>
+<ol>
+<li>女主人设需要加强，避免工具人化</li>
+<li>情感线需要增加波折，打破程式化</li>
+<li>系统能力可以增加限制，提升破案悬念</li>
+</ol>
+<h3>最终建议</h3>
+<p><strong>Consider（建议开发）</strong> - 小幅修改后可进入开发阶段，重点强化女主人物弧线和情感线深度。本剧具有极高爆款潜力，适合红果/抖音等短剧平台投放。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

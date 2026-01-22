@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ 玄幻 白蛇归来</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<h1>剧本评估报告</h1>
+<h2>基本信息</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>剧本名称</strong></td>
+<td>《白蛇归来》</td>
+</tr>
+<tr>
+<td><strong>类型/题材</strong></td>
+<td>玄幻/神话重构/爱情</td>
+</tr>
+<tr>
+<td><strong>目标平台</strong></td>
+<td>短剧平台（抖音/快手等）</td>
+</tr>
+<tr>
+<td><strong>总集数</strong></td>
+<td>35集（实际提供至第35集，但有重复标注问题）</td>
+</tr>
+<tr>
+<td><strong>单集时长</strong></td>
+<td>2分钟</td>
+</tr>
+<tr>
+<td><strong>评估日期</strong></td>
+<td>2026-01-20</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Phase 0: 前置判断</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>概念清晰度</strong></td>
+<td>✅ 通过</td>
+<td>白蛇转世现代汉服设计师+青蛇守护+许仙转世，三人对抗八岐大蛇守护华夏龙脉</td>
+</tr>
+<tr>
+<td><strong>类型匹配</strong></td>
+<td>✅ 通过</td>
+<td>神话IP改编+国风玄幻+跨国对抗，符合当前热门题材</td>
+</tr>
+<tr>
+<td><strong>合规安全</strong></td>
+<td>⚠️ 需关注</td>
+<td>涉及中日对抗、神话宗教元素，需注意审核尺度</td>
+</tr>
+<tr>
+<td><strong>字数规范</strong></td>
+<td>⚠️ 偏多</td>
+<td>单集约800-1200字，超出标准（450-550字），需压缩</td>
+</tr>
+<tr>
+<td><strong>材料完整</strong></td>
+<td>✅ 通过</td>
+<td>完整剧本35集</td>
+</tr>
+</tbody>
+</table>
+<p><strong>前置判断结论</strong>：通过，但字数需压缩约40%，政治敏感内容需调整表述</p>
+<hr />
+<h2>一、评估结论</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>决策</strong></td>
+<td><strong>CONSIDER</strong></td>
+</tr>
+<tr>
+<td><strong>评级</strong></td>
+<td><strong>A+</strong></td>
+</tr>
+<tr>
+<td><strong>总分</strong></td>
+<td><strong>77/100</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>一句话结论</h3>
+<p><strong>高概念国风玄幻剧本，世界观宏大、视效空间丰富、情感线扎实，但前3集代入偏慢、节奏需提速、中段战斗戏重复感明显，经修改后具备爆款潜力。</strong></p>
+<hr />
+<h2>二、9维度能力雷达图</h2>
+<h3>能力分布图</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;            开场与代入(6.5/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (6/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍性────┼───── 情绪设计
+   (9/10)      |      (8/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (9/10)   \|/  (7.5/10)
+              ▼
+         台词质量(7/10)
+              |
+         人物塑造(8/10)&lt;/pre&gt;
+
+</code></pre>
+<h3>维度评分表</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>6.5/10</td>
+<td>18%</td>
+<td>1.17</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>6/10</td>
+<td>15%</td>
+<td>0.90</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8/10</td>
+<td>12%</td>
+<td>0.96</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7.5/10</td>
+<td>12%</td>
+<td>0.90</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>8/10</td>
+<td>10%</td>
+<td>0.80</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7/10</td>
+<td>8%</td>
+<td>0.56</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>9/10</td>
+<td>8%</td>
+<td>0.72</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>9/10</td>
+<td>8%</td>
+<td>0.72</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>0.72</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>7.45→77分</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：创意题材 &amp; 视听可拍性 — 白蛇IP现代化重构+国风vs东瀛妖怪对抗，视效想象空间极大</p>
+<p><strong>最弱项</strong>：节奏控制 — 前3集铺垫过长，中段战斗戏重复，信息密度不均</p>
+<hr />
+<h2>三、人物关系图谱</h2>
+<h3>人物统计</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总人物数</td>
+<td>27人</td>
+</tr>
+<tr>
+<td>核心人物</td>
+<td>7人</td>
+</tr>
+<tr>
+<td>正派阵营</td>
+<td>15人</td>
+</tr>
+<tr>
+<td>反派阵营</td>
+<td>8人</td>
+</tr>
+<tr>
+<td>中立/摇摆</td>
+<td>4人</td>
+</tr>
+</tbody>
+</table>
+<h3>关系图</h3>
+<div class="mermaid">
+graph TB
+    subgraph 核心四人组
+        A[白素素<br/>白蛇转世/汉服设计师/龙气承载者]
+        B[青空<br/>青蛇/四百年守护者/义工]
+        C[许吴悔<br/>许仙转世/建筑师/佛妖合一]
+        D[明茗依<br/>明一法师转世/佛眼觉醒/月华轮寄主]
+    end
+
+    subgraph 反派阵营
+        E[八岐大蛇<br/>白蛇神堕落/百万怨灵/业力结晶]
+        F[天狗<br/>东瀛使者/试探者]
+        G[狼妖<br/>冰属性/千年妖怪]
+        H[七恶念化身<br/>武藏将军等七个]
+    end
+
+    subgraph 华夏修真界
+        I[法海<br/>金山寺/远程支援/雷峰塔守护]
+        J[唐老<br/>巴渝巫觋/龙脉守护者]
+        K[清漪<br/>峨眉剑修/援军]
+    end
+
+    subgraph 东瀛反对派
+        L[神乐千鹤<br/>神官/内应]
+        M[葛叶<br/>妖狐/协助者]
+    end
+
+    A ---|千年情缘| C
+    A ---|姐妹情| B
+    A -.->|前世恩情| D
+    D -->|归还月华轮| A
+
+    E -.->|对立| A
+    E -->|控制| F
+    E -->|控制| G
+    E -->|分裂| H
+
+    I -->|指导| C
+    J -.->|先冲突后合作| A
+    K -->|支援| A
+
+    L -.->|暗中协助| A
+    M -->|从属| L
+</div>
+
+<h3>核心人物卡片</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 主角：白素素 ─────────────────────────────────────────────────┐
+│ 标签：【白蛇转世】+【汉服设计师】+【龙气承载者】                    │
+│ 标签印证：                                                        │
+│ • [白蛇转世] ← 第1集：「她的瞳孔在惊醒瞬间呈现淡金色竖瞳」         │
+│ • [汉服设计师] ← 第1集：「书桌展示数张精美汉服设计图——皆以白蛇、   │
+│   青蛇为灵感」                                                     │
+│ • [龙气承载者] ← 第10集：「白素素手腕蛇鳞纹路完全显现，形成完整    │
+│   蛇形图腾」                                                       │
+│ 弧线：普通设计师 → 记忆觉醒 → 龙气认主 → 跨国超度                  │
+│ 标签准确度：★★★★★                                               │
+└───────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 核心配角：青空（青蛇） ───────────────────────────────────────────┐
+│ 标签：【四百年守护】+【亦男亦女】+【自我牺牲】                      │
+│ 标签印证：                                                        │
+│ • [四百年守护] ← 第9集：「那夜我重伤濒死，是观音大士点化，让我在   │
+│   此守护龙脉，等你归来」                                           │
+│ • [亦男亦女] ← 第3集：「青衣僧人在此吐血题诗」+ 第4集：「约三十    │
+│   岁女性模样」                                                     │
+│ • [自我牺牲] ← 第35集：「青空燃烧妖丹，化作完全体青蛇，一口咬住   │
+│   百斩鬼分身，将其拖向坍塌区」                                     │
+│ 弧线：隐忍守护 → 重逢姐姐 → 获得龙气 → 断后牺牲                    │
+│ 标签准确度：★★★★★                                               │
+└───────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 核心配角：许吴悔（许仙转世） ─────────────────────────────────────┐
+│ 标签：【佛妖合一】+【温润护妻】+【承担者】                          │
+│ 标签印证：                                                        │
+│ • [佛妖合一] ← 第13集：「他右半身的白色蛇鳞纹路瞬间蔓延全身，      │
+│   佛光转化为白金色妖佛之力」                                       │
+│ • [温润护妻] ← 第1集：「他自然地坐在床边，用手背试白素素额头温度」 │
+│ • [承担者] ← 第27集：「我以许仙转世之名起誓——历史不会被遗忘，     │
+│   罪责不会被掩盖！」                                               │
+│ 弧线：普通男友 → 分身融合 → 佛妖合一 → 独守天台                    │
+│ 标签准确度：★★★★☆                                               │
+└───────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 反派：八岐大蛇 ──────────────────────────────────────────────────┐
+│ 标签：【堕落守护神】+【国家业力承载者】+【悲剧反派】                │
+│ 标签印证：                                                        │
+│ • [堕落守护神] ← 第29集：「千年前，它还是纯净的白蛇神，守护着      │
+│   东瀛列岛」                                                       │
+│ • [国家业力承载者] ← 第28集：「每一个因我国而死的魂魄，临死前的    │
+│   怨恨都化为锁链，缠在我这守护神身上」                             │
+│ • [悲剧反派] ← 第28集：「杀了我吧...连同这百万魂魄一起...让我们    │
+│   ...都解脱...」                                                   │
+│ 弧线：纯净神灵 → 被迫承载罪孽 → 疯狂 → 托付神格                    │
+│ 标签准确度：★★★★★（悲剧反派塑造出色）                            │
+└───────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<hr />
+<h2>四、剧本结构与冲突分布</h2>
+<h3>剧本结构曲线</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;张
+力  │
+强  │                                    ★★ 终极决战（29-35集）
+度  │                                   /
+    │                     ☆ 百鬼夜行   /
+    │                    /  （18-20集）/
+    │        ○ 初战天狗/ \           /
+    │       /（6集）   /   \    ☆龙气汇聚/
+    │      /         /     \  /（17集）
+    │     / ○ 三生初见      \/
+    │    /  （7集）         
+    │   / ○记忆觉醒（5集）  
+    │  /
+    │ / ○悬念铺垫（1-4集）
+    │/
+    └────────────────────────────────────────────────→ 集数
+      1    5    10    15    20    25    30    35&lt;/pre&gt;
+
+</code></pre>
+<h3>高潮点标注</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>集数</th>
+<th>事件描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小高潮①</td>
+<td>第5集</td>
+<td>白素素与明茗依视频连线，月华轮首次共鸣</td>
+</tr>
+<tr>
+<td>小高潮②</td>
+<td>第6集</td>
+<td>青空vs天狗初战，龙影首次显现</td>
+</tr>
+<tr>
+<td>小高潮③</td>
+<td>第7集</td>
+<td>机场三生初见，记忆爆发</td>
+</tr>
+<tr>
+<td>中高潮①</td>
+<td>第11-13集</td>
+<td>月食之夜，许吴悔佛妖合一</td>
+</tr>
+<tr>
+<td>中高潮②</td>
+<td>第17集</td>
+<td>三龙聚首，九龙之心完成认主</td>
+</tr>
+<tr>
+<td>中高潮③</td>
+<td>第18-19集</td>
+<td>百鬼夜行，法海远程支援</td>
+</tr>
+<tr>
+<td>大高潮</td>
+<td>第25-29集</td>
+<td>神识入侵八岐体内，真相揭示，超度开始</td>
+</tr>
+<tr>
+<td>终极危机</td>
+<td>第32-35集</td>
+<td>东渡日本，收容所越狱，青空断后</td>
+</tr>
+</tbody>
+</table>
+<h3>冲突热力图</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-table&quot;&gt;集数      1-5    6-10   11-15  16-20  21-25  26-30  31-35
+────────────────────────────────────────────────────────────
+主线冲突  🔥      🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥🔥  🔥🔥🔥🔥 🔥🔥🔥
+人物冲突  🔥🔥    🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥    🔥🔥🔥
+情感冲突  🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥      🔥🔥    🔥🔥🔥  🔥🔥🔥🔥
+内心冲突  🔥      🔥🔥    🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥🔥 🔥🔥🔥
+────────────────────────────────────────────────────────────
+冲突密度  中      高      高      中      高      极高    高&lt;/pre&gt;
+
+</code></pre>
+<h3>冲突线梳理</h3>
+<p><strong>1. 主线冲突：华夏龙脉保卫战</strong>
+- 起点（第3集）：「袁天罡封印'九龙之心'，护吾华夏」
+- 升级（第6集）：「天狗来袭，试探华夏龙脉」
+- 高潮（第18集）：「百鬼夜行，七日不绝。看你们能救几人！」
+- 转折（第26集）：「进入八岐体内，发现百万冤魂真相」</p>
+<p><strong>2. 情感冲突线：千年情缘再续</strong>
+- 起点（第1集）：「他自然地坐在床边，两人互动自然亲密」
+- 升级（第4集）：「我们大学就认识了，七年，还不够久吗？」
+- 高潮（第13集）：「若为护所爱，佛可成妖」</p>
+<p><strong>3. 人物冲突线：修真界内部分歧</strong>
+- 起点（第20集）：「唐老：如果我们都不选呢？」
+- 升级（第21集）：「唐老提议封印龙脉百年 vs 白素素坚持战斗」
+- 转折（第30集）：「唐老：都是你们！我的孙女...还有这么多道友...都不会死！」</p>
+<hr />
+<h2>五、前3集深度拆解（核心）</h2>
+<h3>第1集逐段分析（生死线）</h3>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00-0:30</td>
+<td>航拍重庆夜景+蛇形灯光异象</td>
+<td>黄金开场</td>
+<td>「所有灯笼火光同时扭曲成蛇形，但转瞬恢复正常」</td>
+<td>✅ 视觉抓人</td>
+</tr>
+<tr>
+<td>0:31-1:00</td>
+<td>白素素噩梦惊醒+金色竖瞳</td>
+<td>悬念建立</td>
+<td>「她的瞳孔在惊醒瞬间呈现淡金色竖瞳」</td>
+<td>✅ 身份暗示</td>
+</tr>
+<tr>
+<td>1:01-1:30</td>
+<td>许吴悔登场+日常互动</td>
+<td>双主角交代</td>
+<td>「'白蛇传'系列让你走火入魔了吧？」</td>
+<td>⚠️ 节奏略慢</td>
+</tr>
+<tr>
+<td>1:31-1:45</td>
+<td>浴室蛇鳞显现</td>
+<td>异象升级</td>
+<td>「水流过她手腕时，皮肤下隐约浮现青色蛇鳞纹路」</td>
+<td>✅ 视觉钩子</td>
+</tr>
+<tr>
+<td>1:46-2:00</td>
+<td>阳台对话+影子蛇形</td>
+<td>结尾钩子</td>
+<td>「她影子在阳光下隐约显出蛇形轮廓」</td>
+<td>⚠️ 钩子偏弱</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第1集代入感评分</strong>：6/10</p>
+<p><strong>问题点</strong>：
+1. 开场8秒内未建立明确对立力量，只有"异象暗示"
+2. 1:01-1:30的日常戏过长，削弱悬念感
+3. 结尾钩子"影子蛇形"不够直接，缺乏"非看下一集不可"的冲动</p>
+<h3>第2集分析</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跳切杭州明茗依</td>
+<td>明茗依看到设计图→胎记发光</td>
+<td>「工作室灯光忽明忽暗」</td>
+<td>「两人之间出现一道无形的金色光线连接」</td>
+<td>3/5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>问题</strong>：第1集结尾是白素素，第2集直接跳到杭州明茗依，缺乏过渡，双线并行但衔接不紧密</p>
+<h3>第3集分析</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>唐代闪回→现代华岩洞</td>
+<td>袁天罡封印龙脉→白素素触碰石壁</td>
+<td>「石壁泛起涟漪，如水面」+青空登场</td>
+<td>「龙形气运从洞中冲天而起」</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>亮点</strong>：唐代与现代的时空交错处理出色，青空登场具有神秘感</p>
+<h3>前3集总评</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代入速度</td>
+<td>□极快 □快 ☑一般（1集内） □慢</td>
+</tr>
+<tr>
+<td>信息密度</td>
+<td>□过载 □适中 ☑偏少（前2集）</td>
+</tr>
+<tr>
+<td>钩子循环</td>
+<td>□紧密 ☑一般 □松散</td>
+</tr>
+<tr>
+<td><strong>前3集整体评分</strong></td>
+<td><strong>6/10</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心问题</strong>：前3集花费6分钟（3×2分钟）才完成"白蛇身份暗示+龙脉概念引入"，对于短剧而言铺垫过长。建议第1集直接出现一次小型冲突（如天狗试探）提升代入感。</p>
+<hr />
+<h2>六、集间衔接度分析</h2>
+<h3>衔接度评分表</h3>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「影子显出蛇形轮廓」</td>
+<td>跳切杭州明茗依视角</td>
+<td>2/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「金色光线连接」</td>
+<td>唐代闪回袁天罡</td>
+<td>3/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>5→6</td>
+<td>「前世所寄，今生当归」</td>
+<td>青空独守华岩洞</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>6→7</td>
+<td>「夜袭初战，龙影惊现」</td>
+<td>机场接机</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>9→10</td>
+<td>「千年姐妹重逢，劫数已临」</td>
+<td>青空解释身份</td>
+<td>5/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>17→18</td>
+<td>「三龙聚首，九州为盾」</td>
+<td>八岐释放百鬼</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>27→28</td>
+<td>「一跪释百年怨」</td>
+<td>万魂窟内部真相</td>
+<td>5/5</td>
+<td>反转型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>平均衔接度</strong>：4/5（中后段明显优于前段）</p>
+<p><strong>衔接问题点</strong>：
+- 第1→2集跳切过大，应增加过渡镜头
+- 第2→3集闪回虽精彩但与前集关联弱</p>
+<hr />
+<h2>七、逻辑一致性检查</h2>
+<h3>伏笔回收检查</h3>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白素素手腕蛇鳞</td>
+<td>第1集</td>
+<td>第10集完全显现</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>明茗依宝轮胎记</td>
+<td>第2集</td>
+<td>第14集归还月华轮</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>袁天罡"四百岁龙醒"</td>
+<td>第3集</td>
+<td>第17集三龙聚首</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>许吴悔眼镜片金光</td>
+<td>第4集彩蛋</td>
+<td>第8集彩蛋</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>华岩洞青空血诗</td>
+<td>第3集闪回</td>
+<td>第9集完整吟诵</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>八岐"白蛇神"真身</td>
+<td>第26集暗示</td>
+<td>第27-28集揭示</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>神乐千鹤纸鹤</td>
+<td>第32集</td>
+<td>第33-35集引导</td>
+<td>✅ 已回收</td>
+</tr>
+</tbody>
+</table>
+<h3>时间线检查</h3>
+<p>☑ 连贯无矛盾</p>
+<p>时间脉络清晰：
+- 唐代袁天罡封印 → 清朝青空（白空）守护 → 2001年雷峰塔倒塌 → 现代（24年后）白素素觉醒</p>
+<h3>人物行为一致性</h3>
+<p>☑ 行为符合性格设定</p>
+<p>特别说明：
+- 许吴悔第27集"跪冤魂"行为，符合其"佛妖合一、承担者"人设
+- 青空第35集断后，符合其"自我牺牲守护姐姐"人设
+- 唐老从对抗到合作，符合"固执但有底线"人设</p>
+<h3>逻辑硬伤</h3>
+<ol>
+<li><strong>集数标注重复</strong>：第10集与第9集内容重复，第11-12集、第15-16集、第18-19集、第21-22集均有重复，需修正</li>
+<li><strong>战斗力体系模糊</strong>：八岐"地仙级"设定后，三人如何抗衡缺乏明确解释</li>
+</ol>
+<p><strong>逻辑一致性评分</strong>：8/10</p>
+<hr />
+<h2>八、投流素材清单</h2>
+<h3>高潜力投流片段</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>时长</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第7集 0:31-1:00</td>
+<td>30s</td>
+<td>反转型</td>
+<td>机场三人初见，光芒交汇</td>
+<td>「两人之间距离每缩短一米，光芒就增强一分」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第13集 1:21-1:40</td>
+<td>20s</td>
+<td>爽点型</td>
+<td>许吴悔佛妖合一反击</td>
+<td>「禅杖轻点，'卍'字佛印烙在天狗胸口」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第27集 1:01-1:20</td>
+<td>20s</td>
+<td>情感型</td>
+<td>许吴悔跪向冤魂</td>
+<td>「对不起...那一世，我是金山寺的许仙...」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第9集 1:21-1:40</td>
+<td>20s</td>
+<td>情感型</td>
+<td>白蛇青蛇姐妹相认</td>
+<td>「白素素流泪抱住青空：对不起...让你等了这么久」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第28集 0:00-0:35</td>
+<td>35s</td>
+<td>悬念型</td>
+<td>八岐真相揭示</td>
+<td>「不是我束缚他们——是他们束缚着我！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第11集 1:56-2:00</td>
+<td>5s</td>
+<td>爽点型</td>
+<td>许吴悔金句宣言</td>
+<td>「前世许仙，今生吴悔...今日，护我所爱」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第35集 1:41-1:55</td>
+<td>15s</td>
+<td>危机型</td>
+<td>青空断后牺牲</td>
+<td>「青空燃烧妖丹...姐姐，你们走！」</td>
+<td>★★★★★</td>
+</tr>
+</tbody>
+</table>
+<h3>投流类型分布</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冲突/打脸型</td>
+<td>3个</td>
+</tr>
+<tr>
+<td>反转/悬念型</td>
+<td>4个</td>
+</tr>
+<tr>
+<td>金句/名场面型</td>
+<td>5个</td>
+</tr>
+<tr>
+<td>情感/虐心型</td>
+<td>6个</td>
+</tr>
+<tr>
+<td>爽点/逆袭型</td>
+<td>4个</td>
+</tr>
+</tbody>
+</table>
+<p><strong>投流素材丰富度</strong>：★★★★☆
+<strong>最佳投流片段推荐</strong>：第7集"机场三生初见" + 第13集"佛妖合一"组合，前者情感向破圈，后者爽感向拉新</p>
+<hr />
+<h2>九、精彩片段提取</h2>
+<h3>高光片段</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段1：机场三生初见 ─────────────────────────────────────────┐
+│ 位置：第7集 1:01-1:40                                         │
+│ 类型：☑情感爆发 ☑名场面                                       │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「两人在人群中走向彼此。周围的一切仿佛慢放。                   │
+│ 特效：两人之间距离每缩短一米，光芒就增强一分：                 │
+│ 白素素手腕：白光如月华                                        │
+│ 明茗依肩头：金光如日轮                                        │
+│ 周围旅客被无形气场推开，自动让出三米直径的空地，               │
+│ 却无人察觉异常（结界效果）。                                  │
+│ ...                                                          │
+│ 指尖相触瞬间：                                                │
+│ 爆发性闪光！机场所有玻璃幕墙同时映出古代三宝寺的倒影」        │
+│                                                               │
+│ 上下文：明茗依专程从杭州飞重庆，与白素素首次见面               │
+│ 精彩点：视觉奇观+前世今生记忆爆发+情感高潮三合一               │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段2：许吴悔跪魂 ────────────────────────────────────────────┐
+│ 位置：第27集 0:36-1:20                                        │
+│ 类型：☑情感爆发 ☑反转揭示                                     │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「许吴悔做出了惊人举动。                                      │
+│ 他散去所有佛光防御，任由孩童冤魂撕咬神识体。                  │
+│ 然后，他对着数千冤魂，双膝跪下，额头触地。                    │
+│ 许吴悔（声音颤抖但清晰）：                                    │
+│ &quot;对不起...&quot;                                                   │
+│ &quot;那一世，我是金山寺的许仙，只顾自己的情爱，未能下山救世...    │
+│ 对不起。&quot;                                                     │
+│ &quot;这一世，我虽未生在那个年代，但我继承了这片土地...            │
+│ 继承了你们的鲜血换来的和平...&quot;                                │
+│ &quot;我无法改变过去，但我在此向你们承诺——只要我许吴悔一息尚存，  │
+│ 必不让此等惨剧，在这片土地重演！&quot;」                           │
+│                                                               │
+│ 上下文：神识进入八岐体内，面对被侵略者害死的华夏孩童冤魂      │
+│ 精彩点：以&quot;承担&quot;破&quot;怨恨&quot;，升华人物弧线，情感爆发极强          │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段3：八岐真相 ──────────────────────────────────────────────┐
+│ 位置：第28集 0:00-1:00                                        │
+│ 类型：☑反转揭示                                               │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「八岐意志（黑衣男）狂笑：                                    │
+│ &quot;看到了吗？不是我束缚他们——是他们束缚着我！&quot;                 │
+│ &quot;每一个因我国而死的魂魄，临死前的怨恨都化为锁链，             │
+│ 缠在我这守护神身上！百年积累，我已动弹不得！&quot;                 │
+│ &quot;我想救我的国度，就必须先承受这些罪孽...                      │
+│ 但我承受不住，所以疯了...                                     │
+│ 所以想抢你们的龙脉，用纯粹的力量强行扯断这些锁链！&quot;」         │
+│                                                               │
+│ 上下文：三人神识进入万魂窟，看到被锁链缠绕的白色巨蛇本体      │
+│ 精彩点：反派悲剧化、历史反思、道德灰色地带，极具深度          │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<h3>冲突写作示范</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 示范片段：修真界内部分歧 ─────────────────────────────────────┐
+│ 位置：第20-21集                                               │
+│ 冲突类型：人物冲突+立场冲突                                    │
+│                                                               │
+│ 原文：                                                        │
+│ 「唐老：&quot;听着，小姑娘。我们巫觋世家守护巴渝地脉八百年。       │
+│ 现在给你两个选择——&quot;                                          │
+│ &quot;一，你们三个立刻离开重庆，我们联手封印龙脉百年，            │
+│ 避过此劫。&quot;                                                   │
+│ &quot;二，继续打，但我们会视你们为'破坏地脉者'，与你们为敌。&quot;     │
+│ 白素素握拳：&quot;如果我们都不选呢？&quot;                              │
+│ 唐老身后，浮现七名戴傩戏面具的巫觋，气息强大。」              │
+│                                                               │
+│ 技巧分析：                                                    │
+│ 1. 两难选择制造冲突张力（封印=百年天灾，战斗=破坏地脉）       │
+│ 2. 权威vs新人的立场对立                                       │
+│ 3. 武力展示增加压迫感                                        │
+│ 4. 主角&quot;都不选&quot;的回应体现人物性格                            │
+└───────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<h3>金句清单</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「前世许仙，今生吴悔...今日，护我所爱」</td>
+<td>第11集</td>
+<td>许吴悔</td>
+<td>独守天台面对狼妖天狗</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「姐姐，四百年了...我终于等到你回来」</td>
+<td>第9集</td>
+<td>青空</td>
+<td>酒店首次相认</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「对不起...让你等了这么久」</td>
+<td>第9集</td>
+<td>白素素</td>
+<td>抱住青空</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「不是我束缚他们——是他们束缚着我！」</td>
+<td>第28集</td>
+<td>八岐</td>
+<td>万魂窟真相揭示</td>
+</tr>
+<tr>
+<td>悲壮型</td>
+<td>「告诉我的国民...对不起...还有...别再走老路了...」</td>
+<td>第28集</td>
+<td>八岐意志</td>
+<td>消散前遗言</td>
+</tr>
+<tr>
+<td>热血型</td>
+<td>「龙脉在自发净化！虽然很慢，但它没放弃！我们怎么能先放弃它？！」</td>
+<td>第21集</td>
+<td>明茗依</td>
+<td>修真议会</td>
+</tr>
+<tr>
+<td>牺牲型</td>
+<td>「姐姐...对不起...这次我可能...真的要先走了...」</td>
+<td>第35集彩蛋</td>
+<td>青空</td>
+<td>被巨石压住</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、核心亮点</h2>
+<h3>亮点1：白蛇IP现代化重构出色</h3>
+<p><strong>证据链</strong>：
+- 第1集：「书桌展示数张精美汉服设计图——皆以白蛇、青蛇为灵感」——以"汉服设计师"身份自然承接白蛇传统美学
+- 第3集：「袁天罡在此埋下龙脉种子」——将杭州故事移至重庆，融入巴渝文化
+- 第9集：「青空化身华岩洞义工守护四百年」——青蛇形象从"泼辣妹妹"转为"隐忍守护者"</p>
+<p><strong>分析</strong>：不简单翻拍经典，而是保留核心情感（千年情缘、姐妹情深）的同时，赋予现代职业身份+新地理空间+新世界观（龙脉/华夏vs东瀛），实现了"熟悉感+新鲜感"的平衡。</p>
+<p><strong>可复用技巧</strong>：经典IP改编公式 = 保留情感内核 + 更换时代外壳 + 引入新对立势力</p>
+<hr />
+<h3>亮点2：悲剧反派塑造深度罕见</h3>
+<p><strong>证据链</strong>：
+- 第28集：「每一个因我国而死的魂魄，临死前的怨恨都化为锁链」——解释反派"恶"的来源
+- 第29集：「它死前看着故乡森林的方向...」——连兽魂都有悲剧背景
+- 第28集：「告诉我的国民...对不起...还有...别再走老路了...」——反派临终遗言具有反思意义</p>
+<p><strong>分析</strong>：八岐大蛇不是单纯的"邪恶入侵者"，而是"被国家业力压垮的守护神"。这种设计让正邪对抗上升为"历史/命运"层面的对抗，深度超出同类短剧水准。</p>
+<p><strong>可复用技巧</strong>：悲剧反派公式 = 善良本源 + 被迫堕落 + 最终救赎愿望</p>
+<hr />
+<h3>亮点3：视觉奇观设计丰富</h3>
+<p><strong>证据链</strong>：
+- 第7集：「机场所有玻璃幕墙同时映出古代三宝寺的倒影」——现代空间叠加古代幻象
+- 第11集：「左半身是僧袍佛珠，右半身是现代装」——许吴悔佛妖合一的视觉设计
+- 第17集：「九道金色龙影从重庆各处地底冲出」——龙脉觉醒的壮观场面
+- 第26集：「七个节点：怨念之海、饥荒平原、恐惧火山...」——八岐体内的独特空间</p>
+<p><strong>分析</strong>：每一集都有至少1-2个可落地的视效亮点，为后期特效制作提供了清晰指引。</p>
+<hr />
+<h2>十一、关键问题</h2>
+<h3>问题1：前3集代入速度过慢</h3>
+<p><strong>证据链</strong>：
+- 第1集：全程"异象暗示"但无实际冲突 → 缺乏紧迫感
+- 第2集：跳切杭州明茗依，与第1集主角视角断裂 → 观众困惑
+- 直到第6集才出现第一次正面战斗 → 6分钟（3集）无动作戏</p>
+<p><strong>影响评估</strong>：短剧用户极度缺乏耐心，前3集无冲突可能导致大量流失</p>
+<p><strong>优化建议</strong>：
+- 方案A：第1集0:30加入一次"微型妖怪袭击+许吴悔本能保护"，提前展示世界观
+- 方案B：第1集结尾改为"白素素遭遇天狗试探，被神秘力量救下"作为强钩子</p>
+<hr />
+<h3>问题2：中段战斗戏重复感</h3>
+<p><strong>证据链</strong>：
+- 第11-13集：月食之夜vs狼妖天狗
+- 第18-19集：百鬼夜行vs各种妖怪
+- 第22-24集：南山战场vs雪女+百兽潮</p>
+<p><strong>模式相同</strong>：敌人来袭 → 众人分散 → 各自苦战 → 关键时刻逆转</p>
+<p><strong>影响评估</strong>：审美疲劳，中段流失风险</p>
+<p><strong>优化建议</strong>：
+- 减少"波次式战斗"，合并部分战斗集数
+- 增加"非战斗解决冲突"的戏份（如第27集跪魂，这种处理方式更精彩）</p>
+<hr />
+<h3>问题3：集数标注混乱（技术问题）</h3>
+<p><strong>证据链</strong>：
+- 第10集内容与第9集完全重复
+- 第11集与第12集重复
+- 第15集与第16集重复
+- 第18集与第19集重复
+- 第21集与第22集重复</p>
+<p><strong>影响评估</strong>：实际集数约为27-28集而非35集，需重新标注</p>
+<p><strong>优化建议</strong>：彻底检查并修正集数标注，确保无重复</p>
+<hr />
+<h2>十二、优化建议</h2>
+<h3>修改优先级排序</h3>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>前3集代入慢</td>
+<td>开场与代入</td>
+<td>中</td>
+<td>第1集加入微型冲突</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>集数重复标注</td>
+<td>全局</td>
+<td>低</td>
+<td>修正重复集数</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>单集字数超标</td>
+<td>节奏控制</td>
+<td>中</td>
+<td>压缩40%，每集控制在500字</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>中段战斗重复</td>
+<td>节奏控制</td>
+<td>高</td>
+<td>合并战斗、增加非战斗戏</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>政治敏感审核</td>
+<td>合规安全</td>
+<td>中</td>
+<td>"八嘎国"改为虚构国名</td>
+</tr>
+</tbody>
+</table>
+<h3>具体修改建议</h3>
+<p><strong>1. 第1集改写建议（最重要）</strong></p>
+<p>原版结尾：「她影子在阳光下隐约显出蛇形轮廓」</p>
+<p>建议改为：</p>
+<pre><code>【1:46-2:00】
+白素素走向阳台，突然感到一阵眩晕。
+她看向江面——一只巨大的乌鸦正盯着她，眼中闪着血红光芒。
+乌鸦发出刺耳尖啸，白素素瞬间头痛欲裂。
+许吴悔冲过来扶住她：&quot;素素！&quot;
+他的眼镜片倒影中，那只乌鸦正化为一道黑烟消散。
+但同时，他的瞳孔深处第一次闪过金色佛光——
+黑屏字幕：&quot;有些东西，正在苏醒&quot;
+</code></pre>
+<p><strong>2. 敏感内容调整建议</strong></p>
+<ul>
+<li>"八嘎国" → 改为"东瀛"或虚构国名"岐国"</li>
+<li>"靖国神社" → 改为"幽冥神社"或"战魂殿"</li>
+<li>删除具体历史事件名称（如"南京""重庆大轰炸"），改为"那场战争""那些惨剧"的模糊表述</li>
+</ul>
+<hr />
+<h2>十三、下一步建议</h2>
+<table>
+<thead>
+<tr>
+<th>决策项</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发状态</td>
+<td>☑ 小幅修改后开发（预计2-3周）</td>
+</tr>
+<tr>
+<td>预估开发周期</td>
+<td>剧本修改2周 + 特效预演1周</td>
+</tr>
+<tr>
+<td>预估制作预算</td>
+<td>中高预算（大量特效场景）</td>
+</tr>
+<tr>
+<td>风险提示</td>
+<td>1. 政治敏感需提前报备审核<br/>2. 特效量大需控制预算<br/>3. 战斗戏重复需重点打磨差异化</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>附录：付费卡点分析（建议）</h2>
+<table>
+<thead>
+<tr>
+<th>卡点</th>
+<th>位置</th>
+<th>情绪铺垫</th>
+<th>钩子设计</th>
+<th>有效性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卡一</td>
+<td>第7集结尾</td>
+<td>三生初见记忆爆发</td>
+<td>「前世今生，于此重逢」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>卡二</td>
+<td>第14集结尾</td>
+<td>月华轮被夺，绝境</td>
+<td>「法宝被夺，绝境已临」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>卡三</td>
+<td>第27集结尾</td>
+<td>冤魂超度开始</td>
+<td>「神格托付，往生初开」</td>
+<td>★★★★★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>评估结论</h2>
+<p>```</p>
+<div class="section-title">评估完成</div>
+
+<p>决策：CONSIDER
+评级：A+
+总分：77/100</p>
+<p>核心判断：
+《白蛇归来》是一部高概念、高视效空间、情感线扎实的国风玄幻短剧。
+其最大优势在于：
+1. 白蛇IP现代化重构成功，兼具熟悉感与新鲜感
+2. 悲剧反派塑造深度罕见，超越同类作品
+3. 视觉奇观设计丰富，特效落地指引清晰</p>
+<p>需解决的核心问题：
+1. 前3集代入过慢，需加入早期冲突
+2. 中段战斗戏重复，需压缩合并
+3. 敏感内容需调整表述</p>
+<p>综合建议：经2-3周修改后可进入开发，预估具备头部短剧潜力。</p>
+<p>════════════════════════════════════════════════════════════════</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

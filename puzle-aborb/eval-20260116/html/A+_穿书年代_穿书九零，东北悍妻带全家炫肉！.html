@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ 穿书年代 穿书九零，东北悍妻带全家炫肉！</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<h1>剧本评估报告</h1>
+<h2>基本信息</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>剧本名称</strong></td>
+<td>《穿书九零，东北悍妻带全家炫肉！》</td>
+</tr>
+<tr>
+<td><strong>类型/题材</strong></td>
+<td>穿书 + 年代 + 甜宠 + 逆袭</td>
+</tr>
+<tr>
+<td><strong>目标平台</strong></td>
+<td>短剧平台（短视频竖屏短剧）</td>
+</tr>
+<tr>
+<td><strong>总集数</strong></td>
+<td>目前提供30集</td>
+</tr>
+<tr>
+<td><strong>评估日期</strong></td>
+<td>2026-01-20</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>一、评估结论</h2>
+<p><strong>决策：【 CONSIDER 】</strong></p>
+<p><strong>评级：【 A+ 】</strong></p>
+<p><strong>总分：77/100</strong></p>
+<h3>一句话结论</h3>
+<p>开场爽感极强、人物鲜明、节奏紧凑的年代穿书爽剧，核心爽点清晰但情感深度和故事厚度有待加强，建议优化情感线递进后进入开发。</p>
+<hr />
+<h2>二、9维度能力雷达图</h2>
+<h3>能力分布图</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;              开场与代入(8.5/10)
+                    ▲
+                   /|\
+                  / | \
+      市场适配  /  |  \  节奏控制
+      (8/10)  /   |   \ (8/10)
+             /    |    \
+            /     |     \
+           /      |      \
+    视听可拍 ─────┼───── 情绪设计
+     (7.5/10)    |      (7/10)
+           \     |     /
+            \    |    /
+             \   |   /
+      创意题材 \ | / 故事结构
+      (7/10)   \|/  (7.5/10)
+                ▼
+           台词质量(8.5/10)
+                |
+           人物塑造(7.5/10)&lt;/pre&gt;
+
+</code></pre>
+<h3>维度评分表</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8.5/10</td>
+<td>18%</td>
+<td>15.3</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>8/10</td>
+<td>15%</td>
+<td>12.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>7/10</td>
+<td>12%</td>
+<td>8.4</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7.5/10</td>
+<td>12%</td>
+<td>9.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>7.5/10</td>
+<td>10%</td>
+<td>7.5</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>8.5/10</td>
+<td>8%</td>
+<td>6.8</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>7.5/10</td>
+<td>8%</td>
+<td>6.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td>-</td>
+<td>100%</td>
+<td><strong>77.8</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：台词质量 - 东北方言运用生动、金句频出、个性化强
+<strong>次强项</strong>：开场与代入 - 穿越设定快速建立、第一集即有强冲突爽点
+<strong>最弱项</strong>：情绪设计 - 爽感为主、虐点和深度情感不足
+<strong>次弱项</strong>：创意题材 - 穿书年代题材已有一定同质化</p>
+<hr />
+<h2>三、人物关系图谱</h2>
+<h3>人物统计</h3>
+<ul>
+<li><strong>总人物数</strong>：13人</li>
+<li><strong>核心人物</strong>：6人（有名有戏份）</li>
+<li><strong>正派阵营</strong>：6人（黄英、宋景书、宋安安、宋雪儿、黄凯、徐慧敏/黄忠诚）</li>
+<li><strong>反派阵营</strong>：5人（李凤芹、宋大海、林茵、宋晨、许珍珍）</li>
+<li><strong>中立/摇摆</strong>：2人（宋景文、许珍珍后期转变）</li>
+</ul>
+<h3>关系图（Mermaid格式）</h3>
+<div class="mermaid">
+graph TB
+    subgraph "正派阵营-核心家庭"
+        A["黄英<br/>穿越者/泼辣/独立"]
+        B["宋景书<br/>隐忍/深情/顾家"]
+        C["宋安安<br/>5岁/怯懦→勇敢"]
+        D["宋雪儿<br/>5岁/傲娇/嘴硬心软"]
+    end
+
+    subgraph "正派阵营-娘家"
+        E["黄凯<br/>弟弟/创业伙伴"]
+        F["徐慧敏<br/>母亲/支持者"]
+    end
+
+    subgraph "反派阵营-婆家"
+        G["李凤芹<br/>恶婆婆/偏心"]
+        H["宋大海<br/>重男轻女/古板"]
+        I["宋景文<br/>大哥/正派中立"]
+        J["林茵<br/>大嫂/嫉妒敌视"]
+        K["宋晨<br/>5岁/被娇惯"]
+    end
+
+    subgraph "外部势力"
+        L["许珍珍<br/>小三/后期转变"]
+    end
+
+    A ===|夫妻甜宠主线| B
+    A -->|母子| C
+    A -->|母女| D
+    A -.->|姐弟创业| E
+    A -->|女儿| F
+
+    B -->|父子| C
+    B -->|父女| D
+    B -.->|兄弟关系| I
+    B -->|子| G
+    B -->|子| H
+
+    G -.->|偏爱| I
+    G -.->|偏爱| K
+    G -.->|厌恶| A
+    G -->|撮合| L
+
+    I ===|夫妻| J
+    I -->|父子| K
+
+    J -.->|敌视| A
+    L -.->|追求| B
+    L -.->|敌视| A
+</div>
+
+<h3>核心人物卡片</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 主角：黄英 ──────────────────────────────────────────────────┐
+│ 标签：【穿越者】+【泼辣悍妻】+【创业女强人】                      │
+│ 标签印证：                                                       │
+│ • [穿越者] ← 第1集：「这不是我昨晚上熬夜看的小说吗？原主放着这么  │
+│   好的老公不要，整天一门心思倒贴他大哥，落得个悲惨结局，脑子有泡  │
+│   吧？」                                                         │
+│ • [泼辣悍妻] ← 第3集：「重男轻女的老毕登，以后再让我听见你这么说  │
+│   我闺女，我把你房子点了你信不？」                                │
+│ • [创业女强人] ← 第21集：「盒饭三块三块！买盒饭送奶茶了！」       │
+│ 弧线：[穿越接受现实] → [保卫家庭] → [创业独立]                   │
+│ 标签准确度：★★★★★                                              │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 男主：宋景书 ────────────────────────────────────────────────┐
+│ 标签：【深情隐忍】+【顾家好男人】+【护妻狂魔】                    │
+│ 标签印证：                                                       │
+│ • [深情隐忍] ← 第5集：「狗叫声响起，宋景书睁开眼睛，悄悄转过身，  │
+│   借着月光看着黄英，眼神深情又忐忑。宋景书OS：你真想通了吗？」     │
+│ • [顾家好男人] ← 第16集：「吃烤鸭还挑日子啊，上次你爷生日，我看   │
+│   你们吃的馋嘴麻舌的，就又买了只。」                              │
+│ • [护妻狂魔] ← 第9集：「宋景书一把掀翻桌子...既然不想好好吃饭，   │
+│   那就都别吃了。」                                               │
+│ 弧线：[被原主伤害不信任] → [逐渐被感动] → [全力支持]             │
+│ 标签准确度：★★★★☆                                              │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 反派：李凤芹 ────────────────────────────────────────────────┐
+│ 标签：【恶婆婆】+【偏心眼】+【搅屎棍】                            │
+│ 标签印证：                                                       │
+│ • [恶婆婆] ← 第2集：「当然不行了！景书挣点钱都被你这败家玩意儿    │
+│   赌没了，还拉一屁眼子饥荒，把他害那么惨，你说不离就不离了？」     │
+│ • [偏心眼] ← 第8集：「李凤芹起身将烤鸭和凉菜换了个地方...景文     │
+│   最爱吃鸡了，快吃，我炖的可烂糊了。」                            │
+│ • [搅屎棍] ← 第8集：「我和老许家说好了，他家姑娘嫁给景书，人家    │
+│   不介意当后妈！」                                               │
+│ 弧线：[极度偏心刁难] → [持续作妖] → [（简纲提示）后期转变]        │
+│ 标签准确度：★★★★★                                              │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<hr />
+<h2>四、剧本结构与冲突分布</h2>
+<h3>剧本结构曲线</h3>
+<pre><code>张
+力  │
+强  │                                        ？（后续高潮）
+
+&lt;pre class=&quot;ascii-art&quot;&gt;度  │
+    │              ☆ 掀桌护妻(第9集)      ○ 发现卖盒饭(第30集)
+    │             /         \            /
+    │    ○ 点房子/           \   ○ 护摊 /
+    │   (第3集) /             \  (25集)/
+    │  /      \/               \/    /
+    │ / 撕离婚证                    /
+    │/(第1集)                      /
+    │                             
+    └────────────────────────────────────────────────────────→ 集数
+      1    5    10    15    20    25    30&lt;/pre&gt;
+
+</code></pre>
+<h3>高潮点标注</h3>
+<ul>
+<li><strong>小高潮①（第1集）</strong>：黄英撕毁离婚证，拒绝离婚</li>
+<li><strong>小高潮②（第3集）</strong>：黄英点房子护女儿</li>
+<li><strong>中高潮①（第9集）</strong>：宋景书掀桌护妻，一家四口离席</li>
+<li><strong>小高潮③（第25集）</strong>：黄英智斗小贩陷害</li>
+<li><strong>中高潮②（第30集）</strong>：宋景书发现黄英卖盒饭（悬念）</li>
+</ul>
+<h3>冲突热力图</h3>
+<pre><code>
+&lt;pre class=&quot;ascii-table&quot;&gt;集数        1-5      6-10     11-15    16-20    21-25    26-30
+────────────────────────────────────────────────────────────────
+主线冲突   🔥🔥🔥🔥   🔥🔥🔥    🔥🔥      🔥🔥      🔥🔥🔥    🔥🔥🔥
+人物冲突   🔥🔥🔥    🔥🔥🔥🔥   🔥🔥      🔥🔥      🔥🔥      🔥🔥
+情感冲突   🔥🔥      🔥🔥🔥    🔥🔥🔥    🔥🔥🔥    🔥🔥      🔥🔥
+────────────────────────────────────────────────────────────────
+冲突密度   极高      高        中        中        高        高
+（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）&lt;/pre&gt;
+
+</code></pre>
+<h3>冲突线梳理</h3>
+<p><strong>1. 主线冲突：穿越黄英 vs 原主人设</strong>
+- 起点（第1集）：「黄英猛地上前一把拿起离婚证撕的稀碎...原主脑子有泡，我可没有！来都来了，这老公我要定了！」
+- 升级（第5集）：「宋景书OS：她今天这么反常，到底要干啥？」
+- 持续（第10集）：「宋景书（紧紧盯着黄英）OS：为啥短短几天，她变化这么大？...你到底是谁？」</p>
+<p><strong>2. 家庭冲突线：黄英 vs 恶婆婆公公</strong>
+- 起点（第2集）：「我都给他找好新媳妇了，你痛快的腾地方！」
+- 升级（第3集）：点房子护女
+- 高潮（第9集）：掀桌离席</p>
+<p><strong>3. 情感冲突线：黄英 vs 宋景书的信任危机</strong>
+- 起点（第1集）：原主曾说「你知道我跟你结婚，就是为了能天天看见你大哥」
+- 升级（第7集）：黄英扑向宋景文方向，实则扑向宋景书
+- 转折（第23集）：宋景书主动亲吻黄英</p>
+<p><strong>4. 事业冲突线：黄英创业 vs 外部阻力</strong>
+- 起点（第20集）：黄英开始卖盒饭
+- 升级（第25集）：小贩陷害假装中毒
+- 悬念（第30集）：宋景书发现黄英卖盒饭</p>
+<hr />
+<h2>五、前3集深度拆解（核心）</h2>
+<h3>第1集逐段分析（生死线）</h3>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>开场激烈冲突</td>
+<td>黄金开场</td>
+<td>「宋景书：英子，我哪儿做的不好，你说我改，不离婚行不行？」</td>
+<td>✓ 强冲突</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>人设+矛盾交代</td>
+<td>双交代</td>
+<td>「黄英：宋景书，你知道我跟你结婚，就是为了能天天看见你大哥。」</td>
+<td>✓ 极速</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>原主作死行为</td>
+<td>冲突建立</td>
+<td>「黄英厌恶的将一对儿女甩到地上，扒拉开宋景书毫不犹豫出门。」</td>
+<td>✓ 矛盾激烈</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>穿越反转</td>
+<td>核心爽点</td>
+<td>「黄英猛地上前一把拿起离婚证撕的稀碎...来都来了，这老公我要定了！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>追回老公</td>
+<td>钩子</td>
+<td>「黄英（挥手大喊）：老公，我回家等你！」</td>
+<td>中偏强</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第1集代入感评分</strong>：9/10
+<strong>亮点</strong>：
+- 开场即高能，用闪回+现实对比迅速建立反差
+- 穿越者视角的内心OS增加了趣味性和代入感
+- "撕离婚证"是极强的视觉化动作爽点</p>
+<h3>第2集分析</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黄英回家发现整洁的家</td>
+<td>黄英决定做饭，与婆婆抢肉</td>
+<td>俩孩子态度转变、婆婆来抢肉</td>
+<td>「李凤芹伸手去抢肉，和黄英一人拽一头」</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<h3>第3集分析</h3>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抢肉对峙</td>
+<td>黄英点房子护女</td>
+<td>宋景书护妻：「以后谁再敢说她是赔钱货，点房子都是轻的」</td>
+<td>宋景书攥住扫帚护黄英</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<h3>前3集总评</h3>
+<ul>
+<li><strong>代入速度</strong>：☑极快（3秒入戏）</li>
+<li><strong>信息密度</strong>：☑适中</li>
+<li><strong>钩子循环</strong>：☑紧密</li>
+<li><strong>前3集整体评分</strong>：8.5/10</li>
+</ul>
+<hr />
+<h2>六、集间衔接度分析</h2>
+<h3>衔接度评分表（关键节点）</h3>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「老公，我回家等你！」</td>
+<td>黄英回到家中</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「一人拽一头（抢肉）」</td>
+<td>「黄英用力一拽，肉甩出漂亮弧线」</td>
+<td>5/5</td>
+<td>冲突型</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>宋景书攥住扫帚护黄英</td>
+<td>继续护妻场面</td>
+<td>5/5</td>
+<td>冲突型</td>
+</tr>
+<tr>
+<td>8→9</td>
+<td>「宋景书起身，一把掀翻桌子」</td>
+<td>「杯盘狼藉，洒满一地」</td>
+<td>5/5</td>
+<td>冲突型</td>
+</tr>
+<tr>
+<td>9→10</td>
+<td>「李凤芹满脸堆笑...许珍珍站在门外」</td>
+<td>「许珍珍要嫁给你呢！」</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>29→30</td>
+<td>「宋景书远远跟在后面」</td>
+<td>宋景书发现黄英卖盒饭</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>平均衔接度</strong>：4.5/5</p>
+<p><strong>衔接问题点</strong>：
+- 部分过渡集（如11-15集）节奏稍慢，需要更强的集间钩子
+- 创业线和家庭线有时切换略显生硬</p>
+<hr />
+<h2>七、逻辑一致性检查</h2>
+<h3>伏笔回收检查</h3>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原主欠赌债</td>
+<td>第0集简纲</td>
+<td>第2集提及</td>
+<td>✓已回收（部分）</td>
+</tr>
+<tr>
+<td>宋景书对黄英的不信任</td>
+<td>第1集</td>
+<td>第10集「你到底是谁？」</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>许珍珍当小三意图</td>
+<td>第9集</td>
+<td>第14/30集持续发展</td>
+<td>○进行中</td>
+</tr>
+<tr>
+<td>黄英创业瞒着宋景书</td>
+<td>第13集</td>
+<td>第30集发现</td>
+<td>○进行中</td>
+</tr>
+<tr>
+<td>婆家后期态度转变</td>
+<td>第0集简纲</td>
+<td>-</td>
+<td>✗未回收</td>
+</tr>
+</tbody>
+</table>
+<h3>时间线检查</h3>
+<p>☑ 连贯无矛盾
+- 事件发展符合逻辑顺序
+- 孩子年龄设定统一（5岁）</p>
+<h3>人物行为一致性</h3>
+<p>☑ 行为符合性格设定
+- 黄英的泼辣和护短前后一致
+- 宋景书的隐忍与爆发有合理触发条件
+- 李凤芹的偏心与刁难行为连贯</p>
+<h3>逻辑硬伤</h3>
+<p>无明显逻辑硬伤。</p>
+<p><strong>逻辑一致性评分</strong>：8.5/10</p>
+<hr />
+<h2>八、投流素材清单</h2>
+<h3>高潜力投流片段</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集</td>
+<td>反转型</td>
+<td>撕离婚证</td>
+<td>「黄英猛地上前一把拿起离婚证撕的稀碎，扬起，笑颜如花看着宋景书...原主脑子有泡，我可没有！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第3集</td>
+<td>冲突+霸气型</td>
+<td>点房子护女</td>
+<td>「重男轻女的老毕登，以后再让我听见你这么说我闺女，我把你房子点了你信不？」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第9集</td>
+<td>爽点型</td>
+<td>掀桌护妻</td>
+<td>「宋景书一把掀翻桌子，杯盘狼藉...既然不想好好吃饭，那就都别吃了。」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第7集</td>
+<td>霸气教子</td>
+<td>教孩子反击</td>
+<td>「别人抢你东西，你给我抢回来，别人打你，你给我打回来...不服就干！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第17集</td>
+<td>金句怼人</td>
+<td>怼多管闲事邻居</td>
+<td>「大道上掏粪车路过，你是不还得拿个少尝尝咸淡？」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第18集</td>
+<td>反转+冲突</td>
+<td>婆媳头撞头</td>
+<td>「黄英一把薅起李凤芹的头发，用力往林茵的脑瓜子上撞」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第8集</td>
+<td>甜宠反差</td>
+<td>扑向宋景书而非大哥</td>
+<td>「众人一脸懵。黄英：我抱得就是你呀！一早上没见你，我老想你了。」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8</td>
+<td>第26集</td>
+<td>霸气宣言</td>
+<td>警告小贩</td>
+<td>「要是有人就不想世界和平，非要搞事，把我整急眼了，谁他妈也别想好过！」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<h3>投流类型分布</h3>
+<ul>
+<li><strong>冲突/打脸型</strong>：4个</li>
+<li><strong>反转/悬念型</strong>：2个</li>
+<li><strong>金句/名场面型</strong>：3个</li>
+<li><strong>情感/虐心型</strong>：1个</li>
+<li><strong>爽点/逆袭型</strong>：3个</li>
+</ul>
+<p><strong>投流素材丰富度</strong>：★★★★★
+<strong>最佳投流片段推荐</strong>：
+1. 第1集"撕离婚证"——穿越反转+视觉冲击
+2. 第3集"点房子护女"——霸气金句+极端行为
+3. 第17集"尝尝咸淡"——东北方言金句</p>
+<hr />
+<h2>九、精彩片段提取</h2>
+<h3>高光片段</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段1：撕离婚证 ──────────────────────────────────────────────┐
+│ 位置：第1集                                                      │
+│ 类型：☑反转揭示 ☑名场面                                         │
+│                                                                  │
+│ 完整原文：                                                       │
+│ 「工作人员：行，没异议我就盖章了。                                │
+│   △工作人员拿着章，往离婚证上盖去。                              │
+│   △黄英猛地上前一把拿起离婚证撕的稀碎，扬起，笑颜如花看着宋景书。│
+│   黄英OS：原主脑子有泡，我可没有！来都来了，这老公我要定了！」    │
+│                                                                  │
+│ 上下文：穿越刚发生，在民政局即将完成离婚手续                      │
+│ 精彩点：极强的反转感、穿越者觉醒的仪式感、&quot;来都来了&quot;的金句       │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段2：点房子护女 ──────────────────────────────────────────────┐
+│ 位置：第3集                                                      │
+│ 类型：☑冲突高潮 ☑台词金句 ☑名场面                               │
+│                                                                  │
+│ 完整原文：                                                       │
+│ 「黄英：重男轻女的老毕登，以后再让我听见你这么说我闺女，我把你    │
+│   房子点了你信不？                                               │
+│   △宋雪儿诧异看着黄英。                                         │
+│   宋大海（笑容轻蔑）：我就说了，赔钱货！你点一个我看看？          │
+│   △黄英大步走出门外。                                           │
+│   △黄英走到中间主屋，从兜里掏出火柴，划出火苗，扔到了点火的      │
+│   碎柴上，瞬间燃起火苗。」                                       │
+│                                                                  │
+│ 上下文：公公骂女儿&quot;赔钱货&quot;，黄英说到做到                        │
+│ 精彩点：极端行为但符合人设、言出必行的震撼感                      │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+
+
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 片段3：掀桌护妻 ──────────────────────────────────────────────┐
+│ 位置：第9集                                                      │
+│ 类型：☑冲突高潮 ☑情感爆发                                       │
+│                                                                  │
+│ 完整原文：                                                       │
+│ 「宋大海：那你就跟你妈一起滚！两个赔钱货！                        │
+│   △宋景书起身，一把掀翻桌子。                                   │
+│   △杯盘狼藉，洒满一地，众人震惊。                               │
+│   黄英OS：老公好帅！                                             │
+│   宋景书：既然不想好好吃饭，那就都别吃了。（拉起黄英的手，看向    │
+│   俩孩子）安安，雪儿，回家。」                                   │
+│                                                                  │
+│ 上下文：公公持续侮辱黄英和女儿，宋景书爆发                        │
+│ 精彩点：隐忍男主的爆发、为家人不惜与父母决裂的担当               │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<h3>冲突写作示范</h3>
+<pre><code>
+&lt;pre class=&quot;character-card&quot;&gt;┌─ 示范片段：婆媳抢肉对峙 ────────────────────────────────────────┐
+│ 位置：第2-3集                                                    │
+│ 冲突类型：人物冲突 + 价值观冲突                                   │
+│                                                                  │
+│ 原文：                                                           │
+│ 「李凤芹：还有这块肉，是我们老宋家东西，你别想拿走！              │
+│   △李凤芹伸手去抢肉，和黄英一人拽一头。                         │
+│   （第3集）                                                      │
+│   △黄英用力一拽，肉甩出漂亮弧线，给了李凤芹一巴掌。              │
+│   李凤芹：你敢打我？！                                           │
+│   黄英：你可别胡咧咧，是肉打的。」                               │
+│                                                                  │
+│ 技巧分析：                                                       │
+│ 1. 物化冲突：用&quot;一块肉&quot;具象化婆媳争夺                           │
+│ 2. 跨集悬念：第2集结尾留在抢肉高潮，第3集开场立即承接            │
+│ 3. 意外化解：肉&quot;打人&quot;的黑色幽默化解了直接暴力                   │
+│ 4. 金句收尾：「是肉打的」——既是辩解又是嘲讽                     │
+└──────────────────────────────────────────────────────────────────┘&lt;/pre&gt;
+
+</code></pre>
+<h3>金句清单（按类型分类）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「重男轻女的老毕登，以后再让我听见你这么说我闺女，我把你房子点了你信不？」</td>
+<td>第3集</td>
+<td>黄英</td>
+<td>护女</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「别人抢你东西，你给我抢回来，别人打你，你给我打回来...不服就干！」</td>
+<td>第7集</td>
+<td>黄英</td>
+<td>教子</td>
+</tr>
+<tr>
+<td>怼人型</td>
+<td>「大道上掏粪车路过，你是不还得拿个少尝尝咸淡？」</td>
+<td>第17集</td>
+<td>黄英</td>
+<td>怼邻居</td>
+</tr>
+<tr>
+<td>怼人型</td>
+<td>「像画我就挂墙上了。」</td>
+<td>第17集</td>
+<td>黄英</td>
+<td>怼婆婆</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「原主脑子有泡，我可没有！来都来了，这老公我要定了！」</td>
+<td>第1集</td>
+<td>黄英</td>
+<td>穿越觉醒</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「你可别胡咧咧，是肉打的。」</td>
+<td>第3集</td>
+<td>黄英</td>
+<td>婆媳冲突</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「我还比他先死呢，他咋不让让我？」</td>
+<td>第7集</td>
+<td>黄英</td>
+<td>怼公公</td>
+</tr>
+<tr>
+<td>深情型</td>
+<td>「你真想通了吗？」</td>
+<td>第5集</td>
+<td>宋景书OS</td>
+<td>月下凝视</td>
+</tr>
+<tr>
+<td>价值观型</td>
+<td>「妹妹你记住咯，以后要是哪个男的因为你会干活娶你，那不是爱你，是把你当老妈子使呢。」</td>
+<td>第14集</td>
+<td>黄英</td>
+<td>怼许珍珍</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、核心亮点</h2>
+<h3>亮点1：极强的开场代入与穿越反差</h3>
+<p><strong>证据链：</strong>
+- 第1集：「这不是我昨晚上熬夜看的小说吗？原主放着这么好的老公不要，整天一门心思倒贴他大哥，落得个悲惨结局，脑子有泡吧？」
+- 第1集：「黄英猛地上前一把拿起离婚证撕的稀碎」
+- 第2集：「原主那山炮，老公又帅又体贴，还有一对这么可爱的儿女，咋就不好好过日子？」</p>
+<p><strong>分析</strong>：穿越设定在第一集前30秒内完成，通过闪回对比+内心独白双线，让观众迅速理解"原主vs新黄英"的反差，代入感极强。</p>
+<p><strong>可复用技巧</strong>：穿越剧开场用"原主作死"vs"新人设纠正"的极端对比，3秒内建立爽感。</p>
+<h3>亮点2：东北方言金句的精准运用</h3>
+<p><strong>证据链：</strong>
+- 第3集：「重男轻女的老毕登」
+- 第17集：「大道上掏粪车路过，你是不还得拿个少尝尝咸淡？」
+- 第17集：「像画我就挂墙上了」
+- 第3集：「你可别胡咧咧，是肉打的」</p>
+<p><strong>分析</strong>：台词高度个性化，东北方言的运用既增加了地域特色，又让怼人金句更加生动有力，非常适合短视频传播。</p>
+<p><strong>可复用技巧</strong>：方言金句要"意思到位+表达新奇"，「尝尝咸淡」「挂墙上」都是熟悉的骂人场景但措辞新颖。</p>
+<h3>亮点3：男主人设的"隐忍+爆发"反差</h3>
+<p><strong>证据链：</strong>
+- 第4集：「宋景书：我知道你们都不喜欢雪儿，但她是我闺女，以后谁再敢说她是赔钱货，点房子都是轻的。」
+- 第9集：「宋景书一把掀翻桌子...既然不想好好吃饭，那就都别吃了。」
+- 第4集：「宋景书：不是你自己说的么？这辈子有我哥就够了，你本来就不该指望我。」</p>
+<p><strong>分析</strong>：宋景书日常是隐忍顾家的好男人，但在家人被欺负时的爆发极具张力。掀桌+怼父亲的场面既解气又立住了"护妻狂魔"人设。</p>
+<p><strong>可复用技巧</strong>：隐忍型男主的爆发点要设计在"守护家人"的临界点，让爆发显得合理且解气。</p>
+<hr />
+<h2>十一、关键问题</h2>
+<h3>问题1：情感递进缺乏虐点，爽感单一</h3>
+<p><strong>证据链：</strong>
+- 全30集中，黄英与宋景书的关系几乎是单向递进，缺少真正的误会、分离、虐心
+- 第10集：「宋景书（紧紧盯着黄英）OS：为啥短短几天，她变化这么大？宋景书：你到底是谁？」——这个悬念设置后并未深入发展
+- 宋景书发现黄英卖盒饭（第30集）的矛盾潜力未充分释放</p>
+<p><strong>影响评估</strong>：
+- 情绪曲线过于平坦，缺少"虐后回甘"的情感高潮
+- 观众可能感到"爽但不够揪心"，复看粘性降低</p>
+<p><strong>优化建议</strong>：
+- 强化"你到底是谁"这条线，让宋景书产生真正的怀疑/误会
+- 在创业线中加入更大的挫折和夫妻共患难的情节
+- 可设计一场"黄英被误解为回归原主作风"的虐心戏</p>
+<h3>问题2：反派层次不够丰富</h3>
+<p><strong>证据链：</strong>
+- 李凤芹、宋大海、林茵的"坏"过于单一，都是"偏心+刁难"
+- 第8集：李凤芹倒腾菜、推荐许珍珍——行为模式重复
+- 许珍珍的"小三"设定过于传统，缺少复杂动机</p>
+<p><strong>影响评估</strong>：
+- 反派行为可预测性高，降低悬念感
+- 观众可能产生"怼完一轮又是同样的套路"的疲劳感</p>
+<p><strong>优化建议</strong>：
+- 给李凤芹设计一个"偏心的合理化理由"（如大儿子曾救过她的命）
+- 让许珍珍后期真正成为独立女性的盟友，增加人物弧线
+- 可引入外部反派（如赌债追债人、商业竞争对手）丰富冲突来源</p>
+<h3>问题3：创业线与家庭线融合度不足</h3>
+<p><strong>证据链：</strong>
+- 第13-21集创业线开启后，与家庭冲突线基本独立发展
+- 黄英瞒着宋景书创业的动机（「我不想再祸害他」第13集）设置合理，但后续未产生足够的戏剧张力
+- 第30集发现卖盒饭后的冲突尚未展开</p>
+<p><strong>影响评估</strong>：
+- 双线叙事时观众注意力分散
+- 创业线目前主要靠"小贩陷害"这类外部冲突，与核心情感线脱节</p>
+<p><strong>优化建议</strong>：
+- 让创业与家庭冲突产生交集（如婆婆故意破坏生意、许珍珍也开始做餐饮竞争）
+- 宋景书发现后不是单纯的"感动"，而是"心疼+吵架+和好"的完整情绪曲线</p>
+<hr />
+<h2>十二、优化建议</h2>
+<h3>修改优先级排序</h3>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>情感线缺虐点</td>
+<td>情绪设计、故事结构</td>
+<td>中</td>
+<td>增加1-2场误会/虐心戏</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>创业线与家庭线脱节</td>
+<td>故事结构、节奏控制</td>
+<td>中</td>
+<td>设计交叉冲突点</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>反派层次单一</td>
+<td>人物塑造</td>
+<td>低</td>
+<td>深化反派动机/引入新反派</td>
+</tr>
+</tbody>
+</table>
+<h3>具体修改建议</h3>
+<p><strong>1. 【P0】增加情感虐点</strong></p>
+<ul>
+<li><strong>问题</strong>：夫妻线过于顺利，缺少情感张力</li>
+<li><strong>建议</strong>：在30-40集区间设计一场"宋景书误以为黄英又回到原主状态"的误会戏</li>
+<li>触发点：黄英为生意需要接触某男性客户，被人挑拨</li>
+<li>虐点：宋景书的不信任被激活，与第1集原主伤害形成呼应</li>
+<li>回甘：真相大白后，宋景书彻底放下过去的阴影</li>
+<li><strong>参考</strong>：第10集「你到底是谁？」的悬念可以在此回收</li>
+</ul>
+<p><strong>2. 【P1】创业线与家庭线交叉</strong></p>
+<ul>
+<li><strong>问题</strong>：两条线各走各的</li>
+<li><strong>建议</strong>：</li>
+<li>让李凤芹发现黄英创业后，故意去捣乱/抢客户</li>
+<li>许珍珍也开始做餐饮，形成正面商业竞争</li>
+<li>宋景书在知道真相后，从"被瞒着的丈夫"变成"创业合伙人"，两人并肩作战</li>
+</ul>
+<p><strong>3. 【P2】深化反派人设</strong></p>
+<ul>
+<li><strong>问题</strong>：反派行为模式单一</li>
+<li><strong>建议</strong>：</li>
+<li>第35集左右揭示李凤芹偏心大儿子的"历史原因"</li>
+<li>许珍珍的转变线要有清晰的触发事件（如被原生家庭"卖给"有钱老男人）</li>
+</ul>
+<hr />
+<h2>十三、下一步建议</h2>
+<p>☑ <strong>小幅修改后开发</strong>（预计2周）</p>
+<p><strong>预估开发周期</strong>：90集短剧，约3-4个月
+<strong>预估制作预算</strong>：中等（年代剧需要服化道，但场景相对集中）</p>
+<p><strong>风险提示</strong>：
+1. 年代穿书题材近期同质化较多，需在宣发上强调"东北方言金句"的差异化
+2. "点房子"等极端行为需注意合规审核，可能需要弱化处理
+3. 建议在投流测试中优先使用"撕离婚证"和"点房子"片段验证市场反应</p>
+<hr />
+<h2>评估完成</h2>
+<p><strong>评估结论</strong>：这是一部<strong>开场极强、爽点密集、台词出彩</strong>的年代穿书短剧，核心卖点是"泼辣悍妻护家+东北方言金句+隐忍老公爆发"。主要短板在于情感深度和故事厚度，建议补充虐点戏份、强化双线交叉后进入开发。以目前的完成度，建议评级为 <strong>A+/CONSIDER</strong>，优化后有望达到 <strong>S/RECOMMEND</strong>。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

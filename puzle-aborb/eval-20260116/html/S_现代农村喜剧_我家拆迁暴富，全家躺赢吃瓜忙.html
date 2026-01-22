@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我家拆迁暴富，全家躺赢吃瓜忙</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《我家拆迁暴富，全家躺赢吃瓜忙》
+类型/题材：现代农村喜剧 / 逆袭爽文 / 家庭群像
+目标平台：短剧平台（抖音/快手/微短剧）
+总集数：30集（已提供）
+评估日期：2026年1月20日</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  RECOMMEND  ]
+评级：[  S  ]
+总分：81/100</p>
+<p>一句话结论：高度契合短剧受众的"躺赢爽文"，开场代入极快，全家人设讨喜，
+"吃瓜群众"视角新颖，但中后段节奏略有重复，需压缩买房购物流水账段落。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre class="ascii-art">              开场与代入(8.5/10)
+                    ▲
+                   /|\
+                  / | \
+      市场适配  /  |  \  节奏控制
+      (8.5/10) /   |   \ (7/10)
+              /    |    \
+             /     |     \
+            /      |      \
+    视听可拍 ──────┼────── 情绪设计
+     (8/10)       |       (8/10)
+            \     |     /
+             \    |    /
+              \   |   /
+      创意题材 \ | / 故事结构
+      (7.5/10)  \|/  (7.5/10)
+                ▼
+           台词质量(9/10)
+                |
+           人物塑造(8.5/10)</pre>
+
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8.5/10</td>
+<td>18%</td>
+<td>15.3</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>7/10</td>
+<td>15%</td>
+<td>10.5</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7.5/10</td>
+<td>12%</td>
+<td>9.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>8.5/10</td>
+<td>10%</td>
+<td>8.5</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>9/10</td>
+<td>8%</td>
+<td>7.2</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>7.5/10</td>
+<td>8%</td>
+<td>6.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8.5/10</td>
+<td>9%</td>
+<td>7.65</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>80.15→81</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：台词质量(9/10) - 金句密集，接地气又有网感，"OS内心戏"设计出彩
+<strong>最弱项</strong>：节奏控制(7/10) - 第10-13集买房购物段落略显流水账，冲突密度下降</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：45+人
+• 核心人物：8人（有名有戏份）
+• 正派阵营：12人
+• 反派阵营：8人
+• 中立/吃瓜群众：25+人</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 许家核心["许家核心 - 暴富一家"]
+        XR[许冉<br/>女主/嘴替/吃瓜担当]
+        XJH[许建华<br/>老爸/憨厚/护妻女]
+        LNX[林南星<br/>老妈/智囊/理财高手]
+        NTC[牛翠花<br/>奶奶/文艺团长/战斗力MAX]
+    end
+
+    subgraph 许家亲戚["许家亲属"]
+        XM[许敏<br/>姑姑/离婚受害者]
+        CN[程诺<br/>表妹/狠人少女]
+        XHA[许怀安<br/>堂哥/佛系躺平]
+        ZR[庄柔<br/>大姨/杀猪刀女王]
+    end
+
+    subgraph 反派阵营["反派/吃瓜对象"]
+        LX[路欣<br/>抢工作的绿茶]
+        WH[王昊<br/>舔狗男配]
+        SLT[苏老太<br/>碎嘴毒舌]
+        HCZ[何村长<br/>百家村刁民头子]
+    end
+
+    subgraph 工具人["商业工具人"]
+        QSY[钱三爷<br/>房产掮客/活地图]
+        SZ[宋章<br/>中恒地产/暗线伏笔]
+    end
+
+    XR -->|女儿| XJH
+    XR -->|女儿| LNX
+    XJH -->|儿子| NTC
+    LNX -->|儿媳| NTC
+    XM -->|小姑子| LNX
+    CN -->|女儿| XM
+    XR -.->|职场对立| LX
+    XR -.->|职场对立| WH
+    NTC -.->|战斗| SLT
+    XJH -->|买房| QSY
+    SZ -.->|暗中调查| XJH
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 女主：许冉 ──────────────────────────────────────────────────┐
+│ 标签：[嘴替担当] + [咸鱼躺平] + [吃瓜第一名]                    │
+│ 标签印证：                                                      │
+│ • [嘴替] ← 第1集：「实力？路欣实习被退货的实力？还是你次次补考  │
+│   拉不下的实力？」                                              │
+│ • [躺平] ← 第8集：「不想上班，不想工作，只想做个快乐的废柴包租  │
+│   婆！」                                                        │
+│ • [吃瓜] ← 第26集OS：「这就是传说中的"发疯文学"照进现实！」    │
+│ 弧线：被顶替的学霸 → 暴富躺赢 → 全家智囊+吃瓜记录者              │
+│ 标签准确度：★★★★★                                             │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 核心配角：牛翠花（奶奶）─────────────────────────────────────┐
+│ 标签：[战斗力爆表] + [文艺团长] + [护犊子狂魔]                  │
+│ 标签印证：                                                      │
+│ • [战斗] ← 第8集：「牛翠花一把薅住苏老太的头发，左右开弓扇了两  │
+│   个巴掌。」                                                    │
+│ • [文艺] ← 第2集：「郭镇麦当娜！」+ 唢呐随身携带                │
+│ • [智慧] ← 第24集怼方太太：「Who is your祖宗？」+「Low-key     │
+│   luxury！低调的奢华！」                                        │
+│ 弧线：村里文艺团长 → 暴富后更嚣张 → 家族精神领袖                │
+│ 标签准确度：★★★★★                                             │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 智囊：林南星（妈妈）─────────────────────────────────────────┐
+│ 标签：[理财高手] + [隐藏大佬] + [温柔坚定]                      │
+│ 标签印证：                                                      │
+│ • [理财] ← 第2集：「幸亏听了你的早就加盖了！」                  │
+│ • [大佬] ← 第1集：「坑咱家必须得填上！」+ 布局拆迁             │
+│ • [温柔] ← 第4集：「以后受了委屈一定要说，千万别像你敏姑那样   │
+│   死扛。」                                                      │
+│ 弧线：全家智囊 → 资产配置大师 → 寻找失联母亲的隐线              │
+│ 标签准确度：★★★★★                                             │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre class="ascii-art">张
+力  │
+强  │                              ★ 村民大乱斗
+度  │                             / (26-29集)
+    │              ☆ 拆迁确定  /
+    │             / (5集)    /
+    │    ○ 被抢工作          ☆ 四合院舌战
+    │   / (1集)   \    ○   / (24集)
+    │  /           \买房/截胡
+    │ /             \/ (17-22集)
+    │/
+    └────────────────────────────────────────────────→ 集数
+      1    5    10    15    20    25    30</pre>
+
+<p>【高潮点标注】
+• 小高潮①（第1集）：许冉被路欣王昊顶替工作，当场怼回去
+• 小高潮②（第5集）：幸福村正式成为拆迁备选，全村沸腾
+• 中高潮①（第7集）：许家签约，总资产计算出1742万
+• 中高潮②（第22集）：中恒地产宋章被截胡，暗线伏笔埋下
+• 中高潮③（第24集）：牛翠花vs方太太，中英双语舌战
+• 大高潮（第26-29集）：苏家断亲、许波断亲、村民群像大乱斗</p>
+<p>【冲突热力图】</p>
+<pre class="ascii-table">集数      1-5    6-10   11-15  16-20  21-25  26-30
+────────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥  🔥🔥🔥  🔥      🔥🔥    🔥🔥🔥  🔥🔥
+人物冲突  🔥🔥    🔥🔥    🔥      🔥🔥    🔥🔥    🔥🔥🔥🔥
+情感冲突  🔥      🔥      🔥🔥    🔥      🔥      🔥🔥🔥
+────────────────────────────────────────────────────────
+冲突密度  高      高      低      中      高      极高
+（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p><strong>问题区间</strong>：第11-15集（买房购物段落），冲突密度明显下降</p>
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突</strong>：普通家庭 vs 突然暴富后的选择
+   - 起点（第1集）：「环境检测中心？这是什么野鸡单位？」
+   - 升级（第5集）：「1742万！」→ 资产配置焦虑
+   - 高潮（第26-29集）：围观他人暴富后的家庭撕裂</p>
+</li>
+<li>
+<p><strong>职场冲突线</strong>：许冉 vs 路欣/王昊
+   - 第1集：「学习好不代表一切，这叫综合实力。」→「路欣实习被退货的实力？」
+   - 暂搁置，留有伏笔（林南星：「坑咱家必须得填上！」）</p>
+</li>
+<li>
+<p><strong>商业暗线冲突</strong>：许家 vs 中恒地产
+   - 第22集：「查。我要知道是谁抢了中恒的肉。」
+   - 伏笔已埋，后续待展开</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>教室嘈杂，分配工作</td>
+<td>黄金开场</td>
+<td>「啊啊啊！祖奶奶，财神爷！」</td>
+<td>✓ 强情绪</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>许冉年级第一但被调剂</td>
+<td>双交代</td>
+<td>「许冉这种年级第一，化工所和院里为了抢她都快打起来了！」→「统筹分配名单。许冉，市环境检测中心。」</td>
+<td>✓ 完美反差</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>核心冲突建立</td>
+<td>主角困境</td>
+<td>「化工所的意向协议书上签的是我啊！」「上面说是领导重新安排」</td>
+<td>✓ 不公正感代入</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>路欣王昊嘲讽+许冉反击</td>
+<td>爽点</td>
+<td>「实力？路欣实习被退货的实力？还是你次次补考拉不下的实力？」</td>
+<td>✓ 嘴替爽感</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>许冉回村+拆迁消息</td>
+<td>钩子</td>
+<td>「拆迁组进百家村了！」「拆……给我拆个富二代当当！」</td>
+<td>✓ 强悬念</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：<strong>9/10</strong>
+问题点：无明显问题，节奏紧凑，代入极快</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>牛翠花造型出场，承接拆迁消息</td>
+<td>百家村刁民闹事，许建华救场</td>
+<td>「一辆车十几万是大数，能赔？」→许建华敲锣平事</td>
+<td>拆迁组被赶走</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<p>钩子原文：「许建华一把抄起旁边文艺团的大锣，气沉丹田，猛地敲响。」</p>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>百家村拆迁黄了</td>
+<td>幸福村成为备选</td>
+<td>「百家村拆迁，黄了！」→「咱们幸福村，正式成为备选之一！」</td>
+<td>「信女许冉，愿用我前男友一辈子单身，换财神爷哪怕看我一眼！」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p>【前3集总评】
+• 代入速度：☑ 极快（3秒入戏）— 开场即职场不公，普世痛点
+• 信息密度：☑ 适中 — 人物关系清晰，没有信息过载
+• 钩子循环：☑ 紧密 — 每集结尾都有强悬念
+• 前3集整体评分：<strong>8.5/10</strong></p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「拆迁组进百家村了！」</td>
+<td>牛翠花化妆去百家村</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>百家村闹事被打断</td>
+<td>「百家村这拆迁悬了」</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>幸福村成为备选</td>
+<td>许敏离婚支线展开</td>
+<td>3/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>4→5</td>
+<td>许敏故事</td>
+<td>直接跳到拆迁正式启动</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>7→8</td>
+<td>1742万计算完成</td>
+<td>全家狂欢</td>
+<td>5/5</td>
+<td>爽点型</td>
+</tr>
+<tr>
+<td>24→25</td>
+<td>方太太被怼</td>
+<td>售楼处团购</td>
+<td>4/5</td>
+<td>爽点型</td>
+</tr>
+<tr>
+<td>25→26</td>
+<td>村里打架消息</td>
+<td>苏家大乱斗</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：<strong>4.4/5</strong>
+衔接问题点：第3→4集跳转略突兀，许敏支线插入可再顺滑</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>路欣王昊抢工作</td>
+<td>第1集</td>
+<td>-</td>
+<td>✗ 未回收（待后续）</td>
+</tr>
+<tr>
+<td>林南星母亲失联</td>
+<td>第10集</td>
+<td>-</td>
+<td>✗ 未回收（长线伏笔）</td>
+</tr>
+<tr>
+<td>中恒地产调查许家</td>
+<td>第22-23集</td>
+<td>-</td>
+<td>✗ 未回收（暗线伏笔）</td>
+</tr>
+<tr>
+<td>石榴树下埋女儿红</td>
+<td>第7集</td>
+<td>-</td>
+<td>○ 情感伏笔，待回收</td>
+</tr>
+<tr>
+<td>苏老太门牙磕掉</td>
+<td>第8集</td>
+<td>第8集</td>
+<td>✓ 即时回收（现世报）</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+☑ 连贯无矛盾 — 从分配工作→回村→拆迁消息→正式启动→买房→村民乱斗，逻辑清晰</p>
+<p>【人物行为一致性】
+☑ 行为符合性格设定
+- 许冉：始终保持"嘴替+吃瓜"人设
+- 牛翠花：始终战斗力爆表
+- 林南星：始终理性冷静
+- 许建华：憨厚但关键时刻靠谱</p>
+<p>【逻辑硬伤】
+无明显逻辑硬伤</p>
+<p>逻辑一致性评分：<strong>8.5/10</strong></p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集</td>
+<td>打脸型</td>
+<td>许冉怼路欣王昊</td>
+<td>「实力？路欣实习被退货的实力？还是你次次补考拉不下的实力？」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第8集</td>
+<td>打脸型</td>
+<td>牛翠花扇苏老太</td>
+<td>「牛翠花一把薅住苏老太的头发，左右开弓扇了两个巴掌」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第11集</td>
+<td>打脸型</td>
+<td>49万奔驰打脸势利销售</td>
+<td>「49万？听听，这是还没睡醒呢！」→刷卡</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第24集</td>
+<td>金句型</td>
+<td>牛翠花中英双语怼人</td>
+<td>「Who is your祖宗？」「Low-key luxury！低调的奢华！」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第7集</td>
+<td>爽点型</td>
+<td>计算拆迁款</td>
+<td>「1742万！」→ 三人石化</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第14集</td>
+<td>反转型</td>
+<td>程诺手撕渣爹</td>
+<td>「几百份海报漫天撒，外加一条横幅——"管他小三小四小五，我要年年当新郎"」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第26集</td>
+<td>情感型</td>
+<td>苏家三姐妹断亲</td>
+<td>「钱，我们一分不要了，就当买断了生养之恩！」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：5个 ← <strong>主力素材</strong>
+• 反转/悬念型：2个
+• 金句/名场面型：4个
+• 情感/虐心型：3个
+• 爽点/逆袭型：4个</p>
+<p>投流素材丰富度：★★★★★
+最佳投流片段推荐：<strong>第11集 买奔驰打脸销售</strong> — 完美的"穿得差但有钱"反转，极具爽感</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】</p>
+<pre class="character-card">┌─ 片段1：牛翠花中英双语舌战 ─────────────────────────────────────┐
+│ 位置：第24集                                                    │
+│ 类型：☑台词金句 ☑名场面                                        │
+│                                                                  │
+│ 完整原文：                                                       │
+│ 「                                                               │
+│ 方太太（夹子音）：Hello! Good morning! Sorry啦，late了一会……    │
+│ 牛翠花（气场全开）：Who is your祖宗？国内咋就啧啧啧了？这方水土 │
+│ 养大你，喝两口洋墨水就不知道自己姓啥了？别看我们穿得普通，这叫  │
+│ Low-key luxury！低调的奢华！懂不懂？Know不know？                │
+│                                                       」        │
+│                                                                  │
+│ 上下文：方太太夫妇因为要出国，看不起许家人，阴阳怪气             │
+│ 精彩点：老太太飙英语的反差萌+怼人逻辑无懈可击+金句密集          │
+└──────────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：许冉职场反击 ──────────────────────────────────────────┐
+│ 位置：第1集                                                      │
+│ 类型：☑冲突高潮 ☑台词金句                                      │
+│                                                                  │
+│ 完整原文：                                                       │
+│ 「                                                               │
+│ 路欣（假笑）：许冉，要是想重新找工作，求求我，我让你去化工所当  │
+│ 个临时工。总比你挣那三瓜两枣或者回村种地强吧？                  │
+│ 王昊（凑上来）：就是，路欣也是好心。学习好不代表一切，这叫综合  │
+│ 实力。                                                          │
+│ 许冉（冷笑）：实力？路欣实习被退货的实力？还是你次次补考拉不下  │
+│ 的实力？                                                        │
+│ 路欣（气急）：你！不种地你喝西北风去吧！                        │
+│ 许冉（甩头发，大声）：嘿！西北风我也喝得起！姐想开了，先干着，  │
+│ 大不了回家兼职当地主！                                          │
+│                                                       」        │
+│                                                                  │
+│ 精彩点：以彼之道还施彼身，"综合实力"被完美反击，霸气外露       │
+└──────────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：苏家三姐妹断亲 ──────────────────────────────────────┐
+│ 位置：第26-27集                                                  │
+│ 类型：☑情感爆发 ☑名场面                                        │
+│                                                                  │
+│ 完整原文：                                                       │
+│ 「                                                               │
+│ 苏招娣（红着眼）：养大？五六岁我就做饭，小学没上完就下地，多吃  │
+│ 一口就挨打！还要把我卖给瞎眼老头换粮食！要不是我跳河被救了，我  │
+│ 现在就是个水鬼！                                                │
+│ ……                                                              │
+│ 苏招娣（咬牙）：村长，各位乡亲，给我们做个见证！钱，我们一分不  │
+│ 要了，就当买断了生养之恩！以后他们的生老病死，和我们没关系！这  │
+│ 门亲，断了！                                                    │
+│                                                       」        │
+│                                                                  │
+│ 精彩点：重男轻女社会痛点+果断止损的爽感+情绪张力极强             │
+└──────────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「西北风我也喝得起！姐想开了，大不了回家兼职当地主！」</td>
+<td>第1集</td>
+<td>许冉</td>
+<td>怼路欣</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「Who is your祖宗？」「Low-key luxury！」</td>
+<td>第24集</td>
+<td>牛翠花</td>
+<td>怼方太太</td>
+</tr>
+<tr>
+<td>金钱型</td>
+<td>「1742万！」「从现在开始，咱家每天眼一睁，就进账一千块！」</td>
+<td>第7-8集</td>
+<td>许建华</td>
+<td>算账</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「信女许冉，愿用我前男友一辈子单身，换财神爷哪怕看我一眼！」</td>
+<td>第3集</td>
+<td>许冉</td>
+<td>祈祷</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「这哪是空气啊，这全是金钱的芬芳！」</td>
+<td>第4集</td>
+<td>许冉</td>
+<td>抓钱</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「钱可以再挣，这回忆，多少钱都不卖。」</td>
+<td>第7集</td>
+<td>许建华</td>
+<td>石榴树</td>
+</tr>
+<tr>
+<td>讽刺型</td>
+<td>「浑身上下加起来不超过五十块，一看就是来蹭空调的。」→ 打脸</td>
+<td>第11集</td>
+<td>王燕</td>
+<td>买奔驰</td>
+</tr>
+<tr>
+<td>智慧型</td>
+<td>「鸡蛋不能放在一个篮子里！」</td>
+<td>第10集</td>
+<td>许冉</td>
+<td>分散存款</td>
+</tr>
+<tr>
+<td>断亲型</td>
+<td>「钱，我们一分不要了，就当买断了生养之恩！」</td>
+<td>第27集</td>
+<td>苏招娣</td>
+<td>断亲</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：许冉的"嘴替+吃瓜"双重人设</strong></p>
+<p>证据链：
+• 第1集：「实力？路欣实习被退货的实力？还是你次次补考拉不下的实力？」
+• 第14集OS：「这就是传说中的"发疯文学"照进现实！」
+• 第26集OS：「这就叫，穷在闹市无人问，富在深山有远亲。这一千多万，真是照妖镜。」</p>
+<p>分析：许冉既是参与者又是旁观者，她的OS内心戏像弹幕一样点评剧情，让观众有极强的代入感——"这就是我想说的话"。
+可复用技巧：<strong>设置一个"嘴替角色"，用OS吐槽代替观众发声</strong></p>
+<hr />
+<p><strong>亮点2：牛翠花——战斗力爆表的奶奶人设</strong></p>
+<p>证据链：
+• 第8集：「牛翠花一把薅住苏老太的头发，左右开弓扇了两个巴掌」
+• 第24集：「Who is your祖宗？」「Low-key luxury！低调的奢华！」
+• 第9集：「谁要是敢去赌，老娘我亲自打断他的腿，再把他塞回娘胎里重造！」</p>
+<p>分析：打破"老人=弱势/守旧"的刻板印象，奶奶反而是全家最能打的，且金句频出。这种"反差萌"极具吸睛力。
+可复用技巧：<strong>给老年角色赋予反差属性（战斗力强/时尚/互联网黑话）</strong></p>
+<hr />
+<p><strong>亮点3："吃瓜群众"视角的叙事结构</strong></p>
+<p>证据链：
+• 第26-29集：苏家断亲、许波断亲、王寡妇老李对峙、许军夫妻吵架
+• 第27集村长：「清官难断家务事」
+• 第30集牛翠花：「这村里越来越乱了……咱们新家需要的东西赶紧买，尽快搬。」</p>
+<p>分析：许家作为"已经暴富"的旁观者，围观其他家庭因拆迁款撕裂。这种"吃瓜视角"让剧情更丰富，也避免了主角"太顺"的审美疲劳。
+可复用技巧：<strong>在主角故事之外，设置"群像吃瓜线"增加看点</strong></p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：第10-13集节奏下降，买房购物流水账</strong></p>
+<p>证据链：
+• 第10集：「各家银行存两百万」→ 逐家银行走流程
+• 第12-13集：「真丝四件套、皮鞋、高跟鞋，堆成小山」→ 购物清单罗列
+• 缺乏冲突点，纯粹的"花钱"展示</p>
+<p>影响评估：观众可能在此区间流失，"爽"变成"腻"
+优化建议：
+1. 压缩购物段落，保留最精彩的打脸（如买奔驰）
+2. 在买房过程中增加竞争/阻碍（如中恒地产提前截胡）
+3. 用"插叙"穿插村民羡慕嫉妒的反应，制造张力</p>
+<hr />
+<p><strong>问题2：多条伏笔未在30集内回收</strong></p>
+<p>证据链：
+• 路欣/王昊职场线：第1集后再未出现
+• 林南星母亲失联：第10集提及后搁置
+• 中恒地产调查：第22-23集埋下后未展开</p>
+<p>影响评估：如果30集是完结篇，则剧情有"烂尾"风险
+优化建议：
+1. 如有后续集数，建议在40集前回收职场线（许冉事业逆袭打脸路欣）
+2. 母亲失联线可作为第二季核心
+3. 中恒地产线需在35集前引爆</p>
+<hr />
+<p><strong>问题3：部分配角功能重叠</strong></p>
+<p>证据链：
+• 许大伯、许二伯、庄柔等亲戚戏份较少，功能类似（"帮腔"）
+• 村民甲乙丙的吃瓜台词可互换</p>
+<p>影响评估：角色识别度下降，观众记不住
+优化建议：给每个配角一个"标签动作"或"口头禅"，增强辨识度</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>第10-13集节奏拖沓</td>
+<td>节奏控制、完播率</td>
+<td>中</td>
+<td>压缩购物线，增加银行/中介的小冲突</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>伏笔回收计划</td>
+<td>故事结构完整度</td>
+<td>中</td>
+<td>制定后续集数伏笔回收时间表</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>配角辨识度</td>
+<td>人物塑造</td>
+<td>低</td>
+<td>给配角增加标签动作/口头禅</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>第10-13集节奏优化</strong>
+   - 问题：连续4集以"花钱"为主，缺乏冲突
+   - 建议：</p>
+<ul>
+<li>保留买奔驰打脸场景（精彩）</li>
+<li>压缩银行存款段落，用蒙太奇快剪</li>
+<li>增加"钱三爷被其他买家抢单"的紧张感</li>
+<li>参考修改：第12集可增加「宋章的人跟踪许家」的暗线铺垫</li>
+</ul>
+</li>
+<li>
+<p><strong>职场线回收</strong>
+   - 建议：第35-40集设计"许冉事业逆袭"支线
+   - 参考：许冉用投资回报打脸路欣，或化工所出事连累路欣</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☑ 小幅修改后开发（预计 1-2 周）</p>
+<p>预估开发周期：2-3个月（含拍摄）
+预估制作预算：中等偏低（场景以农村/城市日常为主，无特效需求）
+风险提示：
+1. 伏笔回收需要规划后续集数
+2. 拆迁题材需注意政策合规性表达
+3. "断亲"戏份需把控尺度，避免过度渲染家庭撕裂</p>
+<p><strong>强烈建议</strong>：
+- 前30集可独立成"第一季"
+- 设计第二季核心为"林南星寻母+许冉事业逆袭+对抗中恒地产"</p>
+<div class="section-title">评估完成</div>
+
+<p>```</p>
+<hr />
+<h2>评估总结</h2>
+<p>这是一部<strong>高度适配短剧市场</strong>的作品：</p>
+<h3>✅ 核心优势</h3>
+<ol>
+<li><strong>代入感极强</strong>：开场8秒内建立"被顶替"的不公感，瞬间抓住观众</li>
+<li><strong>金句密集</strong>：牛翠花、许冉的台词自带传播属性，适合切片投流</li>
+<li><strong>投流素材丰富</strong>：至少7个高潜力打脸/逆袭片段</li>
+<li><strong>人设讨喜</strong>：全家人都有记忆点，没有"工具人"主角</li>
+</ol>
+<h3>⚠️ 需要优化</h3>
+<ol>
+<li>第10-13集买房购物段落需压缩，增加小冲突</li>
+<li>伏笔回收需规划后续集数</li>
+<li>部分配角需增加辨识度</li>
+</ol>
+<p><strong>最终决策：RECOMMEND - 值得投入开发</strong></p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

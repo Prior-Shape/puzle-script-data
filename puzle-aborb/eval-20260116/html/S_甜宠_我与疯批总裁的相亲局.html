@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我与疯批总裁的相亲局</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《我与疯批总裁的相亲局》
+类型/题材：甜宠 / 豪门相亲 / 觉醒改命
+目标平台：短剧平台（抖音/快手/微短剧）
+总集数：30集（当前评估为前30集完整剧本）
+评估日期：2025-01-20</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  RECOMMEND  ]
+评级：[  S  ]
+总分：82/100</p>
+<p>一句话结论：
+高概念甜宠短剧，"两个疯批的婚姻合作"设定新颖，前3集代入感强，
+爽点密集，投流素材丰富，建议小幅优化后快速开发。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre class="ascii-art">              开场与代入(8.5/10)
+                    ▲
+                   /|\
+                  / | \
+     市场适配   /  |  \   节奏控制
+     (8.5/10) /   |   \ (8/10)
+             /    |    \
+            /     |     \
+           /      |      \
+    视听可拍 ─────┼───── 情绪设计
+    (7.5/10)     |      (8/10)
+           \     |     /
+            \    |    /
+             \   |   /
+     创意题材 \ | / 故事结构
+     (8.5/10)  \|/  (8/10)
+                ▼
+           台词质量(8.5/10)
+                |
+           人物塑造(8/10)</pre>
+
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8.5/10</td>
+<td>18%</td>
+<td>15.3</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>8.0/10</td>
+<td>15%</td>
+<td>12.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8.0/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>8.0/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>8.0/10</td>
+<td>10%</td>
+<td>8.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>8.5/10</td>
+<td>8%</td>
+<td>6.8</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>8.5/10</td>
+<td>8%</td>
+<td>6.8</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>7.5/10</td>
+<td>8%</td>
+<td>6.0</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8.5/10</td>
+<td>9%</td>
+<td>7.65</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>81.75≈82</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：创意题材/台词质量 - "全职太太职业化"概念新颖，台词记忆点强
+<strong>最弱项</strong>：视听可拍性 - 豪门场景质感要求高，需要一定预算支撑</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：10人
+• 核心人物：4人（宋瓷星、苏冥渊、沈翘、李蔚红）
+• 正派阵营：5人（宋瓷星、苏冥渊、林宣、王婶、苏老太太）
+• 反派阵营：3人（沈翘、李蔚红、沈国仁）
+• 中立/摇摆：2人（苏正峰、董先生）</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[宋瓷星<br/>觉醒女配/倔强/聪明]
+        B[苏冥渊<br/>首富/洁癖/工作狂]
+        C[林宣<br/>闺蜜/情报源]
+        D[王婶<br/>管家/见证人]
+        E[苏老太太<br/>明事理/眼光毒]
+    end
+
+    subgraph 反派阵营
+        F[沈翘<br/>表妹/团宠千金]
+        G[李蔚红<br/>舅妈/表面和气]
+        H[沈国仁<br/>舅舅/利益至上]
+    end
+
+    A <==>|婚姻合作<br/>日薪十万| B
+    A -->|好闺蜜| C
+    B -->|信任| D
+    E -->|喜欢| A
+    A -.->|对照组<br/>竞争| F
+    G -->|母女| F
+    G -.->|养废| A
+    H -->|夫妻| G
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 主角：宋瓷星 ─────────────────────────────────────────────┐
+│ 标签：[觉醒女配] + [聪明倔强] + [务实理性]                     │
+│ 标签印证：                                                   │
+│ • [觉醒女配] ← 第3集：「原来我是一本豪门小说中的炮灰女配，    │
+│   是表妹沈翘的对照组...」                                     │
+│ • [聪明倔强] ← 第5集：「我是第一次做全职太太...希望苏先生     │
+│   可以给我足够的时间和空间来胜任这份工作。」                   │
+│ • [务实理性] ← 第4集：「薪资能不能日结？」                    │
+│ 弧线：[被养废的炮灰] → [主动选择险路] → [获得尊重与偏爱]     │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 男主：苏冥渊 ─────────────────────────────────────────────┐
+│ 标签：[表面变态] + [实际洁癖强迫症] + [婚姻务实派]            │
+│ 标签印证：                                                   │
+│ • [表面变态] ← 第1集：「他可是远近闻名的性格变态」「能连续    │
+│   开会48小时，不准人打盹」                                    │
+│ • [实际洁癖] ← 第9集：「苏先生有洁癖，我们是不可以坐在他      │
+│   的沙发上的」                                               │
+│ • [婚姻务实] ← 第5集：「婚姻本就是合作经营，爱情是合作顺利    │
+│   后的产物」                                                 │
+│ 弧线：[冷漠疏离] → [好奇欣赏] → [主动保护]                   │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 反派：沈翘 + 李蔚红（母女组合） ─────────────────────────────┐
+│ 标签：[嫉妒心强] + [表面优秀] + [见不得人好]                  │
+│ 标签印证：                                                   │
+│ • [嫉妒心强] ← 第19集：「沈翘看着宋瓷星挑选两万多的连衣裙，   │
+│   心里不是滋味」                                             │
+│ • [养废计划] ← 第25集（闪回）：「瓷星去玩吧，作业写不完没     │
+│   关系」vs「翘翘今天必须做完三套练习题！」                    │
+│ 角色功能：制造对比冲突、提供打脸对象                          │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre class="ascii-art">张
+力  │
+强  │                                    ★ 订婚宴打脸
+度  │                                   /   (第28-30集)
+    │                    ☆ 苏老太太    /
+    │                   /  认可      /
+    │          ○ 搬入  /  (第24集)  /
+    │         / 苏家  /            /
+    │   ○相亲/  (9集)/    ○包子   /
+    │   成功/      /    事件(20集)/
+    │  (4集)      /              /
+    │ /          /              /
+    │/──────────────────────────────────────────────→ 集数</pre>
+
+<pre class="ascii-table">      1-4    5-10   11-15   16-20   21-25   26-30</pre>
+
+<p>【高潮点标注】
+• 小高潮①（第4集）：相亲成功，达成日薪十万协议
+• 小高潮②（第9-10集）：搬入苏家，了解"变态"真相
+• 中高潮①（第20-21集）：包子事件，苏冥渊偷偷吃包子
+• 中高潮②（第24-26集）：南瓜饼获苏老太太认可，意外促成订单
+• 大高潮（第28-30集）：订婚宴全职太太宣言，当众打脸沈家</p>
+<p>【冲突热力图】</p>
+<pre class="ascii-table">集数      1-5    6-10   11-15  16-20  21-25  26-30
+────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥🔥🔥
+人物冲突  🔥🔥    🔥      🔥🔥    🔥🔥    🔥🔥    🔥🔥🔥
+情感冲突  🔥      🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥
+────────────────────────────────────────────────────
+冲突密度  高      中      中      中      高      极高
+（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突</strong>：炮灰女配 vs 命定悲剧
+   - 起点（第3集）：「与其变成疯批精神病，不如来和变态男相亲」
+   - 升级（第6集）：「重新选择，第一件事就是搞钱！」
+   - 持续（第30集）：「我的职业是，全职太太」</p>
+</li>
+<li>
+<p><strong>情感冲突线</strong>：两个"疯批"的试探与靠近
+   - 相互试探（第5集）：「这场合作，女方总归是弱势」
+   - 暗生好感（第20集）：苏冥渊偷吃包子
+   - 公开维护（第30集）：「薪酬由我发放」</p>
+</li>
+<li>
+<p><strong>人物冲突线</strong>：宋瓷星 vs 沈家母女
+   - 起点：沈家"养废"计划（多处闪回）
+   - 升级（第7集）：「沈翘不要的男人，凭什么给我？」预期落空
+   - 高潮（第30集）：订婚宴全职太太宣言打脸</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>咖啡厅场景，林宣紧张表情</td>
+<td>悬念建立</td>
+<td>「你真要跟我们老总相亲？他可是远近闻名的性格变态」</td>
+<td>✓ 有效</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>交代相亲对象身份</td>
+<td>双交代</td>
+<td>「我们老总人可凶了，性格怪异」</td>
+<td>✓ 完成</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>林宣恐吓式介绍苏冥渊</td>
+<td>冲突预设</td>
+<td>「连续开会48小时」「直接把策划书摔人脸上」</td>
+<td>✓ 张力足</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>宋瓷星的"元叙事"发言</td>
+<td>人设建立</td>
+<td>「豪门小说中的总裁都不会笑」「炮灰女配，是沈翘的对照组」</td>
+<td>✓ 有趣</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>迈巴赫到达，林宣逃跑</td>
+<td>钩子</td>
+<td>「这场相亲，我必须面对」</td>
+<td>中等偏强</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：8.5/10
+亮点：元叙事设定快速建立（穿书女配自我认知），"变态"信息密集输出制造悬念</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接承接苏冥渊下车</td>
+<td>首次见面，外貌vs传闻的反差</td>
+<td>「如此俊美的男人家暴、囚禁...」脑补画面</td>
+<td>「逃避和恐惧是无用的...我们才是同类？」</td>
+<td>5/5</td>
+</tr>
+</tbody>
+</table>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宋瓷星发呆，引出闪回</td>
+<td>"驴踢觉醒"完整交代</td>
+<td>原书命运揭示：欠债发疯被判无期</td>
+<td>「你每月给我开多少钱？」</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<p>【前3集总评】
+• 代入速度：■极快（3秒入戏）□快 □一般 □慢
+• 信息密度：□过载 ■适中 □偏少
+• 钩子循环：■紧密 □一般 □松散
+• 前3集整体评分：8.5/10</p>
+<p><strong>特别亮点</strong>：
+- 第1集用林宣的"恐怖故事"式叙述快速建立悬念
+- 第3集"驴踢觉醒"设定有记忆点，幽默化处理穿书设定
+- 每集结尾都有明确钩子推动下集</p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】（关键节点）</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「这场相亲，我必须面对」</td>
+<td>苏冥渊下车</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「我们才是同类？」</td>
+<td>宋瓷星回忆觉醒经过</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>「你每月给我开多少钱？」</td>
+<td>苏冥渊回应</td>
+<td>5/5</td>
+<td>反转型</td>
+</tr>
+<tr>
+<td>4→5</td>
+<td>「变态男VS变态女，绝配！」</td>
+<td>继续谈条件</td>
+<td>5/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>5→6</td>
+<td>「不会有那种情况（白月光）」</td>
+<td>同居提议</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>6→7</td>
+<td>「这周末就举行订婚宴」</td>
+<td>宋瓷星骑电动车打电话</td>
+<td>4/5</td>
+<td>反转型</td>
+</tr>
+<tr>
+<td>7→8</td>
+<td>沈翘僵住看宋瓷星上楼</td>
+<td>宋瓷星收拾行李</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>14→15</td>
+<td>「这种变态，再给我来一沓也行！」</td>
+<td>沈家晚餐议论</td>
+<td>3/5</td>
+<td>场景切换</td>
+</tr>
+<tr>
+<td>29→30</td>
+<td>「我的职业是，全职太太」</td>
+<td>沈家惊讶反应</td>
+<td>5/5</td>
+<td>反转型</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：4.3/5
+衔接问题点：第14-15集场景切换略生硬，其余衔接紧密</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宋瓷星会做饭</td>
+<td>第10集闪回</td>
+<td>第17-18集做包子、第24集做南瓜饼</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>苏冥渊洁癖/不喜噪音</td>
+<td>第10集王婶告知</td>
+<td>第28集阻止沈翘弹琴</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>"变态"传闻</td>
+<td>第1集林宣介绍</td>
+<td>第9-10集揭示实为洁癖强迫症</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>沈家养废计划</td>
+<td>第10集、18集、25集闪回</td>
+<td>第29集李蔚红内心独白</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>包子去向</td>
+<td>第21集"喂狗了"</td>
+<td>第24集揭示被苏冥渊吃了</td>
+<td>✓已回收</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+■ 连贯无矛盾
+时间线清晰：相亲→第二天搬家→第三天购物→当晚见苏老太太→周末订婚宴</p>
+<p>【人物行为一致性】
+■ 行为符合性格设定
+- 宋瓷星：务实理性，每次都在算账（日薪、消费等）
+- 苏冥渊：洁癖强迫症表现一致（不让人坐沙发、换洗发水、不喜欢噪音）
+- 沈翘/李蔚红：嫉妒心理贯穿始终</p>
+<p>【逻辑硬伤】
+无明显逻辑硬伤</p>
+<p>逻辑一致性评分：9/10</p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第4集</td>
+<td>爽点型</td>
+<td>日薪谈判</td>
+<td>「每个月给你三百万」「薪资能不能日结？」「周六周日薪资双倍」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第30集</td>
+<td>打脸型</td>
+<td>全职太太宣言</td>
+<td>「我的职业是，全职太太」+苏冥渊「薪酬由我发放」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第14集</td>
+<td>反转型</td>
+<td>内衣裤照片</td>
+<td>「内衣裤呢？都给我看看」「在这？」「我是说照片」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第1集</td>
+<td>悬念型</td>
+<td>变态介绍</td>
+<td>「连续开会48小时，不准人打盹，中途离开就辞退」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第7集</td>
+<td>打脸型</td>
+<td>搬家宣言</td>
+<td>「我上楼收拾东西，明天就搬家」沈翘僵住</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第29集</td>
+<td>反转型</td>
+<td>舅舅贬低被打脸</td>
+<td>沈国仁贬低三次→董先生赞同→苏冥渊霸气护妻</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第20集</td>
+<td>反差萌</td>
+<td>苏冥渊偷吃包子</td>
+<td>「苏总，包子热好了」「真香」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：4个
+• 反转/悬念型：3个
+• 金句/名场面型：2个
+• 情感/虐心型：0个
+• 爽点/逆袭型：3个</p>
+<p>投流素材丰富度：★★★★★
+最佳投流片段推荐：第4集"日薪谈判" + 第30集"全职太太宣言"双素材组合</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】</p>
+<pre class="character-card">┌─ 片段1：日薪谈判 ─────────────────────────────────────────────┐
+│ 位置：第4集                                                   │
+│ 类型：■爽点 □冲突高潮 □情感爆发 ■反转揭示 ■台词金句          │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「宋瓷星：苏先生要求我随叫随到，大大限制了我的人身自由。我无法 │
+│  工作，只能做全职太太，我认为全职太太也该有薪资。              │
+│  苏冥渊：每个月给你三百万。                                    │
+│  宋瓷星OS：每天十万...但两个变态能相处多久是未知数...          │
+│  宋瓷星：薪资能不能日结？                                      │
+│  苏冥渊OS：以为她对月薪不满，没想到要求日结...很专业。         │
+│  苏冥渊：可以。另外，周六周日薪资双倍。」                      │
+│                                                               │
+│ 上下文：首次相亲，双方谈合作条件                               │
+│ 精彩点：1.把婚姻当职业谈，颠覆传统认知                         │
+│        2."日结"要求出人意料，显示女主精明                      │
+│        3.男主加码"双倍"，显示欣赏                              │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：全职太太宣言 ─────────────────────────────────────────┐
+│ 位置：第29-30集                                               │
+│ 类型：■打脸高潮 □情感爆发 □反转揭示 ■台词金句 ■名场面        │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「沈翘：全职太太？那叫什么职业？                               │
+│  宋瓷星：全职太太怎么不叫职业？太太是身份称谓，但全职太太就具有│
+│  职业性了。把自己所有时间和精力奉献给家庭，为了家庭放弃社会职业│
+│  ，为什么不是一种职业？                                        │
+│  董先生：我赞同宋小姐的话...我妻子最近演讲正是围绕"全职太太的  │
+│  职业属性"。                                                  │
+│  李蔚红：全职太太如果是职业，工资由谁开？                      │
+│  苏冥渊：我妻子的工作是全职太太，薪酬由我发放。」              │
+│                                                               │
+│ 上下文：订婚宴上沈家三口当众贬低宋瓷星                         │
+│ 精彩点：1.核心概念的终极输出                                   │
+│        2.外援（董先生）意外助攻                                │
+│        3.男主霸气护妻收尾                                      │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【冲突写作示范】</p>
+<pre class="character-card">┌─ 示范片段：沈国仁三连贬 ──────────────────────────────────────┐
+│ 位置：第29集                                                   │
+│ 冲突类型：人物冲突 + 阶层冲突                                  │
+│                                                               │
+│ 原文：                                                        │
+│ 「沈国仁：我这个外甥女啊，三流大学毕业没学历，没工作，没什么   │
+│  出息，今后还希望你多担待。对比我们家沈翘，宋瓷星是差了不少。」│
+│                                                               │
+│ 技巧分析：                                                     │
+│ 1. 一句话内三次贬低（学历/工作/出息），积累观众愤怒值           │
+│ 2. 表面客气实则讽刺，符合虚伪人设                              │
+│ 3. 主动对比沈翘，为后续打脸制造更大落差                        │
+│ 4. 当众场合增加羞辱感，提升观众代入                            │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「我妻子的工作是全职太太，薪酬由我发放」</td>
+<td>第30集</td>
+<td>苏冥渊</td>
+<td>订婚宴</td>
+</tr>
+<tr>
+<td>概念型</td>
+<td>「全职太太也该有薪资」「薪资能不能日结？」</td>
+<td>第4集</td>
+<td>宋瓷星</td>
+<td>相亲</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「长的帅而且有钱，性格和人品差就差吧」</td>
+<td>第7集</td>
+<td>宋瓷星</td>
+<td>回应沈翘</td>
+</tr>
+<tr>
+<td>搞笑型</td>
+<td>「你的当务之急不是相亲，而是卸载番茄小说！」</td>
+<td>第1集</td>
+<td>林宣</td>
+<td>咖啡厅</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「富贵险中求」</td>
+<td>第6集</td>
+<td>宋瓷星</td>
+<td>回应苏冥渊</td>
+</tr>
+<tr>
+<td>讽刺型</td>
+<td>「死变态...这种变态，再给我来一沓也行！」</td>
+<td>第14集</td>
+<td>宋瓷星</td>
+<td>看银行卡</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：高概念设定——"两个疯批的婚姻合作"</strong></p>
+<p>证据链：
+• 第1集：林宣铺垫苏冥渊"变态"「连续开会48小时」「把下属逼疯」
+• 第3集：宋瓷星自认未来会变疯批「跟踪、窃听、写血书、绑架折磨...最后被判无期」
+• 第4集OS：「变态男VS变态女，绝配！」「看看我们谁先疯到位？」</p>
+<p>分析：用"两个疯批"的设定打破传统霸总甜宠的套路，制造新鲜感和记忆点
+可复用技巧：给男女主都贴上"反常规"标签，制造CP感的同时增加趣味性</p>
+<p><strong>亮点2：核心概念贯穿——"全职太太职业化"</strong></p>
+<p>证据链：
+• 第4集：首次提出「全职太太也该有薪资」
+• 第24集：向苏老太太解释「为家庭奉献...应该得到尊重和薪酬」
+• 第30集：订婚宴正式宣言「我的职业是，全职太太」</p>
+<p>分析：核心概念从提出→深化→输出，形成完整的观点表达闭环
+可复用技巧：将核心概念作为"金句系统"设计，在不同场景反复强化</p>
+<p><strong>亮点3：反差萌人设——"变态总裁"的真实面貌</strong></p>
+<p>证据链：
+• 第1集铺垫恐怖：「背叛公司的高层莫名其妙嘎了好几个」
+• 第9-10集揭示真相：「苏先生有洁癖」「不喜欢噪音」「不喜欢带毛的动物」
+• 第20集反差萌：苏冥渊偷偷让人送包子来公司，「真香」</p>
+<p>分析：先建立"恐怖"预期，再用细节软化，制造反差萌和心动感
+可复用技巧：总裁人设先抑后扬，用可爱缺点（洁癖、社恐）取代真正的"变态"</p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：中段节奏略平，缺少强冲突事件</strong></p>
+<p>证据链：
+• 第11-15集：主要内容是搬家适应、购物、了解规矩
+• 第16集：噩梦场景功能不明确，可删除或强化</p>
+<p>影响评估：中段观众可能流失，完播率下降风险
+优化建议：在第11-15集增加一个小危机事件（如沈翘上门挑衅、苏冥渊公司有人质疑宋瓷星身份等）</p>
+<p><strong>问题2：男主情感变化略快，铺垫不够细腻</strong></p>
+<p>证据链：
+• 第4集：已经「眼底闪过欣赏」
+• 第20集：偷吃包子
+• 第30集：公开维护</p>
+<p>影响评估：男主心动过程可以更渐进，增加观众期待感
+优化建议：在第10-20集增加2-3个男主视角的"微心动"场景</p>
+<p><strong>问题3：反派沈家相对脸谱化</strong></p>
+<p>证据链：
+• 李蔚红/沈翘的坏几乎没有层次，始终是"嫉妒+贬低"
+• 沈国仁功能单一，仅作为"势利舅舅"出现</p>
+<p>影响评估：反派不够立体，打脸爽感可能打折
+优化建议：给沈翘增加一个"曾经对宋瓷星好"的闪回，让反派更有层次</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>中段节奏平</td>
+<td>节奏控制</td>
+<td>中</td>
+<td>第12-14集增加小危机事件</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>男主情感铺垫</td>
+<td>情绪设计</td>
+<td>低</td>
+<td>增加2-3个男主视角场景</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>反派脸谱化</td>
+<td>人物塑造</td>
+<td>低</td>
+<td>给沈翘增加童年闪回</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>第16集噩梦</td>
+<td>结构</td>
+<td>低</td>
+<td>删除或改为有功能的场景</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>中段增加危机事件（最重要）</strong>
+   - 问题：第11-15集事件密度低
+   - 建议：在第13集增加"沈翘带闺蜜参观苏家庄园被拒"的打脸戏
+   - 效果：既增加冲突，又展示苏冥渊对宋瓷星的维护</p>
+</li>
+<li>
+<p><strong>男主视角补充</strong>
+   - 问题：男主心动过程不够渐进
+   - 建议：第12集增加苏冥渊查看宋瓷星消费记录时的OS
+   - 参考：「她真的在学...买的东西都很得体」</p>
+</li>
+<li>
+<p><strong>反派层次化</strong>
+   - 问题：沈翘太脸谱化
+   - 建议：第18集闪回中增加"童年沈翘分糖给宋瓷星，被李蔚红阻止"的细节
+   - 效果：暗示沈翘的"坏"是被母亲教出来的，增加层次</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>■ 小幅修改后开发（预计1周）</p>
+<p>预估开发周期：3-4周（剧本定稿后）
+预估制作预算：中等偏上（豪门场景需要质感）</p>
+<p>风险提示：
+1. 豪门场景质感是关键，服化道预算不能省
+2. 男女主选角要求高，尤其男主需要"禁欲系"+"反差萌"双重气质
+3. "全职太太收薪"概念可能引发社会讨论，做好舆情预案</p>
+<p>开发优势：
+1. 投流素材丰富，至少5个高质量片段可用
+2. 核心概念清晰，记忆点强
+3. 打脸戏密集，爽感充足
+4. 前3集质量高，留存有保障</p>
+<div class="section-title">评估完成</div>
+
+<p>```</p>
+<hr />
+<h2>评估总结</h2>
+<p>《我与疯批总裁的相亲局》是一部<strong>质量上乘的甜宠短剧</strong>，核心亮点在于：</p>
+<ol>
+<li><strong>高概念设定新颖</strong>："两个疯批的婚姻合作"打破传统霸总套路</li>
+<li><strong>核心金句系统完整</strong>："全职太太职业化"概念贯穿始终，记忆点强</li>
+<li><strong>投流素材极其丰富</strong>：日薪谈判、订婚宴打脸等多个名场面可直接使用</li>
+<li><strong>前3集代入感极强</strong>：元叙事设定+密集信息输出+紧密钩子循环</li>
+</ol>
+<p>主要问题是<strong>中段节奏略平</strong>，建议增加1-2个小危机事件提升事件密度。</p>
+<p><strong>决策建议</strong>：RECOMMEND，小幅优化后快速开发。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

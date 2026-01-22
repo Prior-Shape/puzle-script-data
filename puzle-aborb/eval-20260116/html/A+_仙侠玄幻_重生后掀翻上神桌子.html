@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重生后掀翻上神桌子</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《重生后掀翻上神桌子》
+类型/题材：仙侠玄幻 / 身份回归 / 兄弟情仇
+目标平台：短剧平台（抖音/快手/小程序）
+总集数：30集（提供材料）
+评估日期：2026-01-21</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  CONSIDER  ]
+评级：[  A+  ]
+总分：77/100</p>
+<p>一句话结论：世界观宏大、人物关系清晰、情感张力足够的仙侠剧本，前3集开场节奏稳健但略显平缓，兄弟情仇线设计出色，修改兄弟对峙节奏和强化第1集钩子后可进入开发。</p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre class="ascii-art">            开场与代入(7/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (7/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (8/10)      |      (8/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (7/10)   \|/  (8/10)
+              ▼
+         台词质量(7/10)
+              |
+         人物塑造(8/10)</pre>
+
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>7/10</td>
+<td>18%</td>
+<td>12.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>7/10</td>
+<td>15%</td>
+<td>10.5</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>8/10</td>
+<td>12%</td>
+<td>9.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>8/10</td>
+<td>10%</td>
+<td>8.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>8/10</td>
+<td>8%</td>
+<td>6.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td>-</td>
+<td>100%</td>
+<td><strong>75.1→77</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：人物塑造/情绪设计 - 兄弟情仇线情感张力强，北洛人物弧线完整
+<strong>最弱项</strong>：开场与代入 - 第1集为历史旁白+铺垫，缺少主角即时行动</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：18人
+• 核心人物：6人（有名有戏份）
+• 正派阵营：10人
+• 反派阵营：3人
+• 中立/摇摆：5人</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 辟邪王族
+        XG[玄戈<br/>辟邪王/兄长/牺牲者]
+        BL[北洛<br/>弃子/真王/挣扎者]
+        NS[霓商<br/>王妃/调和者]
+    end
+
+    subgraph 方仁馆
+        QHT[曲寒庭<br/>养父/师傅/守护者]
+        FR[傅柔<br/>师母/慈爱]
+        QFL[曲茯苓<br/>小师妹/暗恋]
+        WY[魏遥<br/>二师兄/喜剧担当]
+        BS[白术<br/>三师兄/吃醋]
+    end
+
+    subgraph 反派阵营
+        LX[岚相<br/>王位觊觎者/杀手]
+        ZL[长老<br/>幕后推手]
+    end
+
+    subgraph 妖族
+        YTS[原天柿<br/>黄金飞天鼠/忠仆]
+        YWY[云无月<br/>霒蚀君/神秘强者]
+    end
+
+    XG -->|"双生兄弟<br/>相克命运"| BL
+    XG -->|夫妻| NS
+    XG -.->|"舍身保护"| BL
+
+    QHT -->|"收养/传授剑法"| BL
+    BL -->|"感恩/归属"| QHT
+    QFL -->|暗恋| BL
+    WY -->|"惹祸/依赖"| BL
+    BS -->|"嫉妒/竞争"| BL
+
+    LX -.->|"追杀/夺位"| BL
+    ZL -->|"操控"| LX
+
+    YTS -->|"认主/忠诚"| BL
+    YWY -.->|"受托保护"| BL
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 主角：北洛 ─────────────────────────────────────────────┐
+│ 标签：[弃子身份] + [傲娇倔强] + [身份否认]                    │
+│ 标签印证：                                                   │
+│ • [弃子身份] ← 第8集：「当年将我弃若敝履，现在有求于我就让    │
+│   我回来？」                                                 │
+│ • [傲娇倔强] ← 第26集：「别以为说这些，我就会原谅你。」       │
+│ • [身份否认] ← 第9集：「我是人，不是妖！」                    │
+│ 弧线：[被弃→仇恨] → [动摇→纠结] → [主动回归]                 │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 主要配角：玄戈 ────────────────────────────────────────────┐
+│ 标签：[隐忍王者] + [深沉牺牲] + [温柔兄长]                    │
+│ 标签印证：                                                   │
+│ • [隐忍王者] ← 第11集：「我时日无多，何必让他为我担心。」     │
+│ • [深沉牺牲] ← 第22集：玄戈飞身而至，剑狠狠刺穿了他的身体     │
+│ • [温柔兄长] ← 第26集：「真像回到了小时候，我们一起练剑，     │
+│   一起吃饭，一起睡觉。」                                      │
+│ 弧线：[独撑大局] → [寻回弟弟] → [舍身相护]                   │
+│ 标签准确度：★★★★★                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 反派：岚相 ──────────────────────────────────────────────┐
+│ 标签：[野心觊觎] + [实力强悍] + [心胸狭隘]                    │
+│ 标签印证：                                                   │
+│ • [野心觊觎] ← 第11集：「你才是长老会和族人认可的王位继承人！」│
+│ • [实力强悍] ← 第21集：岚相的剑带着辟邪之力，北洛极力闪躲     │
+│ • [心胸狭隘] ← 第21集：「那么多年都没能要你的命，的确有点     │
+│   本事。」                                                    │
+│ 弧线：[觊觎王位] → [追杀北洛] → [公开对决]                   │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre class="ascii-art">张
+力  │
+强  │                                        ★ 大高潮(29-30)
+度  │                                       /
+    │                    ☆ 中高潮(21-23)  /
+    │                   /    \          /
+    │      ○ 小高潮   /      \    ○   /
+    │     (8-10)    /        \  (28)/
+    │    /    \    /          \   /
+    │   /      \  /            \/
+    │  /        \/
+    │ /    铺垫(1-7)
+    └────────────────────────────────────────────────→ 集数
+      1     5     10    15    20    25    30</pre>
+
+<p>【高潮点标注】
+• 小高潮①（第8-10集）：兄弟初次对峙，玄戈试探北洛实力
+• 中高潮①（第21-23集）：岚相追杀，玄戈舍身挡剑
+• 小高潮②（第28集）：天鹿大阵破裂，魔族入侵
+• 大高潮（第29-30集）：北洛决心回归，魔兽袭击人间</p>
+<p>【冲突热力图】</p>
+<pre class="ascii-table">集数    1-5    6-10   11-15  16-20  21-25  26-30
+────────────────────────────────────────────────────
+主线冲突  🔥      🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥🔥 🔥🔥🔥🔥
+人物冲突  🔥      🔥🔥🔥  🔥🔥    🔥🔥🔥  🔥🔥🔥🔥 🔥🔥🔥
+情感冲突  -       🔥🔥    🔥🔥🔥  🔥🔥    🔥🔥🔥  🔥🔥🔥🔥
+身份冲突  🔥      🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥🔥🔥  🔥🔥🔥
+────────────────────────────────────────────────────
+冲突密度  低      高      中      中      极高    极高
+（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突</strong>：魔族入侵 vs 天鹿大阵守护
+   - 起点（第1集）：「魔族从未放弃入侵常世，天鹿大阵在魔族的攻击下，逐渐松动……」
+   - 升级（第28集）：「天鹿大阵破了，魔族……魔族已经入侵三界！」
+   - 高潮（第29-30集）：魔兽攻击人间，北洛决心回归</p>
+</li>
+<li>
+<p><strong>身份冲突线</strong>：北洛的人/妖身份认同
+   - 起点（第5集）：「北洛，这孩子越长大，力量越强，只怕，我们留不住他多少时日了。」
+   - 升级（第9集）：「我是人，不是妖！」
+   - 高潮（第22集）：「我是人，不是妖……」（濒死仍在坚持）</p>
+</li>
+<li>
+<p><strong>兄弟情仇线</strong>：北洛 vs 玄戈
+   - 起点（第8集）：「看到我还活着，是不是很失望？」
+   - 升级（第22集）：玄戈舍身挡剑
+   - 和解伏笔（第28集）：「我想，当年族人放弃你，是错的，你比我想的还要坚强。」</p>
+</li>
+<li>
+<p><strong>王位争夺线</strong>：北洛 vs 岚相
+   - 起点（第11集）：「辟邪一族，岂能由一废物当王？」
+   - 高潮（第21-23集）：禁地对决</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>浮世绘风格动画</td>
+<td>视觉吸引</td>
+<td>「本场为浮世绘风格的动画，造成历史故事的古老泛黄感」</td>
+<td>✗ 弱视觉冲击</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>旁白介绍世界观</td>
+<td>背景交代</td>
+<td>「三千多年前，人族共主黄帝……」</td>
+<td>✗ 无主角出场</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>黄帝蚩尤大战</td>
+<td>史诗铺垫</td>
+<td>「蚩尤施法召唤风雨，霎时天昏地暗」</td>
+<td>○ 场面宏大但离主角远</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>辟邪族守护使命</td>
+<td>世界观建立</td>
+<td>「辟邪族在天鹿大阵上建天鹿城而居，世代守护」</td>
+<td>○ 铺垫到位</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>魔族持续进攻</td>
+<td>悬念</td>
+<td>「天鹿大阵在魔族的攻击下，逐渐松动……」</td>
+<td>✗ 钩子弱</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：5/10
+问题点：
+- <strong>致命问题</strong>：第1集全是旁白+历史铺垫，无主角出场，无即时冲突
+- 建议将第2-3集的内容前置，第1集应以北洛/玄戈的冲突场景开场</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接切入战斗</td>
+<td>玄戈斩杀异种魔</td>
+<td>玄戈受伤吐血</td>
+<td>「人，找到了吗？」</td>
+<td>2/5</td>
+</tr>
+</tbody>
+</table>
+<p>原文摘录：
+- 开场：「一名穿着白色王袍的男子被巨大的异种魔一爪子拍到地上，吐出一口血」
+- 钩子：「玄戈：羽林那边可有消息？人，找到了吗？」</p>
+<p>分析：第2集才是真正的有效开场，战斗+悬念设置到位</p>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>场景切换到人间</td>
+<td>北洛登场救魏遥</td>
+<td>北洛战斗力展示</td>
+<td>打手逃走，悬念转向人物</td>
+<td>3/5</td>
+</tr>
+</tbody>
+</table>
+<p>原文摘录：
+- 开场：「一名衣衫凌乱、鼻青脸肿的男子连滚带爬从赌坊里跑出来」
+- 北洛登场：「北洛（OS）：嘴这么臭，还是闭上的好。」
+- 「屋檐上，一名黑衣少年肆意懒散地靠坐着」</p>
+<p>分析：主角人物形象立体，痞帅潇洒，但与第2集的悬念「人，找到了吗」承接不够紧密</p>
+<p>【前3集总评】
+• 代入速度：□极快（3秒入戏）□快（30秒内）☑一般（1集内）□慢
+• 信息密度：□过载 ☑适中 □偏少
+• 钩子循环：□紧密 ☑一般 □松散
+• 前3集整体评分：6/10</p>
+<p><strong>核心问题</strong>：第1集纯旁白铺垫是致命伤，建议重构为：
+1. 以第2集玄戈战斗开场
+2. 或以北洛被追杀的闪回+现在的对比开场</p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】（抽样关键节点）</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「天鹿大阵逐渐松动」</td>
+<td>异种魔撞击结界</td>
+<td>4/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「人，找到了吗？」</td>
+<td>切换到北洛所在人间</td>
+<td>3/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>6→7</td>
+<td>辟邪士兵闯入</td>
+<td>北洛被偷袭</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>7→8</td>
+<td>北洛被带走</td>
+<td>北洛在天鹿城醒来</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>10→11</td>
+<td>玄戈吐血</td>
+<td>霓商担忧对话</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>22→23</td>
+<td>玄戈挡剑受伤</td>
+<td>众人反应</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>28→29</td>
+<td>「玄戈他……快撑不住了！」</td>
+<td>魔兽攻击人间</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：4.4/5
+衔接问题点：第2→3集场景切换稍显突兀，可加转场过渡</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双生相克</td>
+<td>第8集「辟邪一族，双生相克，你我只能活一个」</td>
+<td>第22集玄戈挡剑</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>玄戈受伤</td>
+<td>第11集「十年前王上为了保护大阵而受伤」</td>
+<td>第28集「玄戈他快撑不住了」</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>北洛辟邪之力</td>
+<td>第5集「压制徒儿体内的力量」</td>
+<td>第21-22集战斗中压制</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>云无月承诺</td>
+<td>第19集「他让我保护你」</td>
+<td>第29集救北洛</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>师傅的担忧</td>
+<td>第5集「只怕，我们留不住他多少时日了」</td>
+<td>第30集「去吧」</td>
+<td>✓已回收</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+☑ 连贯无矛盾</p>
+<p>【人物行为一致性】
+☑ 行为符合性格设定
+- 北洛始终坚持「我是人不是妖」直到最后
+- 玄戈始终表现出隐忍与牺牲
+- 曲寒庭始终保护北洛</p>
+<p>【逻辑硬伤】（如有）
+无明显逻辑硬伤</p>
+<p>逻辑一致性评分：9/10</p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>时长</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第22集</td>
+<td>15s</td>
+<td>反转型</td>
+<td>玄戈舍身挡剑</td>
+<td>「岚相以妖力拾起地上的剑……剑狠狠刺穿了他的身体」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第8集</td>
+<td>10s</td>
+<td>冲突型</td>
+<td>兄弟首次对峙</td>
+<td>「好久不见，北洛」「看到我还活着，是不是很失望？」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第3集</td>
+<td>8s</td>
+<td>爽点型</td>
+<td>北洛帅气登场</td>
+<td>「嘴这么臭，还是闭上的好」+飞身而下</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第9集</td>
+<td>12s</td>
+<td>情感型</td>
+<td>北洛身份挣扎</td>
+<td>「我是人，不是妖！」（痛苦大喊）</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第28集</td>
+<td>10s</td>
+<td>情感型</td>
+<td>玄戈深夜告白</td>
+<td>「我和辟邪族，始终欠你一句……对不起」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第21集</td>
+<td>15s</td>
+<td>爽点型</td>
+<td>北洛以剑力击退岚相</td>
+<td>「纯以剑力将玄戈击飞……这才是你，北洛」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第10集</td>
+<td>8s</td>
+<td>金句型</td>
+<td>拒绝回归</td>
+<td>「你凭什么以为我会做这个辟邪王？」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：2个
+• 反转/悬念型：1个
+• 金句/名场面型：2个
+• 情感/虐心型：3个
+• 爽点/逆袭型：2个</p>
+<p>投流素材丰富度：★★★★☆
+最佳投流片段推荐：第22集 玄戈舍身挡剑——「兄弟相残到舍身相护」的反转极具冲击力</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】（代表剧本最佳水平）</p>
+<pre class="character-card">┌─ 片段1：玄戈舍身挡剑 ───────────────────────────────────────┐
+│ 位置：第22集                                                   │
+│ 类型：☑冲突高潮 ☑情感爆发 □反转揭示 □台词金句 ☑名场面       │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「岚相以妖力拾起地上的剑，将妖力灌满长剑，高举着剑就要刺      │
+│ 下去——玄戈却突然飞身而至，剑狠狠刺穿了他的身体。              │
+│ 岚相（震惊地）：王上！                                        │
+│ 众士兵：王上！                                                │
+│ 北洛震动地看着玄戈，不敢置信，玄戈的血顺着剑尖低落到他       │
+│ 脸上。玄戈口吐鲜血，但他还是以妖力震出胸口的剑，将岚相       │
+│ 击飞。玄戈：够了！」                                          │
+│                                                               │
+│ 上下文：北洛拒绝使用辟邪之力，被岚相打得濒死，玄戈舍身相救    │
+│ 精彩点：「双生相克」设定下的反向操作，兄长用命保护弟弟         │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：深夜和解 ─────────────────────────────────────────┐
+│ 位置：第28集                                                   │
+│ 类型：□冲突高潮 ☑情感爆发 □反转揭示 ☑台词金句 □名场面       │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「玄戈（轻声地）：我现在才明白，你为什么一定要留在这里，      │
+│ 这里的确很好。这么多年，我和辟邪族，始终欠你一句……对不起。   │
+│ 我想，当年族人放弃你，是错的，你比我想的还要坚强。            │
+│ 窗外的月色透进来，玄戈看着北洛的背影，淡淡笑了。              │
+│ 北洛躺在床上一动不动，极力克制自己颤抖的手，眼圈却早已       │
+│ 通红。」                                                       │
+│                                                               │
+│ 上下文：兄弟俩在方仁馆同住，玄戈以为北洛睡着了说出心里话      │
+│ 精彩点：隐忍式情感爆发，「假装睡着」的设计让情感更有张力      │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：身份挣扎的爆发 ─────────────────────────────────────┐
+│ 位置：第22集                                                   │
+│ 类型：☑冲突高潮 ☑情感爆发 □反转揭示 □台词金句 □名场面       │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「北洛跪在地上，痛苦地控制着妖力，手死死抓着地面。            │
+│ 北洛：少废话！我是人，不是妖……                               │
+│ 岚相：来啊！让我看看你究竟有没有资格跟我抢王位！              │
+│ 长老（冷笑地）：王上，你还不死心吗？他如此仇恨我们，又怎么   │
+│ 会为我们守护大阵？                                            │
+│ 玄戈却只觉得痛心不已。玄戈：北洛！证明给他们看！              │
+│ 岚相一声冷笑，双手结出巨大的能量，狠狠打在北洛的背上。       │
+│ 北洛再次被击飞，撞到巨石上，巨石瞬间碎裂，他吐出一大口血，  │
+│ 趴在地上怎么也站不起来，手在地上抓出血痕。                    │
+│ 北洛（痛苦大喊）：我是人！不是妖！」                          │
+│                                                               │
+│ 上下文：岚相当众追杀北洛，北洛宁死也不用辟邪之力              │
+│ 精彩点：「手在地上抓出血痕」的细节写作，身份认同的极致挣扎    │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【冲突写作示范】（展示冲突处理技巧）</p>
+<pre class="character-card">┌─ 示范片段 ──────────────────────────────────────────────────┐
+│ 位置：第8集                                                    │
+│ 冲突类型：人物冲突 + 身份冲突                                  │
+│                                                               │
+│ 原文：                                                        │
+│ 「玄戈（淡笑地）：好久不见，北洛。                            │
+│ 北洛看着这张和自己一样的脸，嗤笑。                            │
+│ 北洛：原来是辟邪王，还真是好久不见。                          │
+│ 玄戈：你还是老样子。                                          │
+│ 北洛：你也没变，还是那么讨厌。看到我还活着，是不是很失望？   │
+│ 玄戈笑了笑。                                                  │
+│ 玄戈：是有点，毕竟辟邪一族，双生相克，你我只能活一个，       │
+│ 我的亲弟弟。                                                  │
+│ 北洛（嗤笑一下，眼神变得凌厉）：我可没有你这样的哥哥。」     │
+│                                                               │
+│ 技巧分析：                                                    │
+│ 1. 台词节奏：一问一答，短句对冲，张力拉满                      │
+│ 2. 信息密度：三句话交代兄弟关系+双生相克设定+情感对立          │
+│ 3. 潜台词丰富：「是有点」——玄戈的自嘲与无奈                   │
+│ 4. 动作配合：「嗤笑」「眼神变得凌厉」——情绪外化               │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】（按类型分类）</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「嘴这么臭，还是闭上的好」</td>
+<td>第3集</td>
+<td>北洛</td>
+<td>初登场</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「我和辟邪族，始终欠你一句……对不起」</td>
+<td>第28集</td>
+<td>玄戈</td>
+<td>深夜同住</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「看到我还活着，是不是很失望？」「是有点」</td>
+<td>第8集</td>
+<td>北洛/玄戈</td>
+<td>兄弟对峙</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「死在禁地也比给你们当王好！」</td>
+<td>第15集</td>
+<td>北洛</td>
+<td>闯入禁地</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「去吧」</td>
+<td>第30集</td>
+<td>曲寒庭</td>
+<td>北洛决定回归</td>
+</tr>
+<tr>
+<td>虐心型</td>
+<td>「我是人！不是妖！」</td>
+<td>第22集</td>
+<td>北洛</td>
+<td>濒死挣扎</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：兄弟情仇线设计精准</strong></p>
+<p>证据链：
+• 第8集：「辟邪一族，双生相克，你我只能活一个」——设定冲突
+• 第22集：玄戈舍身挡剑——反向操作，打破「相克」宿命
+• 第28集：「对不起」——情感闭环</p>
+<p>分析：在「双生相克」的命运设定下，让「应该相害」的兄长选择「舍身相护」，形成强烈反差。
+可复用技巧：<strong>宿命反叛法</strong>——先建立宿命设定，再让角色用行动打破它。</p>
+<hr />
+<p><strong>亮点2：身份认同线贯穿始终</strong></p>
+<p>证据链：
+• 第5集：「北洛，这孩子越长大，力量越强」——身份的不可回避
+• 第9集/第22集：「我是人，不是妖！」——反复强调的身份执念
+• 第30集：「我要回天鹿城！」——主动接受身份</p>
+<p>分析：北洛的身份认同不是一次性转变，而是通过多次冲击、多次坚持、最终主动选择的弧线。
+可复用技巧：<strong>三拒一受法</strong>——角色连续拒绝命运三次，第四次主动拥抱。</p>
+<hr />
+<p><strong>亮点3：双线叙事结构清晰</strong></p>
+<p>证据链：
+• 第2-6集：天鹿城线（玄戈守阵）+ 人间线（北洛生活）交替
+• 第8-23集：天鹿城内的兄弟对峙 + 王位争夺
+• 第24-30集：人间温情 + 危机爆发 → 汇合</p>
+<p>分析：天鹿城与人间两条线索相互呼应，最终在第29-30集汇合，结构完整。
+可复用技巧：<strong>双线汇合法</strong>——两条独立故事线各自发展，在高潮处交汇。</p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：第1集开场过于平缓（P0级问题）</strong></p>
+<p>证据链：
+• 第1集：「本场为浮世绘风格的动画，造成历史故事的古老泛黄感」→ 纯旁白
+• 第1集：「三千多年前，人族共主黄帝……」→ 无主角，无即时冲突</p>
+<p>影响评估：短剧第1集是生死线，纯旁白开场会导致大量用户在前10秒流失
+优化建议：
+1. 将第2集玄戈战斗场景移至开场
+2. 或以北洛被追杀的闪回（第8集提及）作为冷开场
+3. 旁白世界观可精简为字幕或画外音穿插</p>
+<hr />
+<p><strong>问题2：北洛形象略显被动（中段）</strong></p>
+<p>证据链：
+• 第6-7集：被辟邪士兵带走——被动
+• 第8-10集：被玄戈试探——被动
+• 第21-22集：被岚相追杀——被动</p>
+<p>影响评估：主角在中段较长时间处于被动状态，可能影响观众对主角的认同感
+优化建议：
+1. 在第10-15集增加北洛主动行动的段落
+2. 或将第15-16集闯禁地的主动性提前强调</p>
+<hr />
+<p><strong>问题3：云无月人物功能性过强</strong></p>
+<p>证据链：
+• 第17-20集：突然出现，帮北洛取蜃珠
+• 第29集：受托保护北洛</p>
+<p>影响评估：云无月作为「霒蚀君」的大妖设定，目前更像功能性NPC
+优化建议：适当增加云无月的个人动机或与北洛的互动深度</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>第1集开场平缓</td>
+<td>开场与代入(-3分)</td>
+<td>中</td>
+<td>重构第1集，战斗/追杀场景前置</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>北洛中段被动</td>
+<td>人物塑造(-1分)</td>
+<td>低</td>
+<td>强化闯禁地的主动性描写</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>云无月功能化</td>
+<td>人物塑造(-0.5分)</td>
+<td>中</td>
+<td>增加个人故事线</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>第1集重构</strong>（最重要）
+   - 问题：纯旁白世界观铺垫，无主角无冲突
+   - 建议：</p>
+<ul>
+<li>方案A：以第2集玄戈斩杀异种魔开场→闪回旁白→切到北洛</li>
+<li>方案B：以北洛被追杀（闪回）开场→现在的平静生活对比</li>
+<li>参考改写：
+ ```
+ 第1集 改写版
+ 1-1 夜 外 荒野（闪回）
+ r 一个浑身是血的少年在黑暗中狂奔，身后是无数追杀的身影。
+ r 少年摔下山坡，遍体鳞伤，眼中满是愤怒与恐惧。
+ 追杀者（OS）：双生相克，留你不得！
+ r 少年红了眼，却强忍着没有反击——
+ r 画面骤然切换。</li>
+</ul>
+<p>1-2 日 外 栖霞村-街头
+ r 阳光明媚，热闹的集市。
+ r 一名黑衣少年懒散地靠在树下，嘴角带着痞笑——正是长大后的北洛。
+ r 旁白（简短）：那是十年前的事了……
+ ```</p>
+</li>
+<li>
+<p><strong>强化北洛主动性</strong>
+   - 问题：中段多为被动接受
+   - 建议：第15集「死在禁地也比给你们当王好」的台词已有主动性，可强化为主动计划逃离而非被迫闯入</p>
+</li>
+<li>
+<p><strong>云无月人物深化</strong>（可选）
+   - 建议：增加一场云无月主动与北洛对话的戏，透露其留在天鹿城的原因</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☑ 小幅修改后开发（预计 1-2 周）
+□ 立即进入开发
+□ 重大修改后重新评估
+□ 暂缓
+□ 放弃</p>
+<p><strong>核心修改项</strong>：
+1. 重构第1集开场（必须）
+2. 审视北洛中段主动性（建议）</p>
+<p>预估开发周期：6-8周（含拍摄）
+预估制作预算：中等（需要特效场景较多：战斗、结界、空间通道）
+风险提示：
+- 特效场景较多，需注意预算控制
+- 兄弟对峙戏份需要演员表演功底</p>
+<div class="section-title">评估完成</div>
+
+<p>```</p>
+<hr />
+<h2>评估总结</h2>
+<p>《重生后掀翻上神桌子》是一部<strong>世界观宏大、情感线设计出色</strong>的仙侠短剧剧本。</p>
+<p><strong>核心优势</strong>：
+- 兄弟情仇线「双生相克→舍身相护」的情感反转设计精准
+- 北洛的身份认同弧线完整
+- 投流素材丰富（尤其第22集玄戈挡剑段落）</p>
+<p><strong>核心问题</strong>：
+- 第1集纯旁白开场是致命伤，必须重构</p>
+<p><strong>最终建议</strong>：修改第1集开场结构后，可进入开发阶段。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

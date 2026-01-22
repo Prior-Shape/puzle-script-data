@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白月光回国，绿茶小心</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p>【基本信息】
+剧本名称：《白月光回国，绿茶小心》
+类型/题材：都市情感 / 复仇逆袭 / 白月光回归
+目标平台：短剧平台（竖屏短剧）
+总集数：30集（已提供）
+评估日期：2026-01-20</p>
+<div class="section-title">一、评估结论</div>
+
+<p>决策：[  CONSIDER  ]
+评级：[  A+  ]
+总分：77/100</p>
+<p>一句话结论：<strong>经典"白月光回归打脸绿茶"框架，冲突密集、爽点明确，但人设略显模式化，部分逻辑需打磨，适合追求快节奏爽感的受众。</strong></p>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p>【能力分布图】</p>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;            开场与代入(8/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (8.5/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (7/10)      |      (7.5/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (6/10)   \|/  (7/10)
+              ▼
+         台词质量(7.5/10)
+              |
+         人物塑造(7/10)&lt;/pre&gt;
+
+</code></pre>
+<p>【维度评分表】</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8/10</td>
+<td>18%</td>
+<td>14.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>8.5/10</td>
+<td>15%</td>
+<td>12.75</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>7.5/10</td>
+<td>12%</td>
+<td>9.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7/10</td>
+<td>12%</td>
+<td>8.4</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>7/10</td>
+<td>10%</td>
+<td>7.0</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7.5/10</td>
+<td>8%</td>
+<td>6.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>6/10</td>
+<td>8%</td>
+<td>4.8</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td></td>
+<td>100%</td>
+<td><strong>75.15→77</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：节奏控制 - 每集都有冲突爆点和悬念钩子，几乎无废戏
+<strong>最弱项</strong>：创意题材 - "白月光回归打绿茶"框架较为常见，差异化不足</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p>【人物统计】
+• 总人物数：10+ 人
+• 核心人物：4 人（有名有戏份）
+• 正派阵营：2 人（姜姒/林晚意、傅司璟）
+• 反派阵营：3 人（林晚舟、林父、林母）
+• 中立/摇摆：1 人（傅迟）</p>
+<p>【关系图】（Mermaid格式）</p>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[姜姒/林晚意<br/>白月光/演员/隐忍复仇]
+        B[傅司璟<br/>霸总/暗恋/资源掌控者]
+    end
+
+    subgraph 反派阵营
+        C[林晚舟<br/>绿茶/心机/杀姐夺爱]
+        D[林父林母<br/>偏心/助纣为虐]
+    end
+
+    subgraph 摇摆角色
+        E[傅迟<br/>痴情/易怒/被蒙蔽]
+    end
+
+    A -->|暗恋/合作| B
+    A -.->|姐妹对立| C
+    B -->|兄弟| E
+    C -->|利用感情| E
+    C -->|从属| D
+    E -->|曾暗恋| A
+    D -.->|追杀| A
+</div>
+
+<p>【核心人物卡片】</p>
+<pre class="character-card">┌─ 主角：姜姒（林晚意） ─────────────────────────────────────┐
+│ 标签：[白月光] + [隐忍演员] + [智斗复仇]                     │
+│ 标签印证：                                                   │
+│ • [白月光] ← 第4集：「你还是一样，任何事先考虑别人，不考虑自己。」│
+│ • [隐忍演员] ← 第5集：「让你见识见识，什么才叫一位顶级演员的自我修养。」│
+│ • [智斗复仇] ← 第9集：「演员第三条，需要临场发挥的时候，将镜头吸引过来，过错抛出去。」│
+│ 弧线：[寄人篱下被追杀] → [化名隐忍求生] → [回归智斗复仇]     │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 反派：林晚舟 ──────────────────────────────────────────────┐
+│ 标签：[绿茶白莲] + [嫉妒成魔] + [杀姐夺爱]                   │
+│ 标签印证：                                                   │
+│ • [绿茶白莲] ← 第5集：「我知道姐姐在你心里很重要，可……」（眼眶泛红）│
+│ • [嫉妒成魔] ← 第6集：「林晚意，为什么你都死了还能出来！为什么就不能是我获得幸福！」│
+│ • [杀姐夺爱] ← 第15集：「你没死还真是让我意料之外啊。」       │
+│ 弧线：[嫉妒姐姐] → [派人追杀+模仿夺爱] → [疯狂反扑]         │
+│ 标签准确度：★★★★★（反派刻画到位）                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 男主：傅司璟 ──────────────────────────────────────────────┐
+│ 标签：[霸总] + [深情暗恋] + [守护者]                         │
+│ 标签印证：                                                   │
+│ • [霸总] ← 第1集：「姜姒，我这有你需要的钱和顶级资源，而你，有我要的脸。」│
+│ • [深情暗恋] ← 第25集：「晚意，我好想你，晚意，你为什么要骗我？」│
+│ 弧线：[苦苦寻觅] → [找到后暗中守护] → [表白追求]             │
+│ 标签准确度：★★★☆☆（略显工具人）                            │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 男二：傅迟 ────────────────────────────────────────────────┐
+│ 标签：[痴情弟弟] + [易怒冲动] + [被蒙蔽]                     │
+│ 标签印证：                                                   │
+│ • [痴情弟弟] ← 第4集：「我还以为，我还以为我再也见不到你了。」 │
+│ • [易怒冲动] ← 第2集：「傅司璟！你为什么总想着刁难晚舟！」    │
+│ • [被蒙蔽] ← 第11集：「林晚意，为什么你出国以后变成这样了？」 │
+│ 弧线：[暗恋白月光] → [被绿茶蒙蔽] → [逐渐清醒]               │
+│ 标签准确度：★★★★☆                                          │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p>【剧本结构曲线】</p>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;张
+力  │
+强  │                                              ★ 大高潮(30)
+度  │                                             / DNA揭穿+反杀
+    │                        ☆ 中高潮(24-25)    /
+    │                       / 身份DNA检测      /
+    │          ○ 小高潮   /                   /
+    │         / (16-17) /                    /
+    │    ○   / 商场围攻 ○(20)              /
+    │   /   /         / 书房撞破           /
+    │  /   /         /                    /
+    │ /   /         /                    /
+    │/ (1-3)      (8-12)              (26-30)
+    └────────────────────────────────────────────────→ 集数&lt;/pre&gt;
+
+
+&lt;pre class=&quot;ascii-table&quot;&gt;      1-5   6-10  11-15  16-20  21-25  26-30&lt;/pre&gt;
+
+</code></pre>
+<p>【高潮点标注】
+• 小高潮①（第3集）：姜姒以林晚意身份出现在办公室，傅迟震惊
+• 小高潮②（第12集）：商场地滑戏码，姜姒反将林晚舟一军
+• 小高潮③（第16-17集）：鞋店围攻事件，傅迟霸气护场
+• 中高潮①（第20集）：书房撞破，林晚舟揭穿"姜姒"身份
+• 中高潮②（第24-25集）：DNA检测揭示真实身份
+• 大高潮（第30集）：生日宴吊灯事件，姜姒准备终极反杀</p>
+<p>【冲突热力图】</p>
+<pre><code>
+&lt;pre class=&quot;ascii-table&quot;&gt;集数      1-5    6-10   11-15  16-20  21-25  26-30
+────────────────────────────────────────────────────────────
+主线冲突  🔥🔥🔥  🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥🔥🔥 🔥🔥🔥🔥
+人物冲突  🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥🔥  🔥🔥    🔥🔥🔥
+情感冲突  🔥🔥    🔥🔥    🔥🔥    🔥🔥🔥  🔥🔥🔥  🔥🔥
+身份悬念  🔥🔥🔥  🔥🔥    🔥🔥    🔥🔥🔥🔥 🔥🔥🔥🔥 🔥🔥
+────────────────────────────────────────────────────────────
+冲突密度   高      中      高      极高    极高    极高&lt;/pre&gt;
+
+</code></pre>
+<pre class="ascii-table">（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p>【冲突线梳理】</p>
+<ol>
+<li>
+<p><strong>主线冲突</strong>：姜姒（林晚意）vs 林晚舟的姐妹对决
+   - 起点（第1集）：傅司璟找到姜姒，揭示林晚舟模仿姐姐骗取傅迟感情
+   - 升级（第15集）：「你没死还真是让我意料之外啊。」林晚舟承认派人追杀
+   - 高潮（第30集）：生日宴吊灯谋杀事件，姜姒准备证据反杀</p>
+</li>
+<li>
+<p><strong>情感冲突线</strong>：傅迟的感情归属摇摆
+   - 第2集：「我非晚舟不娶！」
+   - 第17集：「我傅迟在此声明，我与林晚舟没有任何婚约！」
+   - 第21集：姜姒亲吻傅迟脸颊，感情天平倾斜</p>
+</li>
+<li>
+<p><strong>身份悬念线</strong>：姜姒=林晚意的身份揭示
+   - 第1集：傅司璟找到"长相一样的人"
+   - 第20集：林晚舟揭穿「姜姒」身份
+   - 第25集：DNA检测证明姜姒就是林晚意</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p>【第1集逐段分析】（生死线）</p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>保镖撞门，傅司璟霸气登场</td>
+<td>黄金开场</td>
+<td>「保镖撞开出租屋门，蜂拥而至」</td>
+<td>✓ 强视觉冲击</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>霸总找上十八线演员</td>
+<td>双交代</td>
+<td>「终于找到你了，姜姒」+字幕介绍</td>
+<td>✓ 身份明确</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>傅司璟开出条件</td>
+<td>冲突建立</td>
+<td>「我需要你学她，去勾引我弟弟傅迟」</td>
+<td>✓ 核心任务建立</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>谈判拉扯，价码飙升</td>
+<td>事件推进</td>
+<td>「恕我不能从……」「三个亿」「……成交」</td>
+<td>✓ 节奏紧凑有趣</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>揭示背景：白月光失踪+弟弟车祸+妹妹上位</td>
+<td>钩子</td>
+<td>「林晚舟，模仿林晚意的样子让傅迟对她爱入骨髓」</td>
+<td>强，悬念+仇恨动机明确</td>
+</tr>
+</tbody>
+</table>
+<p>第1集代入感评分：<strong>8/10</strong>
+亮点：开场节奏极快，5分钟内建立核心冲突+人物关系+任务目标</p>
+<p>【第2集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>傅迟怒闯办公室质问傅司璟</td>
+<td>林晚舟录音挑拨+傅迟宣布"非晚舟不娶"</td>
+<td>姜姒以林晚意身份突然出现</td>
+<td>「你们在等谁？」姜姒摘墨镜登场</td>
+<td>4.5/5</td>
+</tr>
+</tbody>
+</table>
+<p>核心爆点原文：
+「傅迟（怒视傅司璟）：哥！如果你不同意，我宁愿离家出走，和你断绝往来！」
+「一只穿着高跟鞋的脚拦住傅迟离开的脚步……姜姒微笑摘掉墨镜。姜姒：你们在等谁？」</p>
+<p>【第3集分析】</p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>承接姜姒登场</td>
+<td>傅迟震惊+林晚舟商场暗自得意</td>
+<td>林晚舟内心独白揭示野心</td>
+<td>傅迟手机推送"林晚意回国"新闻</td>
+<td>4/5</td>
+</tr>
+</tbody>
+</table>
+<p>核心爆点原文：
+「林晚舟os：林晚意，你在他们心里地位再高又怎么样？只要你消失，时间一长，不光是傅迟，连傅司璟也会拜倒在我的石榴裙下。」
+「林晚舟os：到时候傅氏集团就是我林家的了，这还得多亏姐姐你这张好脸啊。」</p>
+<p>【前3集总评】
+• 代入速度：☑极快（3秒入戏）□快 □一般 □慢
+• 信息密度：□过载 ☑适中 □偏少
+• 钩子循环：☑紧密 □一般 □松散
+• 前3集整体评分：<strong>8/10</strong></p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p>【衔接度评分表】（抽样关键节点）</p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「傅迟爱入骨髓」背景揭示</td>
+<td>傅迟怒闯办公室</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「你们在等谁？」姜姒登场</td>
+<td>傅迟震惊反应</td>
+<td>5/5</td>
+<td>反转型</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>手机推送"林晚意回国"</td>
+<td>饭店见面场景</td>
+<td>4/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>5→6</td>
+<td>「我既然回来了，就不会离开了」</td>
+<td>傅迟陷入回忆</td>
+<td>4/5</td>
+<td>情感型</td>
+</tr>
+<tr>
+<td>9→10</td>
+<td>「不信你问他！」林晚舟挑战</td>
+<td>傅司璟配合演戏</td>
+<td>5/5</td>
+<td>危机型</td>
+</tr>
+<tr>
+<td>15→16</td>
+<td>「我有关于林晚意的秘密」</td>
+<td>杀手追杀闪回</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+<tr>
+<td>24→25</td>
+<td>DNA检测进行中</td>
+<td>三小时后出结果</td>
+<td>5/5</td>
+<td>悬念型</td>
+</tr>
+</tbody>
+</table>
+<p>平均衔接度：<strong>4.5/5</strong>
+衔接问题点：几乎无明显问题，钩子设计成熟</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p>【伏笔回收检查】</p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>林晚舟派人追杀林晚意</td>
+<td>第2集（林晚舟内心）</td>
+<td>第15集明确揭示</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>姜姒=林晚意的真实身份</td>
+<td>第1集（暗示）</td>
+<td>第25集DNA证实</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>傅迟小时候的花园习惯</td>
+<td>第21集姜姒提及</td>
+<td>第21集用于证明身份</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>杀手照片</td>
+<td>第15集闪回</td>
+<td>第25集林晚舟「明明已经死在杀手手里」</td>
+<td>✓已回收</td>
+</tr>
+<tr>
+<td>吊灯谋杀计划</td>
+<td>第30集（林父林母二楼）</td>
+<td>第30集当场</td>
+<td>✓已回收</td>
+</tr>
+</tbody>
+</table>
+<p>【时间线检查】
+☑ 连贯无矛盾
+- 出国→追杀→化名姜姒→一年后被找到，时间线清晰</p>
+<p>【人物行为一致性】
+☑ 整体符合性格设定
+□ 有小问题：
+- 傅迟的摇摆过于频繁（第10集刚被说服，第11集又被林晚舟挑拨），略显"工具人"
+- 第17集傅迟突然"我傅迟在此声明没有婚约"转变过快</p>
+<p>【逻辑硬伤】（如有）
+1. 第25集：DNA检测"三小时出结果"在现实中不太可能，但可接受为剧情需要
+2. 第12集：商场地面"滑不滑"的设定略显刻意，但用于反转尚可</p>
+<p>逻辑一致性评分：<strong>7.5/10</strong></p>
+<div class="section-title">八、投流素材清单</div>
+
+<p>【高潜力投流片段】</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第1集</td>
+<td>反转型</td>
+<td>价码飙升成交</td>
+<td>「恕我不能……」「三个亿」「……成交」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第2集</td>
+<td>悬念型</td>
+<td>白月光登场</td>
+<td>「你们在等谁？」姜姒摘墨镜</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第12集</td>
+<td>打脸型</td>
+<td>地滑反杀</td>
+<td>林晚舟想证明不滑，结果真的摔倒</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第17集</td>
+<td>霸气型</td>
+<td>傅迟护场</td>
+<td>「谁说她是小三？！」「我傅迟在此声明…」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第9集</td>
+<td>智斗型</td>
+<td>临场反杀</td>
+<td>「傅迟！你怎么能这样胡说你姐姐和我哥呢！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第25集</td>
+<td>反转型</td>
+<td>DNA揭示</td>
+<td>「姜姒小姐和林晚意小姐，确实是同一个人」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第15集</td>
+<td>揭秘型</td>
+<td>追杀真相</td>
+<td>「你没死还真是让我意料之外啊」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8</td>
+<td>第21集</td>
+<td>情感型</td>
+<td>花园亲吻</td>
+<td>姜姒在傅迟脸颊轻轻吻了一下</td>
+<td>★★★☆☆</td>
+</tr>
+</tbody>
+</table>
+<p>【投流类型分布】
+• 冲突/打脸型：4 个
+• 反转/悬念型：3 个
+• 金句/名场面型：2 个
+• 情感/虐心型：1 个
+• 爽点/逆袭型：3 个</p>
+<p>投流素材丰富度：★★★★★
+最佳投流片段推荐：<strong>第12集 商场地滑反杀</strong> - 视觉效果好+反转爽感强+台词少易剪辑</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p>【高光片段】（代表剧本最佳水平）</p>
+<pre class="character-card">┌─ 片段1：三个亿成交 ─────────────────────────────────────────┐
+│ 位置：第1集                                                   │
+│ 类型：☑反转揭示 ☑台词金句                                     │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「姜姒（把文件丢回傅司璟桌上）：抱歉傅总，恕我……               │
+│   傅司璟：事成后，我会给你一个亿。                             │
+│   姜姒：恕我不能……                                            │
+│   傅司璟：两个。                                               │
+│   姜姒：恕我不能从……                                          │
+│   傅司璟：三个亿。                                             │
+│   姜姒（深呼吸）：……成交。」                                  │
+│                                                               │
+│ 上下文：傅司璟要求姜姒扮演林晚意拆散弟弟和林晚舟               │
+│ 精彩点：节奏感极强，四次打断形成喜剧效果，人物个性鲜明         │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：商场地滑反杀 ─────────────────────────────────────────┐
+│ 位置：第12集                                                  │
+│ 类型：☑冲突高潮 ☑名场面                                       │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「林晚舟（大叫）：阿迟！她是演的！这里根本不滑！你看……         │
+│   △林晚舟站起身来想证明，却真的滑了一跤。                     │
+│   △姜姒噗嗤一声笑出来。                                       │
+│   傅迟（冷眼看着摔疼的林晚舟）：看来还是摔的不疼，没必要抱着。 │
+│   傅迟（深情看向姜姒）：晚意姐，疼吗？                         │
+│   姜姒（眨眼）：有你疼着，不疼了。」                           │
+│                                                               │
+│ 上下文：林晚舟故意碰瓷摔倒，姜姒以其人之道还治其人之身         │
+│ 精彩点：以牙还牙的智斗+绿茶自食恶果的爽感+撒糖收尾             │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段3：DNA揭示真相 ─────────────────────────────────────────┐
+│ 位置：第25集                                                  │
+│ 类型：☑反转揭示 ☑情感爆发                                     │
+│                                                               │
+│ 完整原文：                                                    │
+│ 「医生：姜姒小姐和林晚意小姐，确实是同一个人。                 │
+│   △林晚舟双腿一软，踉跄后退两步。                             │
+│   林晚舟（喃喃）：怎么可能呢？我已经收到照片了，林晚意明明已经死│
+│   在那个杀手手里了……                                          │
+│   △傅司璟一把夺过报告，抓住姜姒的手腕，眼睛猩红。             │
+│   傅司璟（咬牙切齿）：你是林晚意，你为什么不早告诉我？」       │
+│                                                               │
+│ 上下文：林晚舟揭穿"姜姒"后，姜姒主动要求DNA检测               │
+│ 精彩点：多方情绪爆发，林晚舟崩溃+傅司璟心疼+真相大白           │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【冲突写作示范】（展示冲突处理技巧）</p>
+<pre class="character-card">┌─ 示范片段：茶言茶语拱火 ──────────────────────────────────────┐
+│ 位置：第5集                                                   │
+│ 冲突类型：人物冲突（姐妹对决）                                 │
+│                                                               │
+│ 原文：                                                        │
+│ 「林晚舟（笑）：姐，国外生活过得肯定很开心吧？不然也不会一条消息│
+│   都不给我们发，我们都以为你失踪了，快急疯了。                 │
+│   △傅迟脸色瞬间阴沉。                                         │
+│   傅迟（冷漠）：既然在国外过得那么好，还回来干什么。           │
+│   傅司璟：傅迟，你怎么和晚意说话的！                           │
+│   林晚舟（委屈，扯了扯傅迟衣服）：阿迟，不要再说姐姐了，可能姐姐│
+│   在国外也有了自己的幸福，想过自己的人生吧。                   │
+│   姜姒（眯眼）os：好一个茶言茶语，林晚舟看起来人畜无害，字字句句│
+│   却在拱火。」                                                 │
+│                                                               │
+│ 技巧分析：                                                     │
+│ 1. 绿茶台词设计精准：表面关心，实则拱火，每句都戳痛点          │
+│ 2. 通过傅迟反应验证效果，增强说服力                            │
+│ 3. 主角OS点破，给观众"我比角色聪明"的优越感                   │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p>【金句清单】（按类型分类）</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>霸气型</td>
+<td>「我傅迟在此声明，我与林晚舟没有任何婚约！」</td>
+<td>第17集</td>
+<td>傅迟</td>
+<td>鞋店护场</td>
+</tr>
+<tr>
+<td>霸气型</td>
+<td>「谁说她是小三？！」</td>
+<td>第17集</td>
+<td>傅迟</td>
+<td>鞋店护场</td>
+</tr>
+<tr>
+<td>智斗型</td>
+<td>「让你见识见识，什么才叫一位顶级演员的自我修养」</td>
+<td>第5集</td>
+<td>姜姒OS</td>
+<td>餐厅对决</td>
+</tr>
+<tr>
+<td>情感型</td>
+<td>「有你疼着，不疼了」</td>
+<td>第12集</td>
+<td>姜姒</td>
+<td>商场</td>
+</tr>
+<tr>
+<td>反转型</td>
+<td>「恕我不能从……」「三个亿」「……成交」</td>
+<td>第1集</td>
+<td>姜姒/傅司璟</td>
+<td>谈判</td>
+</tr>
+<tr>
+<td>打脸型</td>
+<td>「看来还是摔的不疼，没必要抱着」</td>
+<td>第12集</td>
+<td>傅迟</td>
+<td>商场</td>
+</tr>
+<tr>
+<td>揭秘型</td>
+<td>「你没死还真是让我意料之外啊」</td>
+<td>第15集</td>
+<td>林晚舟</td>
+<td>咖啡店</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：节奏控制极佳，冲突密度高</strong></p>
+<p>证据链：
+• 第1集：5分钟内完成世界观+人物关系+核心任务建立
+• 第2集：「你们在等谁？」钩子衔接紧密，无拖沓
+• 第12集：商场戏码一波三折（碰瓷→反碰瓷→摔倒打脸）</p>
+<p>分析：几乎每集都有冲突爆点+悬念钩子，无明显"水戏"
+可复用技巧：<strong>每集结尾必有钩子，下集开场必承接</strong></p>
+<hr />
+<p><strong>亮点2：绿茶反派刻画生动，"茶言茶语"设计精准</strong></p>
+<p>证据链：
+• 第5集：「可能姐姐在国外也有了自己的幸福」（表面体贴，实则拱火）
+• 第8集：「姐姐她，好像很喜欢游走在男人之间呢」（断章取义陷害）
+• 第11集：「没事的，真的是我不小心，姐，行吗？」（碰瓷演戏）</p>
+<p>分析：林晚舟的每句台词都是"绿茶教科书"，观众容易产生代入感和愤怒
+可复用技巧：<strong>反派台词要"表面无害、内里恶毒"，让观众感受到智商优越感</strong></p>
+<hr />
+<p><strong>亮点3：主角"演员"设定与剧情结合紧密</strong></p>
+<p>证据链：
+• 第5集OS：「演员第一步，要带入角色，不管角色多么复杂，现在，她就是我」
+• 第9集OS：「演员第三条，需要临场发挥的时候，将镜头吸引过来，过错抛出去」
+• 第11集OS：「演员守则，永远不要把镜头给你的对手独享，戏，是抢来的」</p>
+<p>分析：用"演员心法"包装智斗过程，既合理化主角的反应能力，又增加趣味性
+可复用技巧：<strong>主角职业特长要与剧情解决方案形成呼应</strong></p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：傅迟人设摇摆过于频繁，略显"工具人"</strong></p>
+<p>证据链：
+• 第2集：「我非晚舟不娶！」「我宁愿离家出走！」
+• 第10集：被姜姒说服，冷落林晚舟
+• 第11集：又被林晚舟碰瓷成功，「林晚意，你终究不是原来的你了」
+• 第17集：突然霸气护场「谁说她是小三？！」</p>
+<p>影响评估：观众可能觉得傅迟"没有主见"、"被耍得团团转"，降低对男二的好感
+优化建议：增加傅迟内心挣扎的铺垫，让每次转变有更充分的心理动机</p>
+<hr />
+<p><strong>问题2：创意题材差异化不足</strong></p>
+<p>证据链：
+• 核心设定："白月光回归+绿茶反派+霸总守护"是短剧常见框架
+• 追杀→化名重生→回归复仇的路线较为套路化</p>
+<p>影响评估：在同类竞品中辨识度不高，可能被淹没
+优化建议：
+- 强化"演员"身份的独特性，增加更多"戏中戏"元素
+- 或增加反派阵营的复杂度（如林父林母有更多独立戏份）</p>
+<hr />
+<p><strong>问题3：傅司璟戏份偏少，与弟弟的三角关系未充分展开</strong></p>
+<p>证据链：
+• 傅司璟主要功能：提供资源+暗中守护+配合演戏
+• 两兄弟争女主的情感张力未充分发挥</p>
+<p>影响评估：浪费了"兄弟同时爱上白月光"的设定潜力
+优化建议：增加傅司璟的主动追求戏份，制造更多三角张力</p>
+<div class="section-title">十二、优化建议</div>
+
+<p>【修改优先级排序】</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>傅迟摇摆过频</td>
+<td>人物塑造</td>
+<td>中</td>
+<td>增加内心戏铺垫</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>差异化不足</td>
+<td>创意题材</td>
+<td>高</td>
+<td>强化"演员"特色</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>傅司璟戏份少</td>
+<td>人物塑造+情绪设计</td>
+<td>中</td>
+<td>增加三角张力</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>部分逻辑刻意</td>
+<td>故事结构</td>
+<td>低</td>
+<td>微调商场、DNA段落</td>
+</tr>
+</tbody>
+</table>
+<p>【具体修改建议】</p>
+<ol>
+<li>
+<p><strong>傅迟每次转变前增加内心OS</strong>
+   - 问题：转变过快显得没有主见
+   - 建议：每次被说服前，增加1-2句内心挣扎的OS
+   - 参考：第17集护场前可加「傅迟os：不对，晚意姐不可能做这种事……」</p>
+</li>
+<li>
+<p><strong>增加"演员破绽"的危机感</strong>
+   - 问题：姜姒扮演得太完美，缺少紧张感
+   - 建议：增加几处差点露馅的险情，提升悬念
+   - 参考：遇到更多林晚意旧识时的危机处理</p>
+</li>
+<li>
+<p><strong>傅司璟增加主动追求戏份</strong>
+   - 问题：目前主要是"守护者"角色
+   - 建议：第20集后增加傅司璟的情感表白+与傅迟的正面交锋</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<p>☑ 小幅修改后开发（预计 1-2 周）
+□ 立即进入开发
+□ 重大修改后重新评估
+□ 暂缓
+□ 放弃</p>
+<p>预估开发周期：2-3个月（含拍摄+后期）
+预估制作预算：中等（场景集中，无大型特效需求）
+风险提示：
+- 同类题材竞争激烈，需在投流素材上做出差异
+- 建议重点打磨"商场打脸戏"和"DNA揭秘戏"作为核心卖点</p>
+<div class="section-title">评估完成</div>
+<h2>评估总结</h2>
+<p>《白月光回国，绿茶小心》是一部<strong>节奏紧凑、爽点密集、投流素材丰富</strong>的短剧剧本。核心优势在于：</p>
+<ol>
+<li><strong>前3集代入极快</strong>，钩子设计成熟</li>
+<li><strong>绿茶反派刻画精准</strong>，"茶言茶语"句句戳心</li>
+<li><strong>打脸爽点充足</strong>，商场戏、鞋店戏等名场面具备病毒传播潜力</li>
+<li><strong>"演员"身份设定</strong>为智斗提供了合理包装</li>
+</ol>
+<p>主要需要改进的是：傅迟的人设一致性、整体创意差异化，以及傅司璟的戏份分配。</p>
+<p><strong>决策建议</strong>：<strong>CONSIDER</strong>——值得开发，按P1优先级进行针对性修改后可进入制作流程。</p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ 乡村逆袭 村医太狂，让人心慌</title>
+    <style>
+
+/* 基础样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", 
+                 "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    line-height: 1.8;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #fafafa;
+}
+
+/* 标题样式 */
+h1 {
+    color: #1a1a1a;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h2 {
+    color: #1565C0;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 8px;
+    margin-top: 35px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #1976D2;
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+/* 特殊分隔线标题 */
+.section-title {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565C0;
+    margin: 40px 0 25px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section-title::before,
+.section-title::after {
+    content: "═══";
+    margin: 0 15px;
+    color: #90CAF9;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 默认代码块 */
+pre {
+    background-color: #263238;
+    color: #ECEFF1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+code {
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ASCII 艺术图（雷达图、结构曲线）- 深色背景 */
+.ascii-art {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: pre;
+    overflow-x: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* ASCII 表格（冲突热力图）- 白色背景 */
+.ascii-table {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+}
+
+/* 人物卡片 */
+.character-card {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #2196F3;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Monaco, 
+                 "Source Code Pro", Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Mermaid 图表容器 */
+.mermaid {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 分隔线 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #2196F3, #90CAF9, transparent);
+    margin: 30px 0;
+}
+
+/* 强调文本 */
+strong {
+    color: #1565C0;
+}
+
+/* 列表样式 */
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* 引用块 */
+blockquote {
+    border-left: 4px solid #2196F3;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #E3F2FD;
+    color: #1565C0;
+    font-style: italic;
+}
+
+/* 链接 */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        max-width: none;
+        padding: 0;
+        background-color: white;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        background-color: #f5f5f5 !important;
+        color: #333 !important;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .mermaid {
+        page-break-inside: avoid;
+    }
+    
+    table {
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        page-break-after: avoid;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 15px;
+    }
+    
+    table {
+        font-size: 0.85em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .ascii-art, .ascii-table, .character-card {
+        font-size: 11px;
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2em;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="section-title">剧本评估报告</div>
+
+<p><strong>【基本信息】</strong>
+- <strong>剧本名称</strong>：《村医太狂，让人心慌》
+- <strong>类型/题材</strong>：乡村逆袭 / 医术爽文 / 男频
+- <strong>目标平台</strong>：短剧平台（番茄等）
+- <strong>IP来源</strong>：《乡野山村》，番茄在读2w，评分9.0
+- <strong>总集数</strong>：90+集（提纲显示30集为前三分之一）
+- <strong>评估日期</strong>：2026-01-20</p>
+<div class="section-title">一、评估结论</div>
+
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>决策</strong></td>
+<td>📗 <strong>CONSIDER</strong></td>
+</tr>
+<tr>
+<td><strong>评级</strong></td>
+<td><strong>A+</strong></td>
+</tr>
+<tr>
+<td><strong>总分</strong></td>
+<td><strong>76/100</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句话结论</strong>：</p>
+<blockquote>
+<p>标准男频逆袭爽剧，开场强劲、打脸节奏密集、投流素材丰富，但角色深度不足、情节套路感明显，适合追求快节奏爽感的下沉市场，建议优化后开发。</p>
+</blockquote>
+<div class="section-title">二、9维度能力雷达图</div>
+
+<p><strong>【能力分布图】</strong></p>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;            开场与代入(8.5/10)
+                  ▲
+                 /|\
+                / | \
+    市场适配  /  |  \  节奏控制
+    (8/10)  /   |   \ (8/10)
+           /    |    \
+          /     |     \
+         /      |      \
+  视听可拍 ─────┼───── 情绪设计
+   (7.5/10)    |      (6.5/10)
+         \     |     /
+          \    |    /
+           \   |   /
+    创意题材 \ | / 故事结构
+    (5.5/10) \|/  (7/10)
+              ▼
+         台词质量(7/10)
+              |
+         人物塑造(6/10)&lt;/pre&gt;
+
+</code></pre>
+<p><strong>【维度评分表】</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>得分</th>
+<th>权重</th>
+<th>加权分</th>
+<th>强弱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. 开场与代入</td>
+<td>8.5/10</td>
+<td>18%</td>
+<td>15.3</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2. 节奏控制</td>
+<td>8/10</td>
+<td>15%</td>
+<td>12.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>3. 情绪设计</td>
+<td>6.5/10</td>
+<td>12%</td>
+<td>7.8</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>4. 故事结构</td>
+<td>7/10</td>
+<td>12%</td>
+<td>8.4</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5. 人物塑造</td>
+<td>6/10</td>
+<td>10%</td>
+<td>6.0</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>6. 台词质量</td>
+<td>7/10</td>
+<td>8%</td>
+<td>5.6</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7. 创意题材</td>
+<td>5.5/10</td>
+<td>8%</td>
+<td>4.4</td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td>8. 视听可拍性</td>
+<td>7.5/10</td>
+<td>8%</td>
+<td>6.0</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>9. 市场适配</td>
+<td>8/10</td>
+<td>9%</td>
+<td>7.2</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td>-</td>
+<td>100%</td>
+<td><strong>72.7→76</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最强项</strong>：<strong>开场与代入</strong> - 第1集即完成"傻子→获得金手指→复仇启动"的完整闭环，代入感极强
+<strong>最弱项</strong>：<strong>创意题材</strong> - 典型"废柴逆袭+金手指+打脸"套路，缺乏新鲜感</p>
+<div class="section-title">三、人物关系图谱</div>
+
+<p><strong>【人物统计】</strong>
+- 总人物数：15人
+- 核心人物：8人（有名有戏份）
+- 正派阵营：7人
+- 反派阵营：5人
+- 中立/摇摆：3人</p>
+<p><strong>【关系图】</strong></p>
+<div class="mermaid">
+graph TB
+    subgraph 正派阵营
+        A[王大壮<br/>傻子逆袭/神医/男主]
+        B[陈晓雪<br/>大小姐/女主/助力者]
+        C[春桃<br/>寡妇/暧昧对象/照顾者]
+        D[杨蓉<br/>少妇/种植帮手]
+        E[李长山<br/>坐馆/转化角色]
+        F[高志国<br/>名医/徒弟位]
+        G[程武<br/>安全署长/人脉]
+    end
+
+    subgraph 反派阵营
+        H[张虎<br/>村长/主要反派]
+        I[张豹<br/>村霸/打手/高频对手]
+        J[沙皮<br/>小弟]
+        K[丧彪<br/>小弟]
+    end
+
+    subgraph 中立
+        L[丁三<br/>水果贩子/转化角色]
+        M[王富贵<br/>父亲]
+        N[王小芳<br/>妹妹]
+    end
+
+    A -->|感情线| B
+    A -.->|暧昧| C
+    A -.->|暧昧| D
+    A -->|师徒反转| E
+    A -->|师徒反转| F
+    A -->|救命之恩| G
+
+    A -.->|核心对立| H
+    A -.->|高频冲突| I
+    I -->|从属| H
+    J -->|跟班| I
+    K -->|跟班| I
+
+    L -->|夫妻| D
+    M -->|父子| A
+    N -->|兄妹| A
+    C -->|照顾| M
+</div>
+
+<p><strong>【核心人物卡片】</strong></p>
+<pre class="character-card">┌─ 主角：王大壮 ─────────────────────────────────────────────┐
+│ **标签**：[傻子逆袭] + [神医] + [仁义之人]                    │
+│                                                              │
+│ **标签印证**：                                                │
+│ • [傻子逆袭] ← 第1集：「我不傻了！我还拥有了太极医典」          │
+│ • [神医] ← 第5集：「金光缠绕手指，对着李长山腹部连拍三下」       │
+│ • [仁义之人] ← 第24集：「自己赚钱，也不忘拉村里人一把」          │
+│                                                              │
+│ **弧线**：傻子受欺 → 获得传承 → 医术扬名 → 带领致富              │
+│ **标签准确度**：★★★★☆                                        │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 女主：陈晓雪 ──────────────────────────────────────────────┐
+│ **标签**：[大小姐] + [温柔善良] + [商业头脑]                   │
+│                                                              │
+│ **标签印证**：                                                │
+│ • [大小姐] ← 第3集：「陈氏集团大小姐，经营陈氏大药房、君悦酒店」  │
+│ • [温柔善良] ← 第5集：「大壮，你能不能帮他一次...算我求你了」    │
+│ • [商业头脑] ← 第24集：「扩大规模！做大做强！」                 │
+│                                                              │
+│ **弧线**：相遇相识 → 商业合作 → 感情升温                       │
+│ **标签准确度**：★★★☆☆（人物较单薄）                          │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 主要反派：张豹/张虎兄弟 ────────────────────────────────────┐
+│ **标签**：[村霸] + [欺男霸女] + [阴险狡诈]                     │
+│                                                              │
+│ **标签印证**：                                                │
+│ • [村霸] ← 第1集：「仗着大哥是村长，在村上欺男霸女」            │
+│ • [欺男霸女] ← 第2集：「刚才被扰了兴致...你就从了我吧！」       │
+│ • [阴险狡诈] ← 第29集：「好啊，既然你们这么无耻，就别怪我坑你们」│
+│                                                              │
+│ **弧线**：压迫 → 被打脸 → 报复 → 再被打脸（循环）              │
+│ **标签准确度**：★★★★☆（工具人反派，但够用）                   │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<div class="section-title">四、剧本结构与冲突分布</div>
+
+<p><strong>【剧本结构曲线】</strong></p>
+<pre><code>
+&lt;pre class=&quot;ascii-art&quot;&gt;张
+力  │
+强  │                                              ★ 大高潮（治安队抓人→程武解围）
+度  │                            ☆ 中高潮
+    │                           /  (救程武)
+    │              ☆ 中高潮   /
+    │             / (救张爷爷)\  /
+    │    ○ 小高潮/      \    \/
+    │   / (救李长山)     \  /
+    │  /    \  / \       \/
+    │ ●(金手指) \/  ○(治丁三)
+    │/
+    └────────────────────────────────────────────────→ 集数
+      1    5    10    15    20    25    30&lt;/pre&gt;
+
+</code></pre>
+<p><strong>【高潮点标注】</strong>
+- ● 起点高潮（第1集）：傻子被砸获得金手指
+- ○ 小高潮①（第5集）：救治李长山，身份初显
+- ☆ 中高潮①（第15-16集）：救张爷爷，打脸高志国
+- ○ 小高潮②（第20集）：帮丁三解决借种困境
+- ☆ 中高潮②（第27集）：救安全署长程武
+- ★ 大高潮（第30集）：治安队抓人，程武出面解围，双重打脸</p>
+<p><strong>【冲突热力图】</strong></p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>1-5</th>
+<th>6-10</th>
+<th>11-15</th>
+<th>16-20</th>
+<th>21-25</th>
+<th>26-30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="ascii-table">| **主线冲突** | 🔥🔥🔥 | 🔥🔥 | 🔥🔥🔥 | 🔥🔥 | 🔥🔥 | 🔥🔥🔥🔥 |
+| **人物冲突** | 🔥🔥🔥 | 🔥🔥🔥 | 🔥🔥 | 🔥🔥 | 🔥🔥🔥 | 🔥🔥🔥🔥 |
+| **情感冲突** | 🔥 | 🔥🔥 | 🔥 | 🔥🔥🔥 | 🔥🔥 | 🔥 |</pre>
+
+<p>| <strong>冲突密度</strong> | 高 | 高 | 中 | 中 | 中 | 极高 |</p>
+<pre class="ascii-table">（🔥=冲突强度：🔥低 🔥🔥中 🔥🔥🔥高 🔥🔥🔥🔥极高）</pre>
+
+<p><strong>【冲突线梳理】</strong></p>
+<ol>
+<li>
+<p><strong>主线冲突</strong>：王大壮 vs 张虎张豹（贯穿全剧的核心对立）
+   - 起点（第1集）：「张豹抓起石头，砸在王大壮后脑」
+   - 升级（第7集）：「张豹带人来要账，发生冲突」
+   - 再升级（第28-30集）：「张虎张豹威胁村民...报警抓王大壮」</p>
+</li>
+<li>
+<p><strong>能力证明线</strong>：王大壮的医术被逐步认可
+   - 起点（第5集）：救李长山 → 镇上认可
+   - 升级（第15-16集）：打脸高志国 → 行业认可
+   - 高潮（第27集）：救程武 → 官方认可</p>
+</li>
+<li>
+<p><strong>致富线</strong>：从个人到带领村民
+   - 起点（第9集）：灵液浇桃子 → 自家致富
+   - 发展（第23集）：帮丁三黄瓜致富
+   - 扩展（第24集）：「扩大规模！做大做强！」</p>
+</li>
+</ol>
+<div class="section-title">五、前3集深度拆解（核心）</div>
+
+<p><strong>【第1集逐段分析】（生死线）</strong></p>
+<table>
+<thead>
+<tr>
+<th>时间段</th>
+<th>内容</th>
+<th>功能</th>
+<th>原文摘录</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3秒</td>
+<td>偷情现场</td>
+<td><strong>黄金开场</strong></td>
+<td>「张豹和香草衣衫不整，搂在一起」</td>
+<td>✅ 强视觉冲击</td>
+</tr>
+<tr>
+<td>0-8秒</td>
+<td>傻子撞破</td>
+<td><strong>身份交代</strong></td>
+<td>「王大壮蹲在那里，探出头，傻呵呵笑着」</td>
+<td>✅ 主角+反派双亮相</td>
+</tr>
+<tr>
+<td>前30秒</td>
+<td>被砸晕</td>
+<td><strong>核心冲突</strong></td>
+<td>「张豹抓起石头，砸在王大壮后脑」</td>
+<td>✅ 主线矛盾建立</td>
+</tr>
+<tr>
+<td>中段</td>
+<td>获得传承</td>
+<td><strong>金手指启动</strong></td>
+<td>「传你无双医术和宝葫芦」</td>
+<td>✅ 能力赋予</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>复仇宣言</td>
+<td><strong>钩子</strong></td>
+<td>「张豹！你敢砸我？看我不弄死你！」</td>
+<td>✅ <strong>强</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>第1集代入感评分</strong>：<strong>9/10</strong>
+- ✅ 3秒内有视觉冲击（偷情）
+- ✅ 8秒内双交代完成（傻子+村霸）
+- ✅ 30秒内建立核心冲突（被砸晕）
+- ✅ 有"非看下一集不可"的复仇悬念</p>
+<p><strong>【第2集分析】</strong></p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直接承接复仇</td>
+<td>打张豹+救春桃</td>
+<td>踢裆</td>
+<td>「太极医典里寻宝术！」</td>
+<td><strong>5/5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>关键原文：
+- 「新账旧账一起算，我掐死你！」→ 直接承接第1集的复仇宣言
+- 「老子今天就废了你，让你这辈子碰不了女人！（抬腿一脚踩向张豹裤裆）」→ <strong>爆点</strong>
+- 结尾钩子：「我看到山上闪光点了，绝对是极品药材！」→ 引出第3集</p>
+<p><strong>【第3集分析】</strong></p>
+<table>
+<thead>
+<tr>
+<th>开场承接</th>
+<th>核心事件</th>
+<th>反转/爆点</th>
+<th>结尾钩子</th>
+<th>与上集衔接度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上山寻宝</td>
+<td>采灵芝+救陈晓雪+遇李长山</td>
+<td>李长山压价被识破</td>
+<td>「少跟我来这套（转身离去）」</td>
+<td><strong>4/5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>关键原文：
+- 「寻宝术真厉害，极品野灵芝！」→ 承接第2集寻宝术
+- 「小伙子，你这个灵芝虽然是人工种植的，也还凑活，五百收了」→ 压价冲突
+- 「不卖？你可想好了...信不信我一句话，镇上没有一个药铺，会收你的药材」→ 威胁升级</p>
+<p><strong>【前3集总评】</strong>
+- <strong>代入速度</strong>：☑️极快（3秒入戏）
+- <strong>信息密度</strong>：☑️适中
+- <strong>钩子循环</strong>：☑️紧密
+- <strong>前3集整体评分</strong>：<strong>8.5/10</strong></p>
+<div class="section-title">六、集间衔接度分析</div>
+
+<p><strong>【衔接度评分表】</strong></p>
+<table>
+<thead>
+<tr>
+<th>集数</th>
+<th>上集钩子</th>
+<th>本集开场</th>
+<th>衔接紧密度</th>
+<th>钩子类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1→2</td>
+<td>「看我不弄死你！」</td>
+<td>回家路上遇张豹欺负春桃</td>
+<td><strong>5/5</strong></td>
+<td>悬念+危机</td>
+</tr>
+<tr>
+<td>2→3</td>
+<td>「我看到山上闪光点了」</td>
+<td>「寻宝术真厉害，极品野灵芝！」</td>
+<td><strong>5/5</strong></td>
+<td>悬念</td>
+</tr>
+<tr>
+<td>3→4</td>
+<td>「少跟我来这套」</td>
+<td>「怎么了？发生什么事了？」</td>
+<td><strong>5/5</strong></td>
+<td>冲突</td>
+</tr>
+<tr>
+<td>5→6</td>
+<td>「我有事，先走了」</td>
+<td>「咦？哥，你真的好了？」</td>
+<td><strong>4/5</strong></td>
+<td>情感</td>
+</tr>
+<tr>
+<td>6→7</td>
+<td>「咱日子要好起来啦！」</td>
+<td>「欠我的钱，也该还了吧？」</td>
+<td><strong>5/5</strong></td>
+<td>反转+危机</td>
+</tr>
+<tr>
+<td>9→10</td>
+<td>「嫂子病了...跟我走！」</td>
+<td>「啊？这、这……」</td>
+<td><strong>5/5</strong></td>
+<td>情感+擦边</td>
+</tr>
+</tbody>
+</table>
+<p><strong>平均衔接度</strong>：<strong>4.8/5</strong></p>
+<p><strong>衔接亮点</strong>：
+- 每集结尾都有明确钩子
+- 下集开场直接承接，无断层
+- 钩子类型多样化：悬念、危机、反转、情感交替使用</p>
+<div class="section-title">七、逻辑一致性检查</div>
+
+<p><strong>【伏笔回收检查】</strong></p>
+<table>
+<thead>
+<tr>
+<th>伏笔</th>
+<th>埋设位置</th>
+<th>回收位置</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>太极医典（医术）</td>
+<td>第1集</td>
+<td>第5、15、27集</td>
+<td>✅ 持续回收</td>
+</tr>
+<tr>
+<td>宝葫芦（灵液）</td>
+<td>第1集</td>
+<td>第9、11、23集</td>
+<td>✅ 持续回收</td>
+</tr>
+<tr>
+<td>张豹被踢裆</td>
+<td>第2集</td>
+<td>第7集提及</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>李长山救命之恩</td>
+<td>第5集</td>
+<td>第8集感谢</td>
+<td>✅ 已回收</td>
+</tr>
+<tr>
+<td>丁三不育问题</td>
+<td>第18集</td>
+<td>第20集承诺治疗</td>
+<td>○ 未完全回收</td>
+</tr>
+<tr>
+<td>程武人脉</td>
+<td>第27集</td>
+<td>第30集出面解围</td>
+<td>✅ 已回收</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【时间线检查】</strong>
+☑️ 连贯无矛盾
+- 剧情按线性推进，无明显时间跳跃问题</p>
+<p><strong>【人物行为一致性】</strong>
+☑️ 行为符合性格设定
+- 王大壮：傻子时期被欺负 → 恢复后有仇必报，逻辑自洽
+- 张豹：持续欺压 → 持续被打脸，符合"工具人反派"设定
+- ⚠️ 轻微问题：李长山转变过快（从奸商到跪舔只用了1集）</p>
+<p><strong>【逻辑硬伤】</strong>
+1. 第11集：「王大壮手指连点，点点金光撒向草丛」→ 仙术从何而来？前文只提医术，未提武术/仙术，略显突兀
+2. 第18-19集：「借种」情节设置略显刻意，丁三夫妇的行为逻辑有些勉强</p>
+<p><strong>逻辑一致性评分</strong>：<strong>7.5/10</strong></p>
+<div class="section-title">八、投流素材清单</div>
+
+<p><strong>【高潜力投流片段】</strong></p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>位置</th>
+<th>类型</th>
+<th>内容描述</th>
+<th>原文/场景</th>
+<th>投流适配度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>第2集</td>
+<td><strong>爽点型</strong></td>
+<td>踢裆复仇</td>
+<td>「老子今天就废了你！（踩向裤裆）」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>2</td>
+<td>第8集</td>
+<td><strong>打脸型</strong></td>
+<td>李长山扇张豹</td>
+<td>「同意你爹！（反手一记耳光）」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>3</td>
+<td>第16集</td>
+<td><strong>反转型</strong></td>
+<td>高志国跪拜</td>
+<td>「王神医！我错了！（跪地）」</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>4</td>
+<td>第5集</td>
+<td><strong>神医型</strong></td>
+<td>拍掌吐黑血</td>
+<td>「猛地一掌！李长山吐出一口黑血」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>第26集</td>
+<td><strong>身份反转</strong></td>
+<td>高志国打脸众人</td>
+<td>「他是我未来的师父」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>第13集</td>
+<td><strong>打脸型</strong></td>
+<td>陈晓雪扇丁三</td>
+<td>「遗留你妹！滚！（一耳光）」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>第1集</td>
+<td><strong>逆袭型</strong></td>
+<td>傻子觉醒</td>
+<td>「我不傻了！张豹！看我不弄死你！」</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td>8</td>
+<td>第15集</td>
+<td><strong>预言型</strong></td>
+<td>神医预判</td>
+<td>「你一针下去...老头就离死不远了」</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【投流类型分布】</strong>
+- 冲突/打脸型：<strong>5个</strong> ⭐最丰富
+- 反转/悬念型：<strong>3个</strong>
+- 金句/名场面型：<strong>2个</strong>
+- 爽点/逆袭型：<strong>4个</strong></p>
+<p><strong>投流素材丰富度</strong>：★★★★★
+<strong>最佳投流片段推荐</strong>：第2集踢裆 + 第8集连扇耳光 + 第16集高志国跪拜</p>
+<div class="section-title">九、精彩片段提取</div>
+
+<p><strong>【高光片段】</strong></p>
+<pre class="character-card">┌─ 片段1：连环耳光 ─────────────────────────────────────────────┐
+│ **位置**：第8集                                                │
+│ **类型**：☑️冲突高潮 ☑️名场面                                  │
+│                                                               │
+│ **完整原文**：                                                 │
+│ 「张豹：一点小事...带你妹妹去坐台，你同不同意？                   │
+│   李长山（反手一记耳光）：同意你爹！                              │
+│   张豹：啊？李老板，你……                                       │
+│   李长山（指着王大壮）：你知道他谁吗？                            │
+│   张豹：他、他就是我们村的大傻子啊。                              │
+│   李长山（又是一耳光）：傻你麻！                                  │
+│   ...                                                          │
+│   李长山（指着门口）：滚！否则……从此以后，我不会收你家一株药！」   │
+│                                                               │
+│ **上下文**：张豹带人上门要债，威胁王大壮妹妹去坐台                 │
+│ **精彩点**：身份反转+连环打脸+台词爽感，投流必爆款                │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<pre class="character-card">┌─ 片段2：神医下跪 ─────────────────────────────────────────────┐
+│ **位置**：第16集                                               │
+│ **类型**：☑️反转揭示 ☑️名场面                                  │
+│                                                               │
+│ **完整原文**：                                                 │
+│ 「高志国：等一下！（急急忙忙跑过来，噗通一声，跪地）               │
+│   王大壮（皱眉）：你这是干什么？                                 │
+│   高志国（磕头）：师父在上，请受徒儿一拜！                        │
+│   王大壮：哼，我不收徒。就算要收，也不会收你这样的老头。」         │
+│                                                               │
+│ **上下文**：王大壮指导高志国救活张爷爷后                          │
+│ **精彩点**：名医跪废柴，极致身份反转，打脸效果拉满                │
+└───────────────────────────────────────────────────────────────┘</pre>
+
+<p><strong>【金句清单】</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>金句</th>
+<th>位置</th>
+<th>说话人</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>霸气型</strong></td>
+<td>「看我不弄死你！还有欺负我的那些人，都给我等着！」</td>
+<td>第1集</td>
+<td>王大壮</td>
+<td>觉醒宣言</td>
+</tr>
+<tr>
+<td><strong>打脸型</strong></td>
+<td>「同意你爹！」「傻你麻！」</td>
+<td>第8集</td>
+<td>李长山</td>
+<td>扇耳光</td>
+</tr>
+<tr>
+<td><strong>霸气型</strong></td>
+<td>「有我在，以后谁也别想欺负你！」</td>
+<td>第2集</td>
+<td>王大壮</td>
+<td>救春桃</td>
+</tr>
+<tr>
+<td><strong>傲娇型</strong></td>
+<td>「我不收徒。就算要收，也不会收你这样的老头」</td>
+<td>第17集</td>
+<td>王大壮</td>
+<td>拒绝高志国</td>
+</tr>
+<tr>
+<td><strong>预判型</strong></td>
+<td>「你一针下去，至少要吐血三口」</td>
+<td>第15集</td>
+<td>王大壮</td>
+<td>阻止高志国</td>
+</tr>
+<tr>
+<td><strong>嘲讽型</strong></td>
+<td>「一百个我，都比不上我师父的一个手指头！」</td>
+<td>第26集</td>
+<td>高志国</td>
+<td>打脸众人</td>
+</tr>
+</tbody>
+</table>
+<div class="section-title">十、核心亮点</div>
+
+<p><strong>亮点1：打脸节奏密集且类型丰富</strong></p>
+<p>证据链：
+- 第2集：王大壮 → 打脸张豹（物理）「抬腿一脚踩向张豹裤裆」
+- 第8集：李长山 → 打脸张豹（耳光+身份）「同意你爹！」
+- 第13集：陈晓雪 → 打脸丁三（耳光）「遗留你妹！滚！」
+- 第15集：王大壮 → 打脸高志国（专业）「你一针下去...老头就离死不远了」
+- 第26集：高志国 → 打脸众人（身份反转）「他是我未来的师父」</p>
+<p>分析：平均每2-3集就有一次高质量打脸，类型涵盖：物理打脸、身份反转打脸、专业碾压打脸，观众爽感持续
+<strong>可复用技巧</strong>：建立"打脸银行"机制，确保每3集至少1次打脸事件</p>
+<hr />
+<p><strong>亮点2：金手指设计多功能且有节制</strong></p>
+<p>证据链：
+- 医术功能：「太极医典里寻宝术！」「金光缠绕手指」
+- 灵液功能：「灵液能滋养万物」「桃子变得又大又红」
+- 武术功能：「手指连点，点点金光撒向草丛」</p>
+<p>分析：一个金手指解决医术、种植、武力三大问题，但使用有节制，不会瞬间无敌
+<strong>可复用技巧</strong>：金手指多功能但分阶段释放，保持升级空间</p>
+<hr />
+<p><strong>亮点3：衔接钩子设计成熟</strong></p>
+<p>证据链：
+- 第6集结尾：「咱日子要好起来啦！」→ 第7集开场：「欠我的钱，也该还了吧？」（反转钩子）
+- 第9集结尾：「嫂子病了...跟我走！」→ 第10集开场：擦边情节（情感钩子）
+- 第15集结尾：张爷爷吐血 → 第16集：高志国下跪（悬念钩子）</p>
+<p>分析：每集结尾都有明确钩子，类型多样化，完播率有保障
+<strong>可复用技巧</strong>：钩子类型轮换使用（悬念→反转→危机→情感→悬念）</p>
+<div class="section-title">十一、关键问题</div>
+
+<p><strong>问题1：人物深度不足，女性角色工具化严重</strong></p>
+<p>证据链：
+- 陈晓雪全程只有"帮助王大壮"一个功能：「马上带人过来装」「我全要了」「以后有多少，我收多少」
+- 春桃的存在只为提供暧昧：「大壮，你给我看看胸口呗」「你自己摸」
+- 杨蓉的设置几乎复制春桃：被蛇咬 → 大腿根 → 借种</p>
+<p>影响评估：角色单薄会导致中后期剧情乏力，观众审美疲劳
+优化建议：
+- 给陈晓雪增加独立困境（家族内斗/商业危机）
+- 春桃可以有自己的复仇线（丈夫之死与张家有关？）</p>
+<hr />
+<p><strong>问题2：套路感明显，缺乏创新</strong></p>
+<p>证据链：
+- 开局套路：傻子被欺 → 获得金手指 → 逆袭打脸（标准模板）
+- 冲突模式：张豹找茬 → 王大壮打脸 → 张豹再来（重复循环）
+- 身份反转：李长山跪 → 高志国跪 → 程武认可（同一手法重复）</p>
+<p>影响评估：看过类似剧的观众会有"看过了"的感觉，差异化不足
+优化建议：
+- 在医术之外增加独特元素（如：金手指有副作用？需要积功德？）
+- 反派升级不能只靠人数和官位，需要有智力对抗</p>
+<hr />
+<p><strong>问题3：第18-19集"借种"情节风险较高</strong></p>
+<p>证据链：
+- 「向大壮借种！」「一个大男人磨磨唧唧，难不成还要嫂子求你吗？」
+- 丁三夫妇的行为逻辑过于刻意，为擦边而擦边</p>
+<p>影响评估：
+- 审核风险：可能被平台限流或要求修改
+- 逻辑硬伤：正常夫妻不会这样处理不育问题</p>
+<p>优化建议：
+- 改为王大壮用医术治好丁三，而非借种
+- 保留暧昧氛围但删除"借种"明示</p>
+<div class="section-title">十二、优化建议</div>
+
+<p><strong>【修改优先级排序】</strong></p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>问题</th>
+<th>影响维度</th>
+<th>修改难度</th>
+<th>建议方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0</strong></td>
+<td>借种情节风险</td>
+<td>合规安全</td>
+<td>低</td>
+<td>改为医术治疗</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>女性角色工具化</td>
+<td>人物塑造</td>
+<td>中</td>
+<td>增加独立困境线</td>
+</tr>
+<tr>
+<td><strong>P1</strong></td>
+<td>套路感明显</td>
+<td>创意题材</td>
+<td>中</td>
+<td>增加金手指限制/反派升级</td>
+</tr>
+<tr>
+<td><strong>P2</strong></td>
+<td>反派单一</td>
+<td>故事结构</td>
+<td>中</td>
+<td>引入新反派类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【具体修改建议】</strong></p>
+<ol>
+<li>
+<p><strong>P0：借种情节（必须改）</strong>
+   - 问题：审核风险+逻辑勉强
+   - 建议：丁三不育原因设定为"中毒"或"经络堵塞"，王大壮用医术治好，杨蓉感激但不需要借种
+   - 保留暧昧：可以保留"吸蛇毒"场景的暧昧氛围</p>
+</li>
+<li>
+<p><strong>P1：女主陈晓雪深度</strong>
+   - 问题：全程工具人
+   - 建议：增加陈氏集团家族内斗，陈晓雪有被架空的危机，需要王大壮帮助
+   - 效果：双向助力，感情线更有说服力</p>
+</li>
+<li>
+<p><strong>P1：增加金手指限制</strong>
+   - 问题：能力太全面，缺乏张力
+   - 建议：灵液有日产量限制，或使用需要消耗"功德值"
+   - 效果：增加选择困境，剧情更有层次</p>
+</li>
+</ol>
+<div class="section-title">十三、下一步建议</div>
+
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>开发决策</strong></td>
+<td>☑️ <strong>小幅修改后开发</strong>（预计1-2周）</td>
+</tr>
+<tr>
+<td><strong>预估开发周期</strong></td>
+<td>90集完整剧本约3-4周</td>
+</tr>
+<tr>
+<td><strong>预估制作预算</strong></td>
+<td>中低预算（场景以乡村为主，特效需求低）</td>
+</tr>
+<tr>
+<td><strong>核心卖点</strong></td>
+<td>打脸爽感 + 逆袭套路 + 投流素材丰富</td>
+</tr>
+<tr>
+<td><strong>目标受众</strong></td>
+<td>下沉市场男性用户，25-45岁</td>
+</tr>
+</tbody>
+</table>
+<p><strong>风险提示</strong>：
+1. ⚠️ 借种情节必须修改，否则审核风险极高
+2. ⚠️ 中后期需要升级反派和冲突，避免重复疲劳
+3. ⚠️ 医术场景需要顾问把关，避免常识错误</p>
+<div class="section-title">评估完成</div>
+
+<p><strong>总结</strong>：
+《村医太狂，让人心慌》是一部标准的男频逆袭爽剧，<strong>开场极强、节奏紧凑、投流素材丰富</strong>，具备短剧爆款的基本素质。主要问题在于<strong>角色深度不足、套路感明显、部分情节有合规风险</strong>。建议完成P0修改后即可进入开发，同时在后续剧本中注意角色丰满和冲突升级。</p>
+<p><strong>评级：A+ | 总分：76/100 | 决策：CONSIDER（小幅修改后开发）</strong></p>
+    
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
