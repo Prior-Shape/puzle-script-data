@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短剧剧本库 - Puzle Script Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            padding: 30px 40px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .stats {
+            padding: 20px 40px;
+            background: #fff;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #e9ecef;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 30px 40px;
+        }
+
+        .rating-section {
+            margin-bottom: 40px;
+        }
+
+        .rating-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+
+        .rating-s-plus .rating-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .rating-s .rating-badge {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+
+        .rating-a-plus .rating-badge {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            color: white;
+        }
+
+        .rating-a .rating-badge {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+        }
+
+        .rating-count {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .script-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .script-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .script-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .script-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .script-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e7f3ff;
+            color: #0066cc;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+
+        .no-results-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .script-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-item {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 短剧剧本库</h1>
+            <p class="subtitle">Puzle Script Data Collection</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 搜索剧本标题或类型...">
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalCount">105</div>
+                <div class="stat-label">总剧本数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="sPlusCount">9</div>
+                <div class="stat-label">S+ 评级</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="sCount">28</div>
+                <div class="stat-label">S 评级</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="aPlusCount">63</div>
+                <div class="stat-label">A+ 评级</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="aCount">5</div>
+                <div class="stat-label">A 评级</div>
+            </div>
+        </div>
+
+        <div class="content" id="content">
+            <!-- Content will be inserted here by JavaScript -->
+        </div>
+
+        <footer>
+            <p>© 2026 Puzle Script Data | 共 <span id="footerCount">105</span> 个剧本</p>
+        </footer>
+    </div>
+
+    <script>
+        const scripts = [
+            { rating: "A", genre: "都市情感", title: "撞车后，我和我养的狗互换了灵魂", file: "A_都市情感_撞车后，我和我养的狗互换了灵魂.html" },
+            { rating: "A", genre: "都市玄幻", title: "被雷劈后，觉醒透视眼我只看美女", file: "A_都市玄幻_被雷劈后，觉醒透视眼我只看美女.html" },
+            { rating: "A", genre: "奇幻爱情", title: "灵魂互换：姐夫爱上我", file: "A_奇幻爱情_灵魂互换：姐夫爱上我.html" },
+            { rating: "A", genre: "甜宠", title: "霸总爱上下凡仙妹", file: "A_甜宠_霸总爱上下凡仙妹.html" },
+            { rating: "A", genre: "职场逆袭", title: "镜中法则", file: "A_职场逆袭_镜中法则.html" },
+            { rating: "A+", genre: "穿书年代", title: "穿书九零，东北悍妻带全家炫肉！", file: "A+_穿书年代_穿书九零，东北悍妻带全家炫肉！.html" },
+            { rating: "A+", genre: "穿越", title: "魂穿最惨皇帝，朕靠抄家续命", file: "A+_穿越_魂穿最惨皇帝，朕靠抄家续命.html" },
+            { rating: "A+", genre: "穿越", title: "开局召唤武将人杰，打造无上帝朝", file: "A+_穿越_开局召唤武将人杰，打造无上帝朝.html" },
+            { rating: "A+", genre: "穿越", title: "我靠游戏养成千古一帝", file: "A+_穿越_我靠游戏养成千古一帝.html" },
+            { rating: "A+", genre: "穿越", title: "我在古代当女帝，三个大佬争着宠", file: "A+_穿越_我在古代当女帝，三个大佬争着宠.html" },
+            { rating: "A+", genre: "穿越", title: "重生白富美：在七零被娇宠", file: "A+_穿越_重生白富美：在七零被娇宠.html" },
+            { rating: "A+", genre: "都市", title: "逆光重生", file: "A+_都市_逆光重生.html" },
+            { rating: "A+", genre: "都市爱情", title: "渡月：猎捕", file: "A+_都市爱情_渡月：猎捕.html" },
+            { rating: "A+", genre: "都市犯罪", title: "飞女", file: "A+_都市犯罪_飞女.html" },
+            { rating: "A+", genre: "都市脑洞", title: "老公你别怕，我来救你了", file: "A+_都市脑洞_老公你别怕，我来救你了.html" },
+            { rating: "A+", genre: "都市脑洞", title: "十八岁太爷爷", file: "A+_都市脑洞_十八岁太爷爷.html" },
+            { rating: "A+", genre: "都市脑洞", title: "总裁的秘书是只喵", file: "A+_都市脑洞_总裁的秘书是只喵.html" },
+            { rating: "A+", genre: "都市脑洞-穿越", title: "穿越1890国术纵横四海", file: "A+_都市脑洞-穿越_穿越1890国术纵横四海.html" },
+            { rating: "A+", genre: "都市女性成长", title: "指环幻梦", file: "A+_都市女性成长_指环幻梦.html" },
+            { rating: "A+", genre: "都市情感", title: "白月光回国，绿茶小心", file: "A+_都市情感_白月光回国，绿茶小心.html" },
+            { rating: "A+", genre: "都市情感", title: "重启人生：爱上烤冷面大妈", file: "A+_都市情感_重启人生：爱上烤冷面大妈.html" },
+            { rating: "A+", genre: "都市爽文", title: "魔丸大学生，清冷校花求我别整了", file: "A+_都市爽文_魔丸大学生，清冷校花求我别整了.html" },
+            { rating: "A+", genre: "都市甜宠", title: "分手后，我继承了亿万家产", file: "A+_都市甜宠_分手后，我继承了亿万家产.html" },
+            { rating: "A+", genre: "都市玄幻", title: "抬手既神雷，你叫我相信科学？", file: "A+_都市玄幻_抬手既神雷，你叫我相信科学？.html" },
+            { rating: "A+", genre: "都市玄幻", title: "徒儿，求你，今天饶为师一次吧", file: "A+_都市玄幻_徒儿，求你，今天饶为师一次吧.html" },
+            { rating: "A+", genre: "都市悬疑", title: "幽影特工：千金总裁的魔方上起舞", file: "A+_都市悬疑_幽影特工：千金总裁的魔方上起舞.html" },
+            { rating: "A+", genre: "都市职场", title: "手机屏保为我加buff", file: "A+_都市职场_手机屏保为我加buff.html" },
+            { rating: "A+", genre: "古偶仙侠", title: "废柴千金飒疯全城", file: "A+_古偶仙侠_废柴千金飒疯全城.html" },
+            { rating: "A+", genre: "古装", title: "庶女逆袭，皇帝他真香了", file: "A+_古装_庶女逆袭，皇帝他真香了.html" },
+            { rating: "A+", genre: "古装", title: "祖宗重生整顿家门，渣爹你慌什么", file: "A+_古装_祖宗重生整顿家门，渣爹你慌什么.html" },
+            { rating: "A+", genre: "古装轻喜剧", title: "长乐府", file: "A+_古装轻喜剧_长乐府.html" },
+            { rating: "A+", genre: "古装甜宠", title: "短命嫡女修仙飞升了", file: "A+_古装甜宠_短命嫡女修仙飞升了.html" },
+            { rating: "A+", genre: "古装武侠", title: "成魔后，我靠医术彻底洗白", file: "A+_古装武侠_成魔后，我靠医术彻底洗白.html" },
+            { rating: "A+", genre: "古装玄幻", title: "天舞纪", file: "A+_古装玄幻_天舞纪.html" },
+            { rating: "A+", genre: "魂穿复仇", title: "毒舌杀手在线复仇", file: "A+_魂穿复仇_毒舌杀手在线复仇.html" },
+            { rating: "A+", genre: "家庭伦理", title: "我的钱对儿媳社恐！", file: "A+_家庭伦理_我的钱对儿媳社恐！.html" },
+            { rating: "A+", genre: "励志", title: "天天向上：少年CEO的逆袭传奇", file: "A+_励志_天天向上：少年CEO的逆袭传奇.html" },
+            { rating: "A+", genre: "民国虐恋", title: "烬火重燃：囚笼玫瑰", file: "A+_民国虐恋_烬火重燃：囚笼玫瑰.html" },
+            { rating: "A+", genre: "男频", title: "警花和你做搭档，你却让她生儿子", file: "A+_男频_警花和你做搭档，你却让她生儿子.html" },
+            { rating: "A+", genre: "男频", title: "天下藏局", file: "A+_男频_天下藏局.html" },
+            { rating: "A+", genre: "男频", title: "重生后校花求原谅，国民女神酸了", file: "A+_男频_重生后校花求原谅，国民女神酸了.html" },
+            { rating: "A+", genre: "男频爽文", title: "祖宅连通女儿国，女帝夜夜需要我", file: "A+_男频爽文_祖宅连通女儿国，女帝夜夜需要我.html" },
+            { rating: "A+", genre: "年代剧", title: "带着亿万囤货，丧尸小妻勇闯七零", file: "A+_年代剧_带着亿万囤货，丧尸小妻勇闯七零.html" },
+            { rating: "A+", genre: "女频逆袭", title: "星光不负赶路人", file: "A+_女频逆袭_星光不负赶路人.html" },
+            { rating: "A+", genre: "女频虐恋", title: "攻略失败后，我老公死了", file: "A+_女频虐恋_攻略失败后，我老公死了.html" },
+            { rating: "A+", genre: "女频甜虐", title: "晚辰烬爱：守真同行", file: "A+_女频甜虐_晚辰烬爱：守真同行.html" },
+            { rating: "A+", genre: "女频现代", title: "初恋男友复活了？", file: "A+_女频现代_初恋男友复活了？.html" },
+            { rating: "A+", genre: "女频现代", title: "借他渡己", file: "A+_女频现代_借他渡己.html" },
+            { rating: "A+", genre: "奇幻", title: "萌宝大闹天庭", file: "A+_奇幻_萌宝大闹天庭.html" },
+            { rating: "A+", genre: "轻喜剧", title: "废柴道士驻村调解日常", file: "A+_轻喜剧_废柴道士驻村调解日常.html" },
+            { rating: "A+", genre: "轻喜剧", title: "职场空降古人", file: "A+_轻喜剧_职场空降古人.html" },
+            { rating: "A+", genre: "甜宠", title: "日出藏匿，日落馋你", file: "A+_甜宠_日出藏匿，日落馋你.html" },
+            { rating: "A+", genre: "甜宠+复仇+悬疑（隐藏身份", title: "芯风暴：我的老婆不好惹", file: "A+_甜宠+复仇+悬疑（隐藏身份_芯风暴：我的老婆不好惹.html" },
+            { rating: "A+", genre: "甜宠复仇", title: "温顾知新", file: "A+_甜宠复仇_温顾知新.html" },
+            { rating: "A+", genre: "系统流", title: "修仙界第一包租公", file: "A+_系统流_修仙界第一包租公.html" },
+            { rating: "A+", genre: "仙侠玄幻", title: "重生后掀翻上神桌子", file: "A+_仙侠玄幻_重生后掀翻上神桌子.html" },
+            { rating: "A+", genre: "现代都市", title: "真千金发飙后，全家跪求原谅", file: "A+_现代都市_真千金发飙后，全家跪求原谅.html" },
+            { rating: "A+", genre: "现代甜宠", title: "狂野千金驾到，未婚夫们请排队", file: "A+_现代甜宠_狂野千金驾到，未婚夫们请排队.html" },
+            { rating: "A+", genre: "乡村逆袭", title: "村医太狂，让人心慌", file: "A+_乡村逆袭_村医太狂，让人心慌.html" },
+            { rating: "A+", genre: "玄幻", title: "白蛇归来", file: "A+_玄幻_白蛇归来.html" },
+            { rating: "A+", genre: "玄幻", title: "超级反派系统，从拿下主角姐姐开", file: "A+_玄幻_超级反派系统，从拿下主角姐姐开.html" },
+            { rating: "A+", genre: "玄幻", title: "说我是假千金，我妈是仙人", file: "A+_玄幻_说我是假千金，我妈是仙人.html" },
+            { rating: "A+", genre: "玄幻复仇", title: "灵魂归位后，全都给我跪下", file: "A+_玄幻复仇_灵魂归位后，全都给我跪下.html" },
+            { rating: "A+", genre: "玄幻修仙", title: "偏心弟弟？重生了还想吸我修为？", file: "A+_玄幻修仙_偏心弟弟？重生了还想吸我修为？.html" },
+            { rating: "A+", genre: "悬疑", title: "谋杀局中局", file: "A+_悬疑_谋杀局中局.html" },
+            { rating: "A+", genre: "悬疑惊悚", title: "雪落无声时", file: "A+_悬疑惊悚_雪落无声时.html" },
+            { rating: "A+", genre: "重生", title: "重生九零：买房当包租婆", file: "A+_重生_重生九零：买房当包租婆.html" },
+            { rating: "A+", genre: "重生+复仇+社会悬疑（杀猪盘", title: "重生反杀：杀房盘", file: "A+_重生+复仇+社会悬疑（杀猪盘_重生反杀：杀房盘.html" },
+            { rating: "A+", genre: "重生复仇", title: "重生摆烂王：今天也在气死白月光", file: "A+_重生复仇_重生摆烂王：今天也在气死白月光.html" },
+            { rating: "A+", genre: "重生复仇", title: "重生复仇手撕渣男贱妾，团灭全族", file: "A+_重生复仇_重生复仇手撕渣男贱妾，团灭全族.html" },
+            { rating: "S", genre: "穿越", title: "炮灰庶女，靠心声被团宠", file: "S_穿越_炮灰庶女，靠心声被团宠.html" },
+            { rating: "S", genre: "穿越", title: "我用物理吊打修仙界", file: "S_穿越_我用物理吊打修仙界.html" },
+            { rating: "S", genre: "都市爱情", title: "程队，你老婆又靠画画破案了", file: "S_都市爱情_程队，你老婆又靠画画破案了.html" },
+            { rating: "S", genre: "都市奇幻", title: "别惹我，我有功德簿", file: "S_都市奇幻_别惹我，我有功德簿.html" },
+            { rating: "S", genre: "都市日常", title: "求放过，我的十位绝色房客太凶猛", file: "S_都市日常_求放过，我的十位绝色房客太凶猛.html" },
+            { rating: "S", genre: "都市甜宠", title: "捡漏，程少是专业的", file: "S_都市甜宠_捡漏，程少是专业的.html" },
+            { rating: "S", genre: "都市玄幻", title: "我的妻子是不死魔丸", file: "S_都市玄幻_我的妻子是不死魔丸.html" },
+            { rating: "S", genre: "古装穿越", title: "穿越成太监，女帝竟是我老婆", file: "S_古装穿越_穿越成太监，女帝竟是我老婆.html" },
+            { rating: "S", genre: "古装宫廷", title: "假太监的昏君养成手札", file: "S_古装宫廷_假太监的昏君养成手札.html" },
+            { rating: "S", genre: "古装权谋", title: "重生后我女扮男装成为帝师", file: "S_古装权谋_重生后我女扮男装成为帝师.html" },
+            { rating: "S", genre: "古装仙侠", title: "修仙界第一背锅侠，居然是我！", file: "S_古装仙侠_修仙界第一背锅侠，居然是我！.html" },
+            { rating: "S", genre: "古装宅斗", title: "傻女谋", file: "S_古装宅斗_傻女谋.html" },
+            { rating: "S", genre: "家庭伦理", title: "错位二十年", file: "S_家庭伦理_错位二十年.html" },
+            { rating: "S", genre: "男频逆袭", title: "我的疯癫系统越气人越强大", file: "S_男频逆袭_我的疯癫系统越气人越强大.html" },
+            { rating: "S", genre: "男频爽剧", title: "透视鉴宝，开局捡漏精神小妹", file: "S_男频爽剧_透视鉴宝，开局捡漏精神小妹.html" },
+            { rating: "S", genre: "男频爽文", title: "仙帝你也敢抢亲！反手挖你至尊骨", file: "S_男频爽文_仙帝你也敢抢亲！反手挖你至尊骨.html" },
+            { rating: "S", genre: "男频爽文", title: "幼儿园当大厨豪门千金求我别收摊", file: "S_男频爽文_幼儿园当大厨豪门千金求我别收摊.html" },
+            { rating: "S", genre: "年代", title: "荒年开局被喂奶，我靠透视养嫂子", file: "S_年代_荒年开局被喂奶，我靠透视养嫂子.html" },
+            { rating: "S", genre: "女频爽剧", title: "开局一个亿，她横扫金融界", file: "S_女频爽剧_开局一个亿，她横扫金融界.html" },
+            { rating: "S", genre: "爽文逆袭", title: "过年加班？我反手包机送员工回家", file: "S_爽文逆袭_过年加班？我反手包机送员工回家.html" },
+            { rating: "S", genre: "甜宠", title: "我与疯批总裁的相亲局", file: "S_甜宠_我与疯批总裁的相亲局.html" },
+            { rating: "S", genre: "现代都市虐恋", title: "晴泽", file: "S_现代都市虐恋_晴泽.html" },
+            { rating: "S", genre: "现代农村喜剧", title: "我家拆迁暴富，全家躺赢吃瓜忙", file: "S_现代农村喜剧_我家拆迁暴富，全家躺赢吃瓜忙.html" },
+            { rating: "S", genre: "修仙", title: "重生后，系统逼我到处认爹", file: "S_修仙_重生后，系统逼我到处认爹.html" },
+            { rating: "S", genre: "重生", title: "重生1997：学霸女儿不好惹", file: "S_重生_重生1997：学霸女儿不好惹.html" },
+            { rating: "S+", genre: "都市奇幻", title: "我家租客三千岁", file: "S+_都市奇幻_我家租客三千岁.html" },
+            { rating: "S+", genre: "古装权谋", title: "我的王妃是阁主：世子揽尽风华", file: "S+_古装权谋_我的王妃是阁主：世子揽尽风华.html" },
+            { rating: "S+", genre: "古装甜宠喜剧", title: "读心暴君的咸鱼宠妃", file: "S+_古装甜宠喜剧_读心暴君的咸鱼宠妃.html" },
+            { rating: "S+", genre: "民国悬疑", title: "轮回烬", file: "S+_民国悬疑_轮回烬.html" },
+            { rating: "S+", genre: "年代", title: "七零年代：捡个落魄千金宠成宝", file: "S+_年代_七零年代：捡个落魄千金宠成宝.html" },
+            { rating: "S+", genre: "女频复仇逆袭", title: "重回八零：嫁给前任他二叔", file: "S+_女频复仇逆袭_重回八零：嫁给前任他二叔.html" },
+            { rating: "S+", genre: "甜宠爽剧", title: "顶流争宠小师祖", file: "S+_甜宠爽剧_顶流争宠小师祖.html" },
+            { rating: "S+", genre: "玄幻喜剧", title: "求死不能：我的渡劫合伙人", file: "S+_玄幻喜剧_求死不能：我的渡劫合伙人.html" },
+            { rating: "S+", genre: "玄幻悬疑", title: "赛博镇妖师", file: "S+_玄幻悬疑_赛博镇妖师.html" }
+        ];
+
+        function renderScripts(scriptsToRender) {
+            const content = document.getElementById('content');
+
+            if (scriptsToRender.length === 0) {
+                content.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h2>未找到相关剧本</h2>
+                        <p>试试其他关键词吧</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const ratings = {
+                'S+': scriptsToRender.filter(s => s.rating === 'S+'),
+                'S': scriptsToRender.filter(s => s.rating === 'S'),
+                'A+': scriptsToRender.filter(s => s.rating === 'A+'),
+                'A': scriptsToRender.filter(s => s.rating === 'A')
+            };
+
+            let html = '';
+            for (const [rating, scripts] of Object.entries(ratings)) {
+                if (scripts.length === 0) continue;
+
+                const ratingClass = rating.toLowerCase().replace('+', '-plus');
+                html += `
+                    <div class="rating-section rating-${ratingClass}">
+                        <div class="rating-header">
+                            <span class="rating-badge">${rating}</span>
+                            <span class="rating-count">${scripts.length} 个剧本</span>
+                        </div>
+                        <div class="script-grid">
+                `;
+
+                scripts.forEach(script => {
+                    html += `
+                        <div class="script-card" onclick="window.location.href='eval-20260116/html/${encodeURIComponent(script.file)}'">
+                            <div class="script-title">${script.title}</div>
+                            <div class="script-meta">
+                                <span class="tag">${script.genre}</span>
+                                <span class="tag">${script.rating}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = html;
+        }
+
+        // Initial render
+        renderScripts(scripts);
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            if (searchTerm === '') {
+                renderScripts(scripts);
+                return;
+            }
+
+            const filtered = scripts.filter(script =>
+                script.title.toLowerCase().includes(searchTerm) ||
+                script.genre.toLowerCase().includes(searchTerm) ||
+                script.rating.toLowerCase().includes(searchTerm)
+            );
+
+            renderScripts(filtered);
+        });
+    </script>
+</body>
+</html>
